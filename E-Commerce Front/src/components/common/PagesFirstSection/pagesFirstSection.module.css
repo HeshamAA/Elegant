@@ -1,0 +1,50 @@
+.PagesFirstSectionContainer {
+  min-height: 50vh;
+  background-image: url(../../../assets/FirstSectionTwo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  background-attachment: fixed;
+  padding: 0;
+}
+.kidsPhoto{
+  background-image: url(../../../assets/kidsBackground.jpg) ;
+}
+.womenPhoto{
+  background-image: url(../../../assets/FirstSection.jpg) ;
+}
+.sportPhoto{
+  background-image: url(../../../assets/sportsBackground.jpg);
+
+}
+.cartPhoto{
+  background-image: url(../../../assets/Cart.jpg);
+}
+.PagesFirstSectionContainer::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-section-overlay);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.PagesFirstSectionContainer > *{
+  z-index: 2;
+}
+.pageTitle{
+    font-size: 100px;
+    color: var(--secondary-color);
+    z-index: 2;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+@media (max-width: 575.98px) {
+  .pageTitle {
+    font-size: 60px;
+    text-align: center;
+  }
+}

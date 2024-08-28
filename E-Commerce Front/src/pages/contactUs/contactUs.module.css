@@ -1,0 +1,66 @@
+.contactUsSection {
+  color: var(--secondary-color);
+  background-color: var(--opposite-secondary);
+}
+
+.contactUsSection h4 {
+  font-size: 24px;
+}
+.contactUsSection h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.contactBoxs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contactBoxs h4 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.contactBoxs > div {
+  background-color: var(--primary-color);
+  flex-grow: 1;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.contactForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  padding-top: 20px;
+}
+.contactForm > div:first-child {
+font-size: 26px;
+}
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contactForm form button {
+  border: none;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  font-size: 19px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  transition: 0.4s ease;
+  position: relative;
+  text-align: center;
+  width: 25%;
+}
+.contactForm form button:hover {
+  background-color: var(--third-color);
+  /* background-color: var(--primary-color-low-opacity); */
+  letter-spacing: 1px;
+}

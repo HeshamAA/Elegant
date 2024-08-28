@@ -1,0 +1,40 @@
+.cartPageSection {
+  background-color: var(--opposite-secondary);
+  padding: 50px 10px;
+}
+
+.cartPageSection > div:first-child > button:last-child{
+  width: 70%;
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  outline: none;
+  color: var(--third-color);
+  transition: 0.5s ease;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.cartPageSection > div:first-child > button:last-child:hover{
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.coupon button {
+  padding: 10px;
+  cursor: pointer
+  ;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  outline: none;
+  border: none;
+}
+
+.subtotal{
+  width: 100%;
+  font-size: 26px;
+  border-top: 2px solid var(--primary-color);
+  color: var(--secondary-color);
+  padding-top: 10px;
+}

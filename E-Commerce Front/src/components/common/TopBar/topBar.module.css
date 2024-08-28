@@ -1,0 +1,60 @@
+.topBar {
+  background-color: var(--third-color);
+  padding: 10px 0;
+  width: 100%;
+  color: var(--secondary-color);
+}
+.topBar > div:first-child {
+  margin: auto;
+}
+.topBar > div:first-child > div:first-child {
+  position: relative;
+
+}
+.topBar > div:first-child > div:first-child > div:last-child{
+  background-color: white;
+  width: calc(100% - 30px);
+  margin: auto;
+  height: 150px;
+  overflow-y: auto;
+  color: var(--third-color);
+  left: 8%;
+  position: absolute;
+  border-top: none;
+  outline: none;
+
+  opacity: 0; 
+
+
+}
+.topBar > div:first-child > div:first-child > div:last-child > div{
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.topBar > div:first-child > div:first-child > div:last-child > div:hover{
+  background-color: rgb(146, 146, 146);
+}
+.topBar > div:first-child > div:first-child svg {
+  position: absolute;
+  right: 75%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.topBar input {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  width: 45%;
+  transition: 0.5s ease;
+  color: var(--third-color);
+  caret-color: var(--third-color);
+}
+.topBar a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.topBar input:focus  {
+  width: 100%;
+}
+

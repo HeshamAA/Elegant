@@ -1,0 +1,45 @@
+.error404Container {
+  background-color: var(--opposite-secondary);
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+.errorText {
+  font-size: 200px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.info {
+  font-family: "Kalam", cursive;
+  font-size: 50px;
+  color: var(--secondary-color);
+}
+.errorMessage {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.goHome {
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  transition: 0.5s ease;
+}
+
+.goHome:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+@media (max-width: 450px) {
+    .info {font-size: 30px}
+}

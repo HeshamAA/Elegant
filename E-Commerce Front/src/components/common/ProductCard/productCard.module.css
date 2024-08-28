@@ -1,0 +1,164 @@
+.cardContainer {
+  /* width: calc(25% - 10px); */
+  max-width: 100%;
+  height: 465px;
+  background-color: var(--card-background);
+  display: flex;
+  align-items: center;
+  /* flex-grow: 1; */
+  flex-direction: column;
+  position: relative;
+  padding: 0px 25px;
+}
+
+.productCardImg {
+  width: calc(100% + 50px);
+  height: 50%;
+}
+
+.cardContainer .loveButton svg,
+.cardContainer .detailsButton svg,
+.cardContainer .addToWatchListButton svg {
+  color: var(--secondary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--third-color);
+  padding: 5px;
+}
+.loveButton,.detailsButton,
+.addToWatchListButton {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.6s ease;
+  transform: translateX(53px);
+  pointer-events: none;
+}
+.detailsButton{
+  top: 80px;
+}
+.addToWatchListButton {
+  top: 80px;
+}
+.cardContainer:hover > .loveButton,
+.cardContainer:hover > .detailsButton,
+.cardContainer:hover > .addToWatchListButton {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.cardContent {
+  text-align: center;
+  width: 100%;
+  padding: 10px 10px 5px 10px;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cardContent > h3 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--secondary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cardContent > div:first-of-type {
+  width: 100%;
+  gap: 10px;
+}
+.productSizes {
+  display: flex;
+  width: 50%;
+}
+.productSizes div {
+  position: relative;
+  height: 30px;
+}
+.productSizes label {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  color: var(--secondary-color);
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.productSizes input {
+  position: absolute;
+  top: 40%;
+  transform: translate(0%, -50%);
+
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.productSizes input:checked + label {
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  border-color: var(--third-color);
+}
+.productPrice {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+.addToCartButton {
+  width: calc(100% + 70px);
+  border: none;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  font-size: 19px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  transition: 0.4s ease;
+  position: relative;
+  left: -35px;
+  text-align: center;
+}
+.addToCartButton:hover {
+  background-color: var(--third-color);
+  /* background-color: var(--primary-color-low-opacity); */
+  letter-spacing: 1px;
+}
+
+.addToCartButton:disabled {
+  background-color: var(--third-color);
+
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* @media (min-width: 768px) and (max-width:991px) {
+  .cardContainer {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (min-width: 576px) and (max-width:767px) {
+  .cardContainer {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cardContainer {
+    width: calc( 100% - 10px);
+    margin: auto;
+  }
+} */

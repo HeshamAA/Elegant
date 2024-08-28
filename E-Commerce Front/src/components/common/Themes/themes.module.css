@@ -1,0 +1,63 @@
+.themes {
+  position: fixed;
+  top: 50%;
+  right: -0px;
+  transform: translateX(80%);
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+  /*  bigger than container zindex */
+  z-index: 2003;
+}
+.themes > div:first-child {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.themes > div:first-child:hover {
+  color: var(--third-color);
+}
+.themesContainer {
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0px 10px;
+}
+.themesContainer div {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+
+.themesContainer > div:first-child {
+  background-color: #f64753;
+}
+
+.themesContainer > div:nth-child(2) {
+  background-color: #f68c97;
+}
+.themesContainer > div:nth-child(3) {
+  background-color: #47a3f6;
+}
+.themesContainer > div:nth-child(4) {
+  background-color: #f6a37f;
+}
+.themesContainer > div:nth-child(5) {
+  background-color: #0fc2c0;
+}

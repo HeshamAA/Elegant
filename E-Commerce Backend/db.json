@@ -1,0 +1,476 @@
+{
+  "users": [
+    {
+      "email": "a@yahoo.com",
+      "password": "$2a$10$4Zmz6D/BDLLE/hYdvbRfWOhNZ67PlHTl0ECk7j89.fHEKtrvfLLWS",
+      "firstName": "hesham",
+      "lastName": "ahmed",
+      "id": 1
+    }
+  ],
+  "bestsellers": [
+    {
+      "id": "1",
+      "title": "Regular Fit Jersey top",
+      "price": 249,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Cotton t-shirt",
+      "price": 100,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Velour top",
+      "price": 300,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg"
+    },
+    {
+      "id": "29",
+      "title": "Sweatshirt shorts",
+      "price": 300,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "title": "men",
+      "prefix": "men",
+      "img": "https://cdn-eu.dynamicyield.com/api/9876644/images/cfb357649428__hp-w12-22032022-h_m-men.jpg"
+    },
+    {
+      "id": "2",
+      "title": "women",
+      "prefix": "women",
+      "img": "https://cdn-eu.dynamicyield.com/api/9876644/images/30d354267a09b__hp-w12-22032022-h_m-women_dresses.jpg"
+    },
+    {
+      "id": "3",
+      "title": "kids",
+      "prefix": "kids",
+      "img": "https://cdn-eu.dynamicyield.com/api/9876644/images/37d243d334c63__hp-w12-22032022-h_m-kids1.jpg"
+    },
+    {
+      "id": "5",
+      "title": "sport",
+      "prefix": "sport",
+      "img": "https://cdn-eu.dynamicyield.com/api/9876644/images/1dda9ae79a671__h_m-w40-06102022-7416b-1x1.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Regular Fit Jersey top",
+      "price": 249,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Comfortable regular fit jersey top made from soft cotton fabric."
+    },
+    {
+      "id": "2",
+      "title": "Regular Fit Jersey top",
+      "price": 229,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Stylish jersey top with a regular fit, perfect for casual wear."
+    },
+    {
+      "id": "3",
+      "title": "Cotton polo shirt",
+      "price": 200,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/13994073/eeb1d90c4764366000eb8b8571396e81f0de5c44/2/image-thumb__3142108__product_listing/4d6db9e8f936d3d82b13bc5861b0310fa214c74d.jpg",
+      "desc": "Classic cotton polo shirt with a comfortable and breathable design."
+    },
+    {
+      "id": "4",
+      "title": "Cotton t-shirt",
+      "price": 100,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg",
+      "desc": "Soft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wear."
+    },
+    {
+      "id": "5",
+      "title": "Sweatshirt shorts",
+      "price": 300,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg",
+      "desc": "Comfortable sweatshirt shorts with an elastic waistband."
+    },
+    {
+      "id": "6",
+      "title": "Velour top",
+      "price": 300,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
+      "desc": "Stylish velour top for kids, made from soft and cozy fabric."
+    },
+    {
+      "id": "7",
+      "title": "Velour pants",
+      "price": 300,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
+      "desc": "Soft velour pants for kids, perfect for comfort and style."
+    },
+    {
+      "id": "8",
+      "title": "Regular Fit football shirt",
+      "price": 449,
+      "cat_prefix": "sport",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14472541/cb9d35f1480ce5c8b0be39ad7fd35ab9f8004ce0/2/image-thumb__3453052__product_listing/70408034bd9792a93abbc8ad322565337f535e24.jpg",
+      "desc": "Football shirt with a regular fit, designed for active sportswear."
+    },
+    {
+      "id": "9",
+      "title": "Regular Fit Jersey top",
+      "price": 249,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Versatile jersey top for men, featuring a regular fit and soft fabric."
+    },
+    {
+      "id": "10",
+      "title": "Regular Fit Jersey top",
+      "price": 229,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Comfortable jersey top designed for a regular fit and easy movement."
+    },
+    {
+      "id": "11",
+      "title": "Cotton polo shirt",
+      "price": 200,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/13994073/eeb1d90c4764366000eb8b8571396e81f0de5c44/2/image-thumb__3142108__product_listing/4d6db9e8f936d3d82b13bc5861b0310fa214c74d.jpg",
+      "desc": "Classic cotton polo shirt ideal for casual and semi-formal wear."
+    },
+    {
+      "id": "12",
+      "title": "Cotton t-shirt",
+      "price": 100,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg",
+      "desc": "Everyday cotton t-shirt offering a relaxed fit and comfort."
+    },
+    {
+      "id": "13",
+      "title": "Sweatshirt shorts",
+      "price": 300,
+      "cat_prefix": "women",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg",
+      "desc": "Relaxed fit sweatshirt shorts, perfect for leisure activities."
+    },
+    {
+      "id": "14",
+      "title": "Velour top",
+      "price": 300,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
+      "desc": "Cozy velour top for kids, designed for warmth and comfort."
+    },
+    {
+      "id": "15",
+      "title": "Velour pants",
+      "price": 300,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
+      "desc": "Comfortable velour pants for kids, perfect for everyday wear."
+    },
+    {
+      "id": "16",
+      "title": "Regular Fit football shirt",
+      "price": 449,
+      "cat_prefix": "sport",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/14472541/cb9d35f1480ce5c8b0be39ad7fd35ab9f8004ce0/2/image-thumb__3453052__product_listing/70408034bd9792a93abbc8ad322565337f535e24.jpg",
+      "desc": "Sporty football shirt with a regular fit, ideal for training and matches."
+    },
+    {
+      "id": "17",
+      "title": "Denim Jacket",
+      "price": 500,
+      "cat_prefix": "men",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/12345678/abcdef1234567890/2/image-thumb__123456__product_listing/denim_jacket.jpg",
+      "desc": "Classic denim jacket with a modern cut, perfect for a casual look."
+    },
+    {
+      "id": "18",
+      "title": "Leather Boots",
+      "price": 1200,
+      "cat_prefix": "women",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/87654321/fedcba0987654321/2/image-thumb__654321__product_listing/leather_boots.jpg",
+      "desc": "Stylish leather boots designed for comfort and durability."
+    },
+    {
+      "id": "19",
+      "title": "Graphic Tee",
+      "price": 150,
+      "cat_prefix": "kids",
+      "sizes": [
+        "XS",
+        "S",
+        "M"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/23456789/bcdefa23456789/2/image-thumb__234567__product_listing/graphic_tee.jpg",
+      "desc": "Fun graphic tee for kids, made from soft, breathable fabric."
+    },
+    {
+      "id": "20",
+      "title": "Running Shoes",
+      "price": 750,
+      "cat_prefix": "sport",
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/34567890/cdefba34567890/2/image-thumb__345678__product_listing/running_shoes.jpg",
+      "desc": "High-performance running shoes for athletes and fitness enthusiasts."
+    },
+    {
+      "id": "21",
+      "title": "Summer Dress",
+      "price": 350,
+      "cat_prefix": "women",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/45678901/defbac45678901/2/image-thumb__456789__product_listing/summer_dress.jpg",
+      "desc": "Light and airy summer dress, perfect for warm weather outings."
+    },
+    {
+      "id": "22",
+      "title": "Chino Pants",
+      "price": 299,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/56789012/efcbad56789012/2/image-thumb__567890__product_listing/chino_pants.jpg",
+      "desc": "Versatile chino pants suitable for both casual and formal wear."
+    },
+    {
+      "id": "23",
+      "title": "Baby Onesie",
+      "price": 100,
+      "cat_prefix": "baby",
+      "sizes": [
+        "0-3m",
+        "3-6m",
+        "6-9m"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/67890123/fbcdae67890123/2/image-thumb__678901__product_listing/baby_onesie.jpg",
+      "desc": "Soft and adorable onesie for babies, perfect for everyday comfort."
+    },
+    {
+      "id": "24",
+      "title": "Puffer Jacket",
+      "price": 899,
+      "cat_prefix": "kids",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/78901234/cdfeab78901234/2/image-thumb__789012__product_listing/puffer_jacket.jpg",
+      "desc": "Warm and cozy puffer jacket for kids, ideal for winter weather."
+    },
+    {
+      "id": "25",
+      "title": "Yoga Pants",
+      "price": 200,
+      "cat_prefix": "women",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/89012345/edcfba89012345/2/image-thumb__890123__product_listing/yoga_pants.jpg",
+      "desc": "Comfortable yoga pants with a high waist, perfect for workouts."
+    },
+    {
+      "id": "26",
+      "title": "Formal Shirt",
+      "price": 400,
+      "cat_prefix": "men",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/90123456/fedcba90123456/2/image-thumb__901234__product_listing/formal_shirt.jpg",
+      "desc": "Elegant formal shirt suitable for business and formal occasions."
+    },
+    {
+      "id": "27",
+      "title": "Sports Bra",
+      "price": 180,
+      "cat_prefix": "sport",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/11223344/aabbcc11223344/2/image-thumb__112233__product_listing/sports_bra.jpg",
+      "desc": "High-support sports bra, perfect for intense workouts and running."
+    },
+    {
+      "id": "28",
+      "title": "Tennis Skirt",
+      "price": 230,
+      "cat_prefix": "sport",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/22334455/bbccdd22334455/2/image-thumb__223344__product_listing/tennis_skirt.jpg",
+      "desc": "Lightweight tennis skirt designed for comfort and performance."
+    },
+    {
+      "id": "29",
+      "title": "Raincoat",
+      "price": 350,
+      "cat_prefix": "kids",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "img": "https://eg.hm.com/assets/styles/HNM/33445566/ccddee33445566/2/image-thumb__334455__product_listing/raincoat.jpg",
+      "desc": "Waterproof raincoat for kids, perfect for rainy days and outdoor play."
+    }
+  ],
+  "watchlist": []
+}

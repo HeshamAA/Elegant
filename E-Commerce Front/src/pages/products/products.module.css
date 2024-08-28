@@ -1,0 +1,14 @@
+.showMoreProductsButton{
+    padding: 5px 35px;
+    font-size: 24px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    
+    color: var(--secondary-color);
+    cursor: pointer;
+    background-color: transparent;  
+    transition: 0.5s ease;
+
+}
+

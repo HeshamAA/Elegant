@@ -1,0 +1,88 @@
+.productSection {
+  background-color: var(--opposite-secondary);
+  color: var(--secondary-color);
+}
+.productSection > * {
+  text-transform: capitalize;
+}
+.productDetailsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.productDetailsContainer img {
+  display: block;
+  height: 600px;
+}
+
+.productDetailsContainer > div:first-of-type {
+  max-width: 40%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.productDetailsContainer > div:first-of-type > div:first-child {
+  font-size: 40px;
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(2) {
+  color: rgb(196, 196, 196);
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(3) {
+  font-size: 24px;
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(4) {
+  font-size: 30px;
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(5) > span {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 30px;
+  border: 2px solid var(--primary-color);
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(6) button {
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+.productDetailsContainer > div:first-of-type > div:nth-child(6) button:hover {
+
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+
+}
+.productDetailsContainer > div:first-of-type > button {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--secondary-color);
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.productDetailsContainer > div:first-of-type > button:hover {
+
+background-color: var(--third-color);
+color:var(--primary-color) ;
+
+}
+@media (max-width: 768px) {
+    .productDetailsContainer {
+      flex-direction: column;
+    }
+    .productDetailsContainer > div:first-of-type {
+      width: 100%;
+      max-width: 100%;
+    }
+  }

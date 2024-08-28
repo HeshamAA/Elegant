@@ -1,0 +1,64 @@
+.header {
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0);
+
+  width: 100%;
+  /*  bigger than container zindex */
+  z-index: 2001;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: auto;
+}
+
+
+.headerContainer h1 {
+  font-family: "Kalam", cursive;
+  letter-spacing: 3px;
+  color: var(--secondary-color);
+  font-weight: bolder;
+  font-size: 50px;
+  margin: 0;
+  transition: 0.5s ease;
+}
+.headerContainer h1 span {
+  font-family: "Kalam", cursive;
+  color: var(--primary-color);
+  font-size: 70px;
+}
+
+
+.cartNumber {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  font-weight: 450;
+  border-radius: 50%;
+  position: absolute;
+  top: -23px;
+  right: -13px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.6px;
+  padding: 5px;
+}
+.headerContainer > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header svg {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+

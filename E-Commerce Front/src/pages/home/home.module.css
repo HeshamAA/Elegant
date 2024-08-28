@@ -1,0 +1,367 @@
+/* home first section */
+.home {
+  position: relative;
+}
+
+.homeSection {
+  background-image: url(../../assets/photo1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 120vh;
+}
+.homeSection::after {
+  content: "";
+  background-color: var(--black-section-overlay);
+  width: 100%;
+  height: 120vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.homeSection > div:first-child {
+  text-align: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .homeSection > div:first-child > div:nth-child(2) {
+    font-size: 55px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .homeSection > div:first-child > div:first-child {
+    font-size: 32px !important;
+  }
+  .homeSection > div:first-child > div:nth-child(2) {
+    font-size: 50px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .homeSection {
+    background-image: url(../../assets/photo1Part2.jpg);
+  }
+  .homeSection > div:first-child > div:first-child {
+    font-size: 25px !important;
+  }
+  .homeSection > div:first-child > div:nth-child(2) {
+    font-size: 40px !important;
+  }
+
+  .signUpButton {
+    font-size: 22px !important;
+  }
+  .time {
+    padding: 20px 30px !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .homeSection {
+    background-image: url(../../assets/photo1Part2.jpg);
+  }
+  .homeSection > div:first-child > div:first-child {
+    font-size: 20px !important;
+  }
+  .homeSection > div:first-child > div:nth-child(2) {
+    font-size: 35px !important;
+  }
+
+  .signUpButton {
+    font-size: 18px !important;
+  }
+  .timerWrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .time {
+    padding: 15px 30px !important;
+  }
+  .homeSection > div:first-child > div:last-child {
+    font-size: 20px !important;
+  }
+  .signUpButton {
+    font-size: 18px !important;
+    padding: 5px 10px !important;
+  }
+}
+.homeSection > div:first-child > div:first-child {
+  font-family: "Kalam", cursive;
+  color: var(--primary-color);
+  font-size: 39px;
+  font-weight: bolder;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.homeSection > div:first-child > div:first-child > div:first-child {
+  display: inline;
+
+  padding: 10px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+.homeSection > div:first-child > div:nth-child(2) {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 70px;
+}
+.homeSection > div:first-child > div:nth-child(2) > div {
+  display: inline;
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.timerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time {
+  border: 1px solid var(--secondary-color);
+  padding: 25px 50px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+.homeSection > div:first-child > div:last-child {
+  color: var(--secondary-color);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+.signUpButton {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 4px 15px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+.signUpButton:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+/* home second section */
+
+.homeSecondSection {
+  background-color: var(--opposite-secondary);
+}
+.homeSecondSectionContainer {
+  background-image: url(../../assets/photo2.jpg);
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  animation: slide 20s infinite;
+}
+@keyframes slide {
+  0% {
+    background-image: url(../../assets/photo2.jpg);
+    animation-delay: 0s;
+  }
+  33.33% {
+    background-image: url(../../assets/photo3.jpg);
+    animation-delay: 5s;
+  }
+  66.66% {
+    background-image: url(../../assets/photo4.jpg);
+    animation-delay: 10s;
+  }
+  100% {
+    background-image: url(../../assets/photo2.jpg);
+    animation-delay: 15s;
+  }
+}
+.homeSecondSectionContainer::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-section-overlay);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* to make texts and content appear from overlay */
+  z-index: -1;
+}
+.homeSecondSectionContainer > div:first-child {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 20px;
+  max-width: 50%;
+}
+.homeSecondSectionContainer > div:first-child > div:first-child {
+  font-family: "Kalam", cursive;
+  color: var(--primary-color);
+  font-size: 25px;
+  font-weight: bolder;
+}
+.homeSecondSectionContainer > div:first-child > div:nth-child(2) {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: bold;
+}
+.homeSecondSectionContainer > div:first-child > div:nth-child(3) {
+  color: var(--secondary-color);
+
+  font-size: 18px;
+}
+
+.homeSecondSectionContainer button {
+  font-size: 30px;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+.homeSecondSectionContainer button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .homeSecondSectionContainer > div:first-child {
+    max-width: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .homeSecondSectionContainer > div:first-child {
+    max-width: 70%;
+  }
+  .homeSecondSectionContainer > div:first-child > div:nth-child(2) {
+    font-size: 40px;
+  }
+  .homeSecondSectionContainer button {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .homeSecondSectionContainer > div:first-child {
+    max-width: 80%;
+  }
+  .homeSecondSectionContainer > div:first-child > div:nth-child(2) {
+    font-size: 30px;
+  }
+  .homeSecondSectionContainer button {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575.98px) {
+  .homeSecondSectionContainer > div:first-child {
+    max-width: 100%;
+  }
+}
+
+/* home third section */
+
+.homeThirdSection {
+  background-color: var(--opposite-secondary);
+
+  position: relative;
+}
+.homeThirdSection::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--full-page-overlay); */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homeThirdSectionContainer {
+  flex-direction: column;
+  gap: 10px;
+}
+.homeThirdSectionContainer > div:first-child {
+  font-family: "Kalam", cursive;
+  color: var(--primary-color);
+  font-size: 39px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.productCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+/* @media (min-width: 768px) and (max-width:991px) {
+  .homeThirdSection {
+   height: 170vh;
+  }
+}
+
+@media (min-width: 576px) and (max-width:767px) {
+  .homeThirdSection {
+    height: 170vh;
+   }
+}
+
+
+@media (max-width: 575.98px) {
+  .homeThirdSection {
+    height: 320vh;
+    padding: 0 20px;
+   }
+} */
+
+/*  home fourth section */
+
+.homeFourthSection {
+  background-color: var(--opposite-secondary);
+  min-height: 60vh;
+  flex-direction: column;
+  text-align: center;
+}
+.homeFourthSection h1 {
+  display: block;
+  font-family: "Kalam", cursive;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+.homeFourthSection > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.homeFourthSection img {
+  max-width: 200px;
+  background-color: var(--primary-color);
+  margin: 10px;
+}
