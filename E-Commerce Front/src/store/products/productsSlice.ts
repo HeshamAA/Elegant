@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IProducts } from "../../types/products";
+import { IProductsState } from "../../types/productsTypes";
 import getProductsByCategoryPrefix from "./thunk/getProductsByCategoryPrefix";
 import getProducts from "./thunk/getProducts";
-const initialState: IProducts = {
+import deleteProduct from "./thunk/deleteProduct";
+import addProduct from "./thunk/addProduct";
+import editProduct from "./thunk/editProduct";
+const initialState: IProductsState = {
   data: [],
   filteredData: [],
   loading: "idle",
@@ -70,11 +73,69 @@ const productsSlice = createSlice({
       state.error = null;
     });
     builder.addCase(getProducts.fulfilled, (state, action) => {
-      state.loading = "succeeded";
-      state.data = action.payload;
+      const { arg } = action.meta;
+      if (arg === "ids") {
+        state.loading = "succeeded";
+        state.data = action.payload.map((el) => el.id?.toString());
+      } else {
+        state.loading = "succeeded";
+        state.data = action.payload;
+      }
     });
     builder.addCase(getProducts.rejected, (state, action) => {
       state.loading = "failed";
+      if (action.payload && typeof action.payload === "string") {
+        state.error = action.payload;
+      }
+    });
+    builder.addCase(deleteProduct.pending, (state) => {
+      state.loading = "pending";
+      state.error = null;
+    });
+    builder.addCase(deleteProduct.fulfilled, (state, action) => {
+      state.loading = "succeeded";
+      state;
+
+      state.data = action.payload;
+    });
+    builder.addCase(deleteProduct.rejected, (state, action) => {
+      state.loading = "failed";
+      console.log(action);
+
+      if (action.payload && typeof action.payload === "string") {
+        state.error = action.payload;
+      }
+    });
+    builder.addCase(addProduct.pending, (state) => {
+      state.loading = "pending";
+      state.error = null;
+    });
+    builder.addCase(addProduct.fulfilled, (state, action) => {
+      state.loading = "succeeded";
+
+      state.data?.push(action.payload);
+    });
+    builder.addCase(addProduct.rejected, (state, action) => {
+      state.loading = "failed";
+      console.log(action);
+
+      if (action.payload && typeof action.payload === "string") {
+        state.error = action.payload;
+      }
+    });
+    builder.addCase(editProduct.pending, (state) => {
+      state.loading = "pending";
+      state.error = null;
+    });
+    builder.addCase(editProduct.fulfilled, (state, action) => {
+      state.loading = "succeeded";
+
+      console.log(action);
+    });
+    builder.addCase(editProduct.rejected, (state, action) => {
+      state.loading = "failed";
+      console.log(action);
+
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }

@@ -1,8 +1,5 @@
-type THeaderIcons = {
-  className: string;
-  value: number;
-  children: React.ReactNode;
-};
+import { THeaderIcons } from "../../../../types/headerTypes";
+
 
 function HeaderIcons({ className, value, children }: THeaderIcons) {
   return (

@@ -1,0 +1,23 @@
+.buttonsContainer{
+    display: flex;
+    
+}
+.buttonsContainer button{
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonsContainer button:hover{
+    opacity: 0.5;
+}
+.buttonsContainer button:disabled{
+    cursor: not-allowed;
+   opacity: 1;
+}

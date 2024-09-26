@@ -1,11 +1,52 @@
 {
   "users": [
     {
-      "email": "a@yahoo.com",
-      "password": "$2a$10$4Zmz6D/BDLLE/hYdvbRfWOhNZ67PlHTl0ECk7j89.fHEKtrvfLLWS",
-      "firstName": "hesham",
-      "lastName": "ahmed",
-      "id": 1
+      "email": "hesham@yahoo.com",
+      "password": "$2a$10$GrVL8/GXeleJFY32CB9J8e8FS516PiKZlKWN2dxPZj1Vc1dMRCgBO",
+      "firstName": "admin",
+      "lastName": "one",
+      "watchlist": [],
+      "id": "1",
+      "role": "admin"
+    },
+    {
+      "email": "asd@yahoo.com",
+      "password": "$2a$10$zDtDYwh6NP8WZFRhwCsijuTHrLAg8JOmrERbcofPdNStEIkWPBsIu",
+      "firstName": "asd",
+      "lastName": "asd",
+      "watchlist": [
+        "1",
+        "4"
+      ],
+      "id": "2",
+      "role": "user"
+    },
+    {
+      "email": "asdasd@yahoo.com",
+      "password": "$2a$10$XVqSYNPj9OLRAk3gjd3e8uJ7rcqFIOGW4p1B4uYTPmCYFmDuP32Pq",
+      "firstName": "asdasd",
+      "lastName": "asdasd",
+      "watchlist": [],
+      "id": "3",
+      "role": "user"
+    },
+    {
+      "email": "asdasdads@yahoo.com",
+      "password": "$2a$10$0QDNllUy8lECSGNy4hIEluEJh5ueD5qbWY3TCOXCyyHfI.1Q4Kply",
+      "firstName": "asdasdasd",
+      "lastName": "asdasdasd",
+      "watchlist": [],
+      "role": "user",
+      "id": "4"
+    },
+    {
+      "email": "none@gmail.com",
+      "password": "$2a$10$0b2V7HI80qQS74fWEIka3uSfJgj68xYy69sz4FzFG1j6RzvTEzt3q",
+      "firstName": "none",
+      "lastName": "none",
+      "watchlist": [],
+      "role": "user",
+      "id": "5"
     }
   ],
   "bestsellers": [
@@ -88,11 +129,12 @@
     {
       "id": "1",
       "title": "Regular Fit Jersey top",
-      "price": 249,
+      "price": "265",
       "cat_prefix": "men",
       "sizes": [
-        "M",
+        "S",
         "L",
+        "M",
         "XL"
       ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
@@ -312,11 +354,9 @@
       "price": 1200,
       "cat_prefix": "women",
       "sizes": [
-        "36",
-        "37",
-        "38",
-        "39",
-        "40"
+        "M",
+        "L",
+        "XL"
       ],
       "img": "https://eg.hm.com/assets/styles/HNM/87654321/fedcba0987654321/2/image-thumb__654321__product_listing/leather_boots.jpg",
       "desc": "Stylish leather boots designed for comfort and durability."
@@ -335,141 +375,42 @@
       "desc": "Fun graphic tee for kids, made from soft, breathable fabric."
     },
     {
-      "id": "20",
-      "title": "Running Shoes",
-      "price": 750,
-      "cat_prefix": "sport",
+      "title": "Regular Fit Jersey top",
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Comfortable regular fit jersey top made from soft cotton fabricty.",
+      "price": 249,
+      "cat_prefix": "men",
       "sizes": [
-        "40",
-        "41",
-        "42",
-        "43",
-        "44"
+        null,
+        null,
+        null
       ],
-      "img": "https://eg.hm.com/assets/styles/HNM/34567890/cdefba34567890/2/image-thumb__345678__product_listing/running_shoes.jpg",
-      "desc": "High-performance running shoes for athletes and fitness enthusiasts."
+      "id": "aesmEwX"
     },
     {
-      "id": "21",
-      "title": "Summer Dress",
-      "price": 350,
-      "cat_prefix": "women",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/45678901/defbac45678901/2/image-thumb__456789__product_listing/summer_dress.jpg",
-      "desc": "Light and airy summer dress, perfect for warm weather outings."
-    },
-    {
-      "id": "22",
-      "title": "Chino Pants",
-      "price": 299,
+      "title": "Regular Fit Jersey top",
+      "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
+      "desc": "Comfortable regular fit jersey top made from soft cotton fabricyy.",
+      "price": 249,
       "cat_prefix": "men",
       "sizes": [
         "M",
-        "L",
-        "XL",
-        "XXL"
+        "XL"
       ],
-      "img": "https://eg.hm.com/assets/styles/HNM/56789012/efcbad56789012/2/image-thumb__567890__product_listing/chino_pants.jpg",
-      "desc": "Versatile chino pants suitable for both casual and formal wear."
+      "id": "BZilWRX"
     },
     {
-      "id": "23",
-      "title": "Baby Onesie",
-      "price": 100,
-      "cat_prefix": "baby",
+      "title": "Awesome Jacket",
+      "img": "https://i.pinimg.com/564x/b0/9d/ce/b09dce1fbeeec696d0c581cf4cff3163.jpg",
+      "desc": "An Awesome jacket for winter",
+      "price": "350",
+      "cat_prefix": "men",
       "sizes": [
-        "0-3m",
-        "3-6m",
-        "6-9m"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/67890123/fbcdae67890123/2/image-thumb__678901__product_listing/baby_onesie.jpg",
-      "desc": "Soft and adorable onesie for babies, perfect for everyday comfort."
-    },
-    {
-      "id": "24",
-      "title": "Puffer Jacket",
-      "price": 899,
-      "cat_prefix": "kids",
-      "sizes": [
-        "M",
+        "S",
         "L",
         "XL"
       ],
-      "img": "https://eg.hm.com/assets/styles/HNM/78901234/cdfeab78901234/2/image-thumb__789012__product_listing/puffer_jacket.jpg",
-      "desc": "Warm and cozy puffer jacket for kids, ideal for winter weather."
-    },
-    {
-      "id": "25",
-      "title": "Yoga Pants",
-      "price": 200,
-      "cat_prefix": "women",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/89012345/edcfba89012345/2/image-thumb__890123__product_listing/yoga_pants.jpg",
-      "desc": "Comfortable yoga pants with a high waist, perfect for workouts."
-    },
-    {
-      "id": "26",
-      "title": "Formal Shirt",
-      "price": 400,
-      "cat_prefix": "men",
-      "sizes": [
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/90123456/fedcba90123456/2/image-thumb__901234__product_listing/formal_shirt.jpg",
-      "desc": "Elegant formal shirt suitable for business and formal occasions."
-    },
-    {
-      "id": "27",
-      "title": "Sports Bra",
-      "price": 180,
-      "cat_prefix": "sport",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/11223344/aabbcc11223344/2/image-thumb__112233__product_listing/sports_bra.jpg",
-      "desc": "High-support sports bra, perfect for intense workouts and running."
-    },
-    {
-      "id": "28",
-      "title": "Tennis Skirt",
-      "price": 230,
-      "cat_prefix": "sport",
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/22334455/bbccdd22334455/2/image-thumb__223344__product_listing/tennis_skirt.jpg",
-      "desc": "Lightweight tennis skirt designed for comfort and performance."
-    },
-    {
-      "id": "29",
-      "title": "Raincoat",
-      "price": 350,
-      "cat_prefix": "kids",
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/33445566/ccddee33445566/2/image-thumb__334455__product_listing/raincoat.jpg",
-      "desc": "Waterproof raincoat for kids, perfect for rainy days and outdoor play."
+      "id": "wnxOVUY"
     }
   ],
   "watchlist": []

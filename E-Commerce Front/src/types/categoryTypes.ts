@@ -5,8 +5,10 @@ export type TCategories = {
   img: string;
 };
 
-export interface ICategories {
+export interface ICategoriesState {
   data: TCategories[];
   loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
 }
+
+export type TCategoryResponse = TCategories[]

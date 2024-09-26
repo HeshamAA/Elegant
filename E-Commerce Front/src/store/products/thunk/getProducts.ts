@@ -1,27 +1,25 @@
-import { AsyncThunk, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TProducts } from "../../../types/products";
+import { TProductsResponse } from "../../../types/productsTypes";
 
-type TResponse = TProducts[];
+const getProducts = createAsyncThunk<
+  TProductsResponse,
+  string,
+  { rejectValue: string }
+>("productsslice/getproducts", async (_, thunkAPI) => {
+  try {
+    const response = await axios.get(`http://localhost:5000/products`);
 
-const getProducts: AsyncThunk<TResponse, string, object> = createAsyncThunk(
-  "productsslice/getproducts",
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get<TResponse>(
-        `http://localhost:5000/products`
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return thunkAPI.rejectWithValue(
+        error.response?.data.message || error.message
       );
-      return response.data;
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        return thunkAPI.rejectWithValue(
-          error.response?.data.message || error.message
-        );
-      } else {
-        return thunkAPI.rejectWithValue("An unexpected error");
-      }
+    } else {
+      return thunkAPI.rejectWithValue("An unexpected error");
     }
   }
-);
+});
 
 export default getProducts;

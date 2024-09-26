@@ -4,7 +4,7 @@
 
   width: 100%;
   /*  bigger than container zindex */
-  z-index: 2001;
+  z-index: 2003;
   position: absolute;
   top: 0;
   left: 0;
@@ -61,4 +61,6 @@ header svg {
   cursor: pointer;
   color: var(--primary-color);
 }
+
+
 

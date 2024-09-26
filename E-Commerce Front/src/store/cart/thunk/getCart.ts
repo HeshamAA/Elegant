@@ -2,11 +2,13 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import axios from "axios";
 
-const getCart = createAsyncThunk("cart/getcart", async (_, thunkAPI) => {
+import { TGetCartResponse } from "../../../types/cartTypes";
+
+const getCart = createAsyncThunk<TGetCartResponse,void, { rejectValue: string }>("cart/getcart", async (_, thunkAPI) => {
   const { rejectWithValue, fulfillWithValue, getState } = thunkAPI;
 
-  const { addToCartSlice } = getState() as RootState;
-  const itemsIds = Object.keys(addToCartSlice.items);
+  const { addToCart } = getState() as RootState;
+  const itemsIds = Object.keys(addToCart.items);
 
   if (itemsIds.length === 0) {
     return fulfillWithValue([]);

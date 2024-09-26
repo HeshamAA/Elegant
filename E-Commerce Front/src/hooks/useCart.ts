@@ -21,7 +21,7 @@ function useCart() {
   const cartTotalQuantity = useAppSelector(getTotalCartQuantitySelector);
 
   const isFlyOutCartOpened = useAppSelector(
-    (state) => state.flyOutCartSlice.isOpened
+    (state) => state.flyOutCart.isOpened
   );
   const closeFlyOutCartHandler = () => {
     dispatch(closeFlyOutCart());
@@ -32,10 +32,13 @@ function useCart() {
   };
 
   const getProductsFullInfo = useAppSelector(
-    (state) => state.addToCartSlice.productFullInfo
+    (state) => state.addToCart.productFullInfo
   );
 
-  const cartItems = useAppSelector((state) => state.addToCartSlice.items);
+
+
+
+  const cartItems = useAppSelector((state) => state.addToCart.items);
 
   const fullProductsWithQuantity = getProductsFullInfo.map((el, index) => ({
     ...el,
@@ -47,7 +50,7 @@ function useCart() {
     0
   );
 
-  const sizeChangeHandler = (id: number, size: string) => {
+  const sizeChangeHandler = (id: string, size: string) => {
     dispatch(changeSize({ id, size }));
   };
 

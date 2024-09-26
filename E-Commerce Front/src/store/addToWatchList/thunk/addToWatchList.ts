@@ -1,41 +1,56 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TProducts } from "../../../types/products";
-interface TProductWithId extends TProducts {
-  productId: number;
-}
-
-type TResponse = TProductWithId[];
+import { RootState } from "../../store";
+import { TWatchlistResponse } from "../../../types/watchlistTypes";
 
 const addToWatchList = createAsyncThunk<
-  { type: "add" | "remove"; productId: number },
-  number,
+  TWatchlistResponse,
+  string,
   { rejectValue: string }
 >("watchlist/addToWatchList", async (productId, thunkAPI) => {
-  const { rejectWithValue } = thunkAPI;
+  const { rejectWithValue, getState } = thunkAPI;
+  const { auth } = getState() as RootState;
+
   try {
-    // Fetch the entire watchlist
-    const response = await axios.get<TResponse>(
-      "http://localhost:5000/watchlist"
+    const userResponse = await axios.get(
+      `http://localhost:5000/users/${auth.user.id}`
     );
-    const watchlist = response.data;
+    const currentWatchlist = userResponse.data.watchlist || [];
 
-    const itemToDelete = watchlist.find((item) => item.productId === productId);
+    const isInWatchlist = currentWatchlist.includes(productId);
 
-    if (itemToDelete) {
-      await axios.delete(`http://localhost:5000/watchlist/${itemToDelete.id}`);
-      return { type: "remove", productId };
-    }
-    // Otherwise, add the product to the watchlist
-    else {
-      await axios.post("http://localhost:5000/watchlist", {
-        userId: "1",
-        productId,
-      });
-      return { type: "add", productId };
+    let updatedWatchlist;
+
+    if (isInWatchlist) {
+      updatedWatchlist = currentWatchlist.filter(
+        (id: string) => id !== productId
+      );
+      const res = await axios.patch(
+        `http://localhost:5000/users/${auth.user.id}`,
+        { watchlist: updatedWatchlist },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${auth.accessToken}`,
+          },
+        }
+      );
+      return res.data.watchlist;
+    } else {
+      updatedWatchlist = [...currentWatchlist, productId];
+      const res = await axios.patch(
+        `http://localhost:5000/users/${auth.user.id}`,
+        { watchlist: updatedWatchlist },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${auth.accessToken}`,
+          },
+        }
+      );
+      return res.data.watchlist;
     }
   } catch (error) {
-    // Handle and return any errors that occur
     if (axios.isAxiosError(error)) {
       return rejectWithValue(error.response?.data.message || error.message);
     } else {

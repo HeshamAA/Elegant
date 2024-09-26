@@ -2,19 +2,29 @@ import { useEffect } from "react";
 import styles from "./burgerMenu.module.css";
 import { Link } from "react-router-dom";
 import useHeader from "../../../../hooks/useHeader";
+import BurgerIcon from "./BurgerIcon/BurgerIcon";
+import { useAppSelector } from "../../../../store/hooks/hooks";
+import DashboardMenu from "../NavLinks/DashboardMenu/DashboardMenu";
+import DetailsMenu from "../../DetailsMenu/DetailsMenu";
 
-const { burger, burgerOpen, burgerOpenMenu, burgerMenu, categoriesMenu } =
-  styles;
+const { burgerContainer, burgerOpenMenu, burgerMenu } = styles;
 function BurgerMenu() {
   const {
     isBurgerOpened,
     setIsBurgerOpened,
     isCategoriesOpened,
     setIsCategoriesOpened,
-    categories,
+
+    linksTitles,
   } = useHeader();
 
+  
+  const { role } = useAppSelector((state) => state.auth.user);
+  const categories = ["men", "women", "kids", "sport"];
+
   useEffect(() => {
+
+    
     const handleResize = () => {
       if (window.innerWidth > 991) {
         setIsBurgerOpened(false);
@@ -29,77 +39,60 @@ function BurgerMenu() {
     };
   }, []);
 
+  const renderBurgerMenu = (linkTitle: string) => {
+    switch (linkTitle) {
+      case "categories":
+        return (
+          <DetailsMenu
+            summaryTitle="Categories"
+            data={categories}
+            link="products"
+            style={{
+              position: "relative",
+              backgroundColor: "var(--third-color)",
+              boxShadow: "none",
+            }}
+          ></DetailsMenu>
+        );
+      case "dashboard":
+        return role === "admin" ? <DashboardMenu /> : null;
+      default:
+        return (
+          <li>
+            <Link
+              onClick={() => {
+                setIsBurgerOpened(false);
+                setIsCategoriesOpened(false);
+              }}
+              to={`/${linkTitle === "home" ? "" : linkTitle}`}
+            >
+              {linkTitle}
+            </Link>
+          </li>
+        );
+    }
+  };
+
   return (
     <div
-      className="burgerContainer"
-      style={{ position: "relative", marginBottom: "6px" }}
+      className={burgerContainer}
+      style={{
+        position: "relative",
+        marginBottom: "6px",
+      }}
     >
-      <div
-        onClick={() => {
-          setIsBurgerOpened(!isBurgerOpened);
-          setIsCategoriesOpened(false);
-        }}
-        className={`${burger} ${isBurgerOpened ? burgerOpen : ""}`}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <BurgerIcon
+        isBurgerOpened={isBurgerOpened}
+        setIsBurgerOpened={setIsBurgerOpened}
+        setIsCategoriesOpened={setIsCategoriesOpened}
+      />
 
       <div className={`${burgerMenu} ${isBurgerOpened ? burgerOpenMenu : ""}`}>
         <nav>
           <ul>
-            <li>
-              <Link
-                onClick={() => {
-                  setIsBurgerOpened(false);
-                  setIsCategoriesOpened(false);
-                }}
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <div
-                onClick={() => {
-                  setIsCategoriesOpened(!isCategoriesOpened);
-                }}
-              >
-                Categories
-              </div>
-              {isCategoriesOpened ? (
-                <div className={categoriesMenu}>
-                  {categories.map((el) => {
-                    return (
-                      <Link
-                        onClick={() => {
-                          setIsBurgerOpened(false);
-                          setIsCategoriesOpened(false);
-                        }}
-                        to={`/products/${el.title}`}
-                      >
-                        {" "}
-                        &gt; {el.title}
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                ""
-              )}
-            </li>
-            <li>
-              <Link
-                onClick={() => {
-                  setIsBurgerOpened(false);
-                  setIsCategoriesOpened(false);
-                }}
-                to="cart"
-              >
-                Cart
-              </Link>
-            </li>
+            {linksTitles.map((el) => (
+              <>{renderBurgerMenu(el)}</>
+            ))}
           </ul>
         </nav>
       </div>

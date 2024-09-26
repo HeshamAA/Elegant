@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const { detailsButton } = styles;
 
-function DetailsButton({ id }: { id: number }) {
+function DetailsButton({ id }: { id: string }) {
   const navigate = useNavigate();
   return (
     <div

@@ -1,7 +1,7 @@
 .cardContainer {
   /* width: calc(25% - 10px); */
   max-width: 100%;
-  height: 465px;
+  max-height: 420px;
   background-color: var(--card-background);
   display: flex;
   align-items: center;
@@ -13,7 +13,8 @@
 
 .productCardImg {
   width: calc(100% + 50px);
-  height: 50%;
+  height: 250px;
+  overflow-y: auto;
 }
 
 .cardContainer .loveButton svg,
@@ -27,7 +28,8 @@
   background-color: var(--third-color);
   padding: 5px;
 }
-.loveButton,.detailsButton,
+.loveButton,
+.detailsButton,
 .addToWatchListButton {
   position: absolute;
   top: 40px;
@@ -38,7 +40,7 @@
   transform: translateX(53px);
   pointer-events: none;
 }
-.detailsButton{
+.detailsButton {
   top: 80px;
 }
 .addToWatchListButton {
@@ -55,7 +57,7 @@
 .cardContent {
   text-align: center;
   width: 100%;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 10px 0px 10px;
   color: var(--secondary-color);
   text-transform: capitalize;
   position: relative;
@@ -77,11 +79,10 @@
 }
 .productSizes {
   display: flex;
-  width: 50%;
+
 }
 .productSizes div {
   position: relative;
-  height: 30px;
 }
 .productSizes label {
   width: 100%;

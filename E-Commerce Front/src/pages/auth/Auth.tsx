@@ -1,30 +1,17 @@
 import styles from "./auth.module.css";
-import photo from "../../assets/regBackground.jpg";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Register from "./register/Register";
 import Login from "./login/Login";
+import AuthContentSection from "./authContentSection/AuthContentSection";
 
-
-const { authSection, authPhotoContent } = styles;
+const { authSection } = styles;
 
 function Auth() {
   const location = useLocation();
 
   return (
     <section className={authSection}>
-      <div>
-        <img src={photo}></img>
-        <div className={authPhotoContent}>
-          <h1>
-          <span>E</span>legant
-          </h1>
-          <div>
-            Discover our latest collection of stylish and affordable clothing,
-            designed to elevate your everyday look with ease and elegance,
-            <Link to="/">visit us</Link>
-          </div>
-        </div>
-      </div>
+      <AuthContentSection></AuthContentSection>
       {location.pathname.includes("register") ? (
         <Register></Register>
       ) : (

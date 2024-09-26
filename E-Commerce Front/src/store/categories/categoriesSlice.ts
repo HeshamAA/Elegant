@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import getCategories from "./thunk/getCategories";
-import { ICategories } from "../../types/category";
+import {  ICategoriesState } from "../../types/categoryTypes";
 
-const initialState: ICategories = {
+const initialState: ICategoriesState = {
   data: [],
   loading: "idle",
   error: null,

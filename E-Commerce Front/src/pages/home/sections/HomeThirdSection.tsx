@@ -14,6 +14,8 @@ function HomeThirdSection() {
     dispatch(getBestSellers());
   }, [dispatch]);
 
+
+
   const bestSellers = bestSellersData.map((el) => {
     return (
       <ProductCard

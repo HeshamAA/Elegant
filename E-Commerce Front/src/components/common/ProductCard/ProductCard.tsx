@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import styles from "./productCard.module.css";
-import { TProducts } from "../../../types/products";
+import { TProducts } from "../../../types/productsTypes";
 import { LoveButton } from "./ProductCardIcons/LoveButton";
 import useProductCard from "../../../hooks/useProductCard";
 import StarRating from "./ProductCardIcons/StarRating";
 import Sizes from "./ProductCardIcons/Sizes";
-import { getAddToWatchList } from "../../../store/addToWatchList/thunk/getAddToWatchList";
 import getproduct from "../../../store/product/thunk/getProduct";
 import DetailsButton from "./ProductCardIcons/DetailsButton";
 
@@ -31,14 +30,11 @@ const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
     }
   }, [buttonDisabled]);
 
-  useEffect(() => {
-    
-    dispatch(getAddToWatchList(id));
-  }, [dispatch]);
   return (
     <>
       <div className={cardContainer}>
         <img
+          alt="image"
           onClick={() => {
             dispatch(getproduct(id));
           }}
@@ -47,17 +43,17 @@ const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
         ></img>
         <LoveButton id={id}></LoveButton>
         <DetailsButton id={id}></DetailsButton>
+
         <div className={`${cardContent}`}>
           <h3>{title}</h3>
-          <div className="flexBetween">
-            <div>
-              <div>{category}</div>
-            </div>
-            <div>
-              <div className={`flex ${productSizes}`} style={{ gap: "10px" }}>
-                <Sizes availableSizes={sizes || []}></Sizes>
-              </div>
-            </div>
+          <div className="flexMiddleScreen">
+            <div>{category}</div>
+          </div>
+          <div
+            className={`flexMiddleScreen ${productSizes}`}
+            style={{ gap: "10px" }}
+          >
+            <Sizes availableSizes={sizes || []}></Sizes>
           </div>
           <div className={productPrice}>{price}$</div>
           <div>

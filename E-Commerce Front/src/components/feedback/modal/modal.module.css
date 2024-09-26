@@ -1,0 +1,79 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(155, 155, 155, 0.504);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 3000;
+}
+
+.modalContent {
+  background-color: var(--third-color);
+  height: 300px;
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--secondary-color);
+  flex-direction: column;
+}
+
+.modalContent > div:first-child {
+  font-size: 26px;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  width: 100%;
+}
+
+.modalContent > div:first-child > div:last-child {
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.modalContent > div:nth-child(2) {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.modalContent > div:nth-child(3) {
+  width: 100%;
+  border-top: 1px solid rgb(177, 177, 177);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 10px;
+  gap: 10px;
+}
+.modalContent > div:nth-child(3) button {
+  width: 30%;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  transition: 0.5s ease;
+  border: 1px solid transparent;
+}
+
+.modalContent > div:nth-child(3) button:nth-of-type(2) {
+  background-color: var(--primary-color);
+  color: var(--opposite-secondary);
+}
+.modalContent > div:nth-child(3) button:nth-of-type(2):hover {
+  background-color:transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+.modalContent > div:nth-child(3) button:first-of-type {
+  background-color: var(--opposite-secondary);
+  color: var(--primary-color);
+}
+.modalContent > div:nth-child(3) button:first-of-type:hover {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}

@@ -1,5 +1,5 @@
 export type TProducts = {
-  id: number;
+  id: string;
   title: string;
   price: number;
   cat_prefix?: string;
@@ -9,12 +9,21 @@ export type TProducts = {
   sizes?: string[];
   selectedSize?: string;
   desc?: string;
+  isLiked?: boolean;
 };
 
-export interface IProducts {
-  data?: TProducts[];
+export interface IProductsState {
+  data: TProducts[];
   loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
   filteredData?: TProducts[];
-  product?: TProducts[];
+  
+}
+
+
+export type TProductsResponse = TProducts[]
+
+export interface IEditProductPayload {
+  productId: string;
+  updatedProductData: Partial<TProducts>;
 }

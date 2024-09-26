@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { productsCleanUp } from "../../store/products/productsSlice";
 import getProductsByCategoryPrefix from "../../store/products/thunk/getProductsByCategoryPrefix";
 import ProductCard from "../../components/common/ProductCard/ProductCard";
@@ -6,6 +6,7 @@ import PagesFirstSection from "../../components/common/PagesFirstSection/PagesFi
 import styles from "./products.module.css";
 import useProducts from "../../hooks/useProducts";
 import Sorting from "../../components/Ecommerce/sorting/Sorting";
+import Pagination from "../../components/feedback/pagination/Pagination";
 
 const { showMoreProductsButton } = styles;
 const Products = () => {
@@ -19,16 +20,19 @@ const Products = () => {
   } = useProducts();
 
   useEffect(() => {
-    setVisibleCount(4);
     dispatch(getProductsByCategoryPrefix(params.prefix as string));
 
     return () => {
       dispatch(productsCleanUp());
     };
-  }, [dispatch, params]);
+  }, [dispatch, params.prefix]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
   const productsToShow = productsData
-    .slice(0, visibleCount)
+    .slice(startIndex, endIndex)
     .map((el, index) => {
       return (
         <ProductCard
@@ -44,7 +48,6 @@ const Products = () => {
       );
     });
 
-
   return (
     <>
       <PagesFirstSection
@@ -58,17 +61,12 @@ const Products = () => {
       >
         <Sorting></Sorting>
         <div className="container productCardsContainer">{productsToShow}</div>
-        {productsToShow.length !== productsData.length ? (
-          <button
-            className={showMoreProductsButton}
-            onClick={handleShowMoreItems}
-          >
-            Show More
-          </button>
-        ) : (
-          ""
-        )}
-        
+        <Pagination
+          itemsPerPage={4}
+          items={productsData}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        ></Pagination>
       </section>
     </>
   );

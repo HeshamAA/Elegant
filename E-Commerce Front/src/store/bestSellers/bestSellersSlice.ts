@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IProducts } from "../../types/products";
+import { IProductsState } from "../../types/productsTypes";
 import getBestSellers from "./thunk/getBestSellers";
-const initialState: IProducts = {
+const initialState: IProductsState = {
   data: [],
   loading: "idle",
   error: null,

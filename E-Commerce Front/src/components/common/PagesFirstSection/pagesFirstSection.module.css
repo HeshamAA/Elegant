@@ -36,6 +36,7 @@
   z-index: 2;
 }
 .pageTitle{
+  margin-top: 120px;
     font-size: 100px;
     color: var(--secondary-color);
     z-index: 2;

@@ -1,29 +1,28 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-type formData = {
-  email: string;
-  password: string;
-};
-type LoginResponse = {
-  accessToken: string;
-  user: {
-    id: number;
-    email: string;
-    firstName: string;
-    lastName: string;
-  };
-};
+import { setWatchlistIds } from "../../addToWatchList/addToWatchListSlice"; // Import the action
+import { TFormData, TUserResponse } from "../../../types/authTypes";
+
 const getLogin = createAsyncThunk<
-  LoginResponse,
-  formData,
+  TUserResponse,
+  TFormData,
   { rejectValue: string }
->("auth/getlogin", async (formData: formData, thunkAPI) => {
+>("auth/getlogin", async (formData: TFormData, thunkAPI) => {
+  const { dispatch } = thunkAPI;
   try {
     const res = await axios.post("http://localhost:5000/login", formData);
+
+    const watchlistIds = res.data.user.watchlist;
+    console.log(watchlistIds);
+
+    dispatch(setWatchlistIds(watchlistIds));
+
     return res.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data);
+  } catch (error: any) {
+    return thunkAPI.rejectWithValue(
+      error.response?.data || "Something went wrong"
+    );
   }
 });
 

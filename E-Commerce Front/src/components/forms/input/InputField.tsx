@@ -6,10 +6,12 @@ const { fieldContainer, inputError } = styles;
 type TFieldProps<TFieldValues extends FieldValues> = {
   label: string;
   type?: string;
-  inputTitle: Path<TFieldValues>;
-  register: UseFormRegister<TFieldValues>;
+  inputTitle?: Path<TFieldValues>;
+  register?: UseFormRegister<TFieldValues>;
   error?: string;
   placeholder?: string;
+  children?: React.ReactNode;
+  isInputActive?: boolean;
 };
 
 function InputField<TFieldValues extends FieldValues>({
@@ -19,17 +21,25 @@ function InputField<TFieldValues extends FieldValues>({
   register,
   error,
   placeholder,
+  children,
+  isInputActive = true,
 }: TFieldProps<TFieldValues>) {
+  const inputProps = register && inputTitle ? register(inputTitle) : {};
+
   return (
     <div className={fieldContainer}>
       <label>{label}</label>
-      <input
-        className={error ? inputError : ""}
-        type={type}
-        placeholder={placeholder}
-        {...register(inputTitle)}
-      />
+      {isInputActive && (
+        <input
+          className={error ? inputError : ""}
+          type={type}
+          placeholder={placeholder}
+          {...inputProps}
+        />
+      )}
+
       {error && <p style={{ color: "#D32F2F" }}>{error}</p>}
+      {children}
     </div>
   );
 }

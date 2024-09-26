@@ -5,7 +5,7 @@ import {
 } from "../../../../store/cart/addToCart/addToCartSlice";
 
 type TQuantityChange = {
-  id: number;
+  id: string;
   quantity: number;
 };
 function CartItemQuantityChange({ id, quantity }: TQuantityChange) {

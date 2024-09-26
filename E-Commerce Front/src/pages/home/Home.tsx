@@ -1,17 +1,18 @@
-import React from "react";
 import HomeSection from "./sections/HomeSection";
 import styles from "./home.module.css";
 import HomeSecondSection from "./sections/HomeSecondSection";
 import HomeThirdSection from "./sections/HomeThirdSection";
-import HomeFourthSection from "./sections/HomeFourthSection";
+import HomeBrandsSection from "./sections/HomeBrandsSection";
+import HomeHeroSection from "./sections/HomeHeroSection";
 const { home } = styles;
 const Home = () => {
   return (
     <div className={home}>
-      <HomeSection></HomeSection>
+      <HomeHeroSection></HomeHeroSection>
+      <HomeBrandsSection></HomeBrandsSection>
       <HomeSecondSection></HomeSecondSection>
+      <HomeSection></HomeSection>
       <HomeThirdSection></HomeThirdSection>
-      <HomeFourthSection></HomeFourthSection>
     </div>
   );
 };

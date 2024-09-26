@@ -1,31 +1,40 @@
 import { useCallback } from "react";
 import toast from "react-hot-toast";
 
-type TToast = {
-  text: string;
-  duration?: number;
-  dependency?: number;
-};
-export const useNatificationToast = ({
-  text,
-  duration = 2000,
-  dependency,
-}: TToast) => {
-  const notify = useCallback(() => {
-    toast.success(`${text}`, {
-      duration: duration,
-      position: "top-right",
-      className: "custom-toast",
-    });
-  }, [dependency]);
+interface ToastPromiseOptions {
+  loading: string;
+  success: string | JSX.Element; // Allow string or JSX for success message
+  error: string; // Base error message without dynamic content
+  duration?: number; // Optional duration
+}
+export const useNatificationToast = () => {
+  const toastPromise = useCallback(
+    <T>(
+      promise: Promise<T>,
+      { loading, success, error, duration = 3000 }: ToastPromiseOptions
+    ) => {
+      return toast.promise(
+        promise,
+        {
+          loading,
+          success: () => `${success}`,
+          error: () => `${error}`,
+        },
+        {
+          position: "top-right",
+          success: {
+            duration,
+            className: "custom-toast",
+          },
+          error: {
+            duration : 5000,
+            className: "custom-toast-error",
+          },
+        }
+      );
+    },
+    []
+  );
 
-  const errorNotify = useCallback(() => {
-    toast.error(`${text}`, {
-      duration: duration,
-      position: "top-right",
-      className: "custom-toast-error",
-    });
-  }, [dependency]);
-
-  return { notify, errorNotify };
+  return { toastPromise };
 };

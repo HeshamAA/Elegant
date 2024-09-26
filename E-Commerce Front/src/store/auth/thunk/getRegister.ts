@@ -1,24 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { TFormData, TUserResponse } from "../../../types/authTypes";
 
-type formData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-};
-
-type User = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-};
-const getRegister = createAsyncThunk<User, formData, { rejectValue: string }>(
+const getRegister = createAsyncThunk<TUserResponse, TFormData, { rejectValue: string }>(
   "auth/getregister",
-  async (formData: formData, thunkAPI) => {
+  async (formData: TFormData, thunkAPI) => {
     try {
-      const res = await axios.post("http://localhost:5000/register", formData);
+      const res = await axios.post("http://localhost:5000/register", {
+        ...formData,
+        watchlist: [],
+        role: "user",
+      });
+ 
+
       return res.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

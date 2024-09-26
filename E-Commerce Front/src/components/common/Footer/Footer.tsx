@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "./footer.module.css";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";

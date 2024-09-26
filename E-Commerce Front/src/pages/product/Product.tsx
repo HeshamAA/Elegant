@@ -1,51 +1,58 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import styles from "./product.module.css";
 import { useParams } from "react-router-dom";
-import getproduct from "../../store/product/thunk/getProduct";
+
 import PagesFirstSection from "../../components/common/PagesFirstSection/PagesFirstSection";
 import useProductCard from "../../hooks/useProductCard";
 import { cleanUpProduct } from "../../store/product/productSlice";
+import getProduct from "../../store/product/thunk/getProduct";
 const { productSection, productDetailsContainer } = styles;
 
 function Product() {
-  const productDetails = useAppSelector((state) => state.productSlice.product);
+  const { data: product } = useAppSelector((state) => state.product);
   const params = useParams();
-  console.log(params.id);
-  const { addToCartHandler, addToWatchListHandler } = useProductCard(params.id);
+
+  const { addToCartHandler, addToWatchListHandler } = useProductCard(
+    params.id as string
+  );
 
   const dispatch = useAppDispatch();
+
   useEffect(() => {
-    if (productDetails?.length > 0) {
+    dispatch(cleanUpProduct());
+    dispatch(getProduct(params.id as string));
+
+    // dispatch(productsCleanUp());
+
+    return () => {
       dispatch(cleanUpProduct());
-      dispatch(getproduct(params.id));
-    }else{
-      dispatch(getproduct(params.id));
-    }
+    };
   }, [dispatch, params.id]);
 
-  const productToShow = productDetails.map((el, index) => {
-    return (
-      <div className={productDetailsContainer} key={index}>
-        <img src={el.img}></img>
+
+  const productToShow = product.map((product) => (
+    <div className={productDetailsContainer} key={product.id}>
+      <img alt="image" src={product.img} />
+      <div>
+        <div>{product.title}</div>
+        <div>{product.desc}</div>
+        <div>{product.cat_prefix}</div>
+        <div>{product.price}$</div>
         <div>
-          <div>{el.title}</div>
-          <div>{el.desc}</div>
-          <div>{el.cat_prefix}</div>
-          <div>{el.price}$</div>
-          <div>
-            {el.sizes.map((el) => {
-              return <span>{el}</span>;
-            })}
-          </div>
-          <div>
-            <button onClick={addToWatchListHandler}>Add to watchlist</button>
-          </div>
-          <button onClick={addToCartHandler}>Add to cart</button>
+          {product.sizes ? (
+            product.sizes.map((size, index) => <span key={index}>{size}</span>)
+          ) : (
+            <div>No Sizes Found</div>
+          )}
         </div>
+        <div>
+          <button onClick={addToWatchListHandler}>Add to watchlist</button>
+        </div>
+        <button onClick={addToCartHandler}>Add to cart</button>
       </div>
-    );
-  });
+    </div>
+  ));
 
   return (
     <>

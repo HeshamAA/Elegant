@@ -1,7 +1,7 @@
-import React from "react";
 import styles from "./pagesFirstSection.module.css";
 
 import { useLocation } from "react-router-dom";
+import { TPagesFirstSection } from "../../../types/pagesFirstSectionTypes";
 const {
   PagesFirstSectionContainer,
   pageTitle,
@@ -11,10 +11,7 @@ const {
   cartPhoto,
 } = styles;
 
-type TPagesFirstSection = {
-  title: string;
-  children?: React.ReactNode;
-};
+
 function PagesFirstSection({ title, children }: TPagesFirstSection) {
   const location = useLocation();
   const dynamicBackgroundImg = () => {

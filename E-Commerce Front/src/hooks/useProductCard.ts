@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { getTotalCartQuantitySelector } from "../store/cart/addToCart/selectors";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
-import { useNatificationToast } from "./useNatificationToast";
 import { addToCart } from "../store/cart/addToCart/addToCartSlice";
 import { addToWatchList } from "../store/addToWatchList/addToWatchListSlice";
+import toast from "react-hot-toast";
 
-function useProductCard(productId: number) {
+function useProductCard(productId: string) {
   const dispatch = useAppDispatch();
 
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -13,27 +13,44 @@ function useProductCard(productId: number) {
   const cartTotalQuantity = useAppSelector(getTotalCartQuantitySelector);
 
   const watchListTotalQuantity = useAppSelector(
-    (state) => state.addToWatchListSlice.watchListIds
+    (state) => state.addToWatchList.watchlistIds
   );
 
-  const { notify: notifyCart } = useNatificationToast(
-    `Item Added,You now have (${cartTotalQuantity + 1}) items`,
-    cartTotalQuantity
-  );
+  const notifyCart = () => {
+    toast.success(`Item Added,You now have (${cartTotalQuantity + 1}) items`, {
+      duration: 2000,
+      position: "top-right",
+      className: "custom-toast",
+    });
+  };
 
-  const { notify: notifyWatchListAdded } = useNatificationToast(
-    `Item Added to watchList,You now have (${
-      watchListTotalQuantity.length + 1
-    }) items`,
-    watchListTotalQuantity.length
-  );
 
-  const { errorNotify: notifyWatchListRemoved } = useNatificationToast(
-    `Item removed from watchList,You now have (${
-      watchListTotalQuantity.length - 1
-    }) items`,
-    watchListTotalQuantity.length
-  );
+
+  const notifyWatchListAdded = () => {
+    toast.success(
+      `Item Added to watchList,You now have (${
+        watchListTotalQuantity.length + 1
+      }) items`,
+      {
+        duration: 2000,
+        position: "top-right",
+        className: "custom-toast",
+      }
+    );
+  };
+
+  const notifyWatchListRemoved = () => {
+    toast.error(
+      `Item removed from watchList,You now have (${
+        watchListTotalQuantity.length - 1
+      }) items`,
+      {
+        duration: 2000,
+        position: "top-right",
+        className: "custom-toast-error",
+      }
+    );
+  };
 
   const addToCartHandler = () => {
     dispatch(addToCart(productId));
@@ -44,22 +61,25 @@ function useProductCard(productId: number) {
   //  Love Button
   const [loveButtonState, setLoveButtonState] = useState<boolean>(false);
 
-  const watchListProductsIds: number[] = watchListTotalQuantity.map((el) => el);
+  const { watchlistIds } = useAppSelector((state) => state.addToWatchList);
 
   const addToWatchListHandler = () => {
     dispatch(addToWatchList(productId))
       .unwrap()
-      .then((action) => {
-        if (action.type === "add") {
-          setLoveButtonState(true);
-          notifyWatchListAdded();
-        } else if (action.type === "remove") {
-          setLoveButtonState(false);
-          notifyWatchListRemoved();
+      .then(() => {
+        if (!loveButtonState) {
+          toast.success("Item Added to watchList", {
+            position: "top-right",
+            className: "custom-toast",
+            duration: 2000,
+          });
+        } else {
+          toast.error("Item Removed from watchList", {
+            position: "top-right",
+            className: "custom-toast-error",
+            duration: 2000,
+          });
         }
-      })
-      .catch((error) => {
-        console.error("Failed to update watchlist:", error);
       });
   };
 
@@ -76,7 +96,7 @@ function useProductCard(productId: number) {
     watchListTotalQuantity,
     loveButtonState,
     setLoveButtonState,
-    watchListProductsIds,
+    watchlistIds,
     addToWatchListHandler,
   };
 }

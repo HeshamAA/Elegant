@@ -5,7 +5,7 @@ function Empty({
   children,
   text,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   text: string;
 }) {
   return (

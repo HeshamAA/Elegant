@@ -5,20 +5,7 @@ import { HiOutlineEmojiSad } from "react-icons/hi";
 import PagesFirstSection from "../PagesFirstSection/PagesFirstSection";
 const { error404Container, errorText, info, errorMessage, goHome } = styles;
 export const Error404 = () => {
-  // const error = useRouteError();
   const navigate = useNavigate();
-  // to fix error.status typescript error
-
-  // let errorStatus: number;
-  // let errorStatusText: string;
-
-  // if (isRouteErrorResponse(error)) {
-  //   errorStatus = error.status;
-  //   errorStatusText = error.statusText;
-  // } else {
-  //   errorStatus = 404;
-  //   errorStatusText = "Page Not Found";
-  // }
 
   return (
     <>

@@ -19,16 +19,21 @@ export const Header = () => {
 
   useEffect(() => {
     dispatch(getCategories());
-    
   }, [dispatch]);
-
 
   return (
     <>
       {isFlyOutCartOpened ? <FlyOutCart /> : ""}
-     
+
       <header className={`${header}`}>
-      <TopBar></TopBar>
+
+
+
+        
+        <TopBar></TopBar>
+
+
+
         <div className={`container ${headerContainer}`}>
           <div>
             <h1
@@ -41,8 +46,17 @@ export const Header = () => {
             </h1>
           </div>
 
+
+
           <NavLinks />
+
+
+
+
+
           <div>
+
+
             <HeaderIcons
               className={cartNumber}
               value={watchListTotalQuantity}
@@ -53,6 +67,9 @@ export const Header = () => {
                 />
               }
             />
+
+
+
             <HeaderIcons
               className={cartNumber}
               value={cartTotalQuantity}
@@ -60,8 +77,15 @@ export const Header = () => {
                 <FaShoppingCart onClick={openFlyOutCartHandler} size={28} />
               }
             />
+
+
+
             <BurgerMenu />
           </div>
+
+
+
+          
         </div>
       </header>
     </>

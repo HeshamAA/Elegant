@@ -4,15 +4,34 @@ import { Link } from "react-router-dom";
 import Search from "../../feedback/search/Search";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
 import { logout } from "../../../store/auth/authSlice";
+import { clearWatchList } from "../../../store/addToWatchList/addToWatchListSlice";
+import toast from "react-hot-toast";
+import { useEffect } from "react";
 const { topBar } = styles;
 function TopBar() {
-  const { accessToken, user } = useAppSelector((state) => state.authSlice);
+  const { accessToken, user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+    dispatch(clearWatchList());
+
+    toast.success("You're logged out now", {
+      duration: 2000,
+      className: "custom-toast-warning",
+      position: "top-center",
+      iconTheme: {
+        primary: "#856404",
+        secondary: "#FFFAEE",
+      },
+    });
+  };
+
 
   return (
     <div className={topBar}>
       <div className="container flexBetween">
         <Search></Search>
+        
         <div className="flex" style={{ gap: "20px" }}>
           {accessToken ? (
             <>
@@ -23,7 +42,8 @@ function TopBar() {
                   <span> {user.lastName}</span>
                 </div>
               </div>
-              <Link onClick={() => dispatch(logout())} to="/login">
+
+              <Link onClick={logoutHandler} to="/">
                 Logout
               </Link>
             </>

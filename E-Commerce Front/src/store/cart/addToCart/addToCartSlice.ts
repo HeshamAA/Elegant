@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TProducts } from "../../../types/products";
+import { TProducts } from "../../../types/productsTypes";
 import getCart from "../thunk/getCart";
+import { TAddToCartState } from "../../../types/cartTypes";
 
-type TAddToCart = {
-  items: { [key: string]: number };
-  productFullInfo: TProducts[];
-};
 
-const initialState: TAddToCart = {
+
+const initialState: TAddToCartState = {
   items: {},
   productFullInfo: [],
 };
@@ -50,7 +48,6 @@ const addToCartSlice = createSlice({
         item.selectedSize = size;
       }
     },
-    
   },
 
   extraReducers: (builder) => {

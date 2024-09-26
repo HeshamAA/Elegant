@@ -1,0 +1,26 @@
+.productsManagementContainer {
+  width: 100%;
+}
+.productsManagementContainer form {
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.productsManagementContainer form > button {
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  outline: none;
+  border: 1px solid var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+.productsManagementContainer form > button:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}

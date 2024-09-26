@@ -2,7 +2,7 @@ import styles from "../flyOutCart/flyOutCart.module.css";
 import { removeProductFromCart } from "../../../../store/cart/addToCart/addToCartSlice";
 import useCart from "../../../../hooks/useCart";
 import CartItemQuantityChange from "../cartItemQuantityChange/CartItemQuantityChange";
-import { TProducts } from "../../../../types/products";
+import { TProducts } from "../../../../types/productsTypes";
 const { flyOutCartItem } = styles;
 function FlyOutCartItem({
   id,
@@ -21,7 +21,7 @@ function FlyOutCartItem({
   return (
     <div className={flyOutCartItem}>
       <div>
-        <img src={img}></img>
+        <img alt="image" src={img}></img>
         <div>
           <div>{title}</div>
           <div>

@@ -1,26 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import getRegister from "./thunk/getRegister";
 import getLogin from "./thunk/getLogin";
+import { TAuthState } from "../../types/authTypes";
 
-type TAuth = {
-  accessToken: string;
-  user: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-  };
-  loading: string;
-};
-const initialState: TAuth = {
+
+const initialState: TAuthState = {
   accessToken: "",
   user: {
     firstName: "",
     lastName: "",
     email: "",
     password: "",
+    watchlist: [],
+    role: "user",
   },
-  loading: "",
+  loading: "idle",
+  error: null,
 };
 const authSlice = createSlice({
   name: "auth",
@@ -28,14 +23,15 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.accessToken = "";
+      state.user = initialState.user;
     },
   },
   extraReducers: (builder) => {
     builder.addCase(getRegister.pending, (state) => {
-      state.loading = "loading";
+      state.loading = "pending";
     });
     builder.addCase(getRegister.fulfilled, (state, action) => {
-      state.loading = "success";
+      state.loading = "succeeded";
       state.accessToken = action.payload.accessToken;
       state.user = action.payload.user;
     });
@@ -44,12 +40,13 @@ const authSlice = createSlice({
       state.loading = "failed";
     });
     builder.addCase(getLogin.pending, (state) => {
-      state.loading = "loading";
+      state.loading = "pending";
     });
     builder.addCase(getLogin.fulfilled, (state, action) => {
-      state.loading = "success";
+      state.loading = "succeeded";
       state.accessToken = action.payload.accessToken;
       state.user = action.payload.user;
+      state.user.watchlist = action.payload.user.watchlist;
     });
     builder.addCase(getLogin.rejected, (state) => {
       state.loading = "failed";

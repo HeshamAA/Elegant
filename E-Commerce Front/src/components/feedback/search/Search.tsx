@@ -8,7 +8,6 @@ function Search() {
   return (
     <div>
       <input
-        style={{ width: isOpen ? "100%" : "45%" }}
         onChange={searchHandler}
         type="search"
         placeholder="Search..."
@@ -16,6 +15,7 @@ function Search() {
       <div
         style={{
           opacity: isOpen ? 1 : 0,
+          pointerEvents: isOpen ? "all" : "none",
         }}
       >
         {filteredData?.length === 0 ? (
@@ -25,7 +25,7 @@ function Search() {
         ) : (
           filteredData?.map((el, index) => {
             return (
-              <div key={index} onClick={()=>getProductHandler(el.id)}>
+              <div key={index} onClick={() => getProductHandler(el.id)}>
                 {el.title}
               </div>
             );

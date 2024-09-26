@@ -2,7 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
 const getTotalCartQuantitySelector = createSelector(
-  (state: RootState) => state.addToCartSlice.items,
+  (state: RootState) => state.addToCart.items,
   (items) => {
     const totalQuantity = Object.values(items).reduce((acc, curr) => {
       return acc + curr;

@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import getproduct from "./thunk/getProduct";
-import { IProducts } from "../../types/products";
+import getProduct from "./thunk/getProduct";
+import { IProductsState } from "../../types/productsTypes";
 
-const initialState: IProducts = {
-  product: [],
+const initialState: IProductsState = {
+  data: [],
   loading: "idle",
   error: null,
 };
@@ -13,13 +13,26 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     cleanUpProduct: (state) => {
-      state.product = [];
+      state.data = [];
     },
   },
   extraReducers(builder) {
-    builder.addCase(getproduct.fulfilled, (state, action) => {
+    builder.addCase(getProduct.pending, (state) => {
+      state.loading = "pending";
+      state.error = null;
+    });
+    builder.addCase(getProduct.fulfilled, (state, action) => {
       state.loading = "succeeded";
-      state.product.push(action.payload);
+      state.data.push(action.payload)
+      
+    });
+
+    builder.addCase(getProduct.rejected, (state, action) => {
+      state.loading = "failed";
+      if (action.payload && typeof action.payload === "string") {
+        state.error = action.payload;
+      }
+      console.log(action);
     });
   },
 });

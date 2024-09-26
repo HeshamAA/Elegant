@@ -45,6 +45,7 @@
   font-size: 60px;
   margin: 0;
   transition: 0.5s ease;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
 .authPhotoContent h1 span{
   font-family: "Kalam", cursive;
@@ -52,9 +53,9 @@
   font-size: 80px;
 }
 .authPhotoContent div {
-  color: var(--third-color);
+  color: var(--secondary-color);
   font-size: 25px;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 .authPhotoContent div a {
   color: var(--primary-color);

@@ -37,6 +37,8 @@ function FlyOutCartItemsContainer() {
     dispatch(getCart());
   }, []);
 
+
+  
   return (
     <div
       className={`${flyOutCartContainer} ${isFlyOutCartOpened ? active : ""}`}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { getCategories } from "../store/categories/categoriesSlice";
 import {
@@ -17,13 +17,21 @@ function useHeader() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const watchListTotalQuantity = useAppSelector(
-    (state) => state.addToWatchListSlice.watchListIds.length
+    (state) => state.addToWatchList.watchlistIds.length
   );
+
 
   // Header NavLinks
 
-  const categories = useAppSelector((state) => state.categoriesSlice.data);
-  const linksTitles: string[] = ["home", "categories","cart", "contact" ];
+  const categories = useAppSelector((state) => state.categories.data);
+
+  const linksTitles: string[] = [
+    "home",
+    "categories",
+    "cart",
+    "contact",
+    "dashboard",
+  ];
 
   // Header Burger
 
@@ -32,30 +40,38 @@ function useHeader() {
 
   // Topbar
 
-  const filteredData = useAppSelector(
-    (state) => state.productsSlice.filteredData
-  );
+  const filteredData = useAppSelector((state) => state.products.filteredData);
   const [, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
+  const [debounceTimer, setDebounceTimer] = useState<SetStateAction<any>>(null);
   const searchHandler = (e) => {
     const value = e.target.value;
     setInputValue(value);
 
-    if (value) {
-      setIsOpen(true);
-      dispatch(getProducts());
-      dispatch(searchProducts({ value }));
-    } else {
-      setIsOpen(false);
-      dispatch(searchProductsCleanUp());
+   
+    if (debounceTimer) {
+      clearTimeout(debounceTimer);
     }
-  };
 
+  
+    const newTimer = setTimeout(() => {
+      if (value) {
+        setIsOpen(true);
+        dispatch(getProducts());
+        dispatch(searchProducts({ value })); 
+      } else {
+        setIsOpen(false);
+        dispatch(searchProductsCleanUp());
+      }
+    }, 1000);
+
+    
+    setDebounceTimer(newTimer);
+  };
   const getProductHandler = (id) => {
     dispatch(getproduct(id));
     navigate(`/products/product/${id}`);
-    setIsOpen(false)
+    setIsOpen(false);
   };
   return {
     dispatch,
@@ -73,7 +89,7 @@ function useHeader() {
     filteredData,
     isOpen,
     searchHandler,
-    getProductHandler
+    getProductHandler,
   };
 }
 

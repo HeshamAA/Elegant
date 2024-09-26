@@ -1,0 +1,79 @@
+.dashboardProductsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboardProductsSection table {
+  border-collapse: collapse;
+  background-color: #323232;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.dashboardProductsSection table img {
+  width: 100px;
+  height: 100px;
+}
+.dashboardProductsSection thead tr {
+  background-color: var(--primary-color);
+}
+.dashboardProductsSection tr {
+  width: 100%;
+}
+.dashboardProductsSection thead tr > * {
+  color: var(--third-color);
+}
+
+.dashboardProductsSection th,
+.dashboardProductsSection td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.dashboardProductsSection td {
+  color: var(--secondary-color);
+}
+
+.dashboardProductsSection tbody tr:nth-child(even) {
+  background-color: #8c707048;
+}
+.dashboardProductsSection tbody tr {
+  max-height: 200px;
+}
+.dashboardProductsSection tbody tr td:nth-of-type(6) {
+  max-width: 200px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.dashboardProductsSection tbody button {
+  padding: 5px 10px;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  width: 80px;
+  color: var(--third-color);
+  border: 1px solid transparent;
+  margin-bottom: 5px;
+  transition: 0.5s ease;
+}
+
+.dashboardProductsSection tbody button:first-of-type {
+  background-color: #d9534f;
+  border: 1px solid #d9534f;
+
+
+  outline: none;
+}
+.dashboardProductsSection tbody button:nth-of-type(2) {
+  background-color: #0a7af1;
+  border: 1px solid #0a7af1;
+
+  outline: none;
+}
+.dashboardProductsSection tbody button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}

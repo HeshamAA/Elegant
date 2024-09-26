@@ -5,19 +5,19 @@ import useProductCard from "../../../../hooks/useProductCard";
 
 const { loveButton } = styles;
 
-const LoveButton = ({ id }: { id: number }) => {
+const LoveButton = ({ id }: { id: string }) => {
   const {
     watchListTotalQuantity,
     setLoveButtonState,
     loveButtonState,
-    watchListProductsIds,
+    watchlistIds,
     addToWatchListHandler,
   } = useProductCard(id);
 
   useEffect(() => {
-    const isInWatchlist = watchListProductsIds.includes(id);
+    const isInWatchlist = watchlistIds.includes(id);
     setLoveButtonState(isInWatchlist);
-  }, [watchListTotalQuantity, id]);
+  }, [watchlistIds, id]);
 
   return (
     <div className={loveButton}>

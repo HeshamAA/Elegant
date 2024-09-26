@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 function useProducts() {
   const dispatch = useAppDispatch();
   const params = useParams();
-  const productsData = useAppSelector((state) => state.productsSlice.data);
+  const productsData = useAppSelector((state) => state.products.data);
 
   const [visibleCount, setVisibleCount] = useState(4);
 
