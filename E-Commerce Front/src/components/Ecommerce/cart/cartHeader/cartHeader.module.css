@@ -36,34 +36,23 @@
   opacity: 1;
 }
 
-.checkoutPage > div:first-child {
-  color: #53eb86;
-  border-bottom-color: #53eb86;
-}
-
-.checkoutPage > div:first-child > span {
-  color: #53eb86;
-}
-.checkoutPage > div:first-child > div {
-  background-color: #53eb86;
-  color: var(--third-color);
-}
-
-.checkoutPage > div:last-child {
+.disabled {
   opacity: 0.5;
 }
 
-.orderCompletePage > div:first-child,
-.orderCompletePage > div:nth-child(2) {
+.active {
+  opacity: 1;
+}
+
+.done {
+  opacity: 1;
   color: #53eb86;
   border-bottom-color: #53eb86;
 }
-.orderCompletePage > div:first-child > span,
-.orderCompletePage > div:nth-child(2) > span {
-  color: #53eb86;
-}
-.orderCompletePage > div:first-child > div,
-.orderCompletePage > div:nth-child(2) > div {
+.done div{
   background-color: #53eb86;
   color: var(--third-color);
+}
+.done span{
+  color: #53eb86;
 }

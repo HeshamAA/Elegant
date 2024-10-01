@@ -1,41 +1,36 @@
-import React, { useEffect } from "react";
+
 import styles from "./cartHeader.module.css";
-import useCart from "../../../../hooks/useCart";
 
-const { headings, heading, cartPage, checkoutPage, orderCompletePage } = styles;
-function CartHeader() {
-  const { currentPage, setCurrentPage, location } = useCart();
-  useEffect(() => {
-    if (location.pathname.includes("ordercomplete")) {
-      setCurrentPage("ordercomplete");
-    } else if (location.pathname.includes("checkout")) {
-      setCurrentPage("checkout");
-    } else {
-      setCurrentPage("cart");
-    }
-  }, [location.pathname]);
 
-  const pageChangeHandler = () => {
-    if (currentPage === "cart") {
-      return cartPage;
-    } else if (currentPage === "checkout") {
-      return checkoutPage;
-    } else if (currentPage === "ordercomplete") {
-      return orderCompletePage;
-    }
-  };
+const {
+  headings,
+  heading,
+  done,
+  disabled,
+  active,
+} = styles;
 
+type TProps = {
+  formStep: number;
+}
+function CartHeader({formStep}: TProps) {
   return (
-    <div className={`${headings} ${pageChangeHandler()}`}>
-      <div className={heading}>
+    <div className={headings}>
+      <div
+        className={`${heading} ${(formStep === 1
+          ? active
+          : formStep > 1
+          ? done
+          : "")}`}
+      >
         <div>1</div>
         <span>Shopping cart</span>
       </div>
-      <div className={heading}>
+      <div className={`${heading} ${formStep < 2 ? disabled : formStep > 2 ? done : active}`}>
         <div>2</div>
         <span>Checkout details</span>
       </div>
-      <div className={heading}>
+      <div className={`${heading} ${formStep < 3 ? disabled : active}`}>
         <div>3</div>
         <span>Order complete</span>
       </div>

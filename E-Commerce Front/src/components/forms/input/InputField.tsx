@@ -28,9 +28,10 @@ function InputField<TFieldValues extends FieldValues>({
 
   return (
     <div className={fieldContainer}>
-      <label>{label}</label>
+      <label htmlFor={label}>{label}</label>
       {isInputActive && (
         <input
+          id={label}
           className={error ? inputError : ""}
           type={type}
           placeholder={placeholder}

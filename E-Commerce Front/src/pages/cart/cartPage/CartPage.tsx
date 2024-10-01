@@ -1,61 +1,61 @@
 import styles from "./cartPage.module.css";
-import CartHeader from "../../../components/Ecommerce/cart/cartHeader/CartHeader";
-
-import FlyOutCartItem from "../../../components/Ecommerce/cart/flyOutCartItem/flyOutCartItem";
 import useCart from "../../../hooks/useCart";
 import Empty from "../../../components/feedback/empty/Empty";
 import { TbShoppingCartOff } from "react-icons/tb";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import getCart from "../../../store/cart/thunk/getCart";
+import CartProductsStep from "../cartProductsStep/CartProductsStep";
+import CartHeader from "../../../components/Ecommerce/cart/cartHeader/CartHeader";
+import CheckoutDetails from "../cartCheckoutDetailsStep/CheckoutDetails";
+import CartOrderComplete from "../cartOrderCompleteStep/cartOrderComplete";
 
-const { cartPageSection, subtotal, coupon } = styles;
+const { cartPageSection } = styles;
 function CartPage() {
-  const { dispatch, fullProductsWithQuantity, cartTotalPrice } = useCart();
-
-  const productToShow = fullProductsWithQuantity.map((el) => {
-    if (el.quantity !== 0) {
-      return (
-        <FlyOutCartItem
-          id={el.id}
-          key={el.id}
-          img={el.img}
-          title={el.title}
-          price={el.price * el.quantity}
-          quantity={el.quantity}
-          sizes={el.sizes}
-        ></FlyOutCartItem>
-      );
-    }
-  });
-
+  const { dispatch } = useCart();
+  const [formStep, setFormStep] = useState(1);
+  const { fullProductsWithQuantity } = useCart();
   useEffect(() => {
     dispatch(getCart());
   }, []);
+
+  const renderMutlipleForms = () => {
+    switch (formStep) {
+      case 1:
+        return (
+         
+            <CartProductsStep
+              setNextStep={() => setFormStep(2)}
+              />
+         
+        );
+      case 2:
+        return (
+     
+            <CheckoutDetails formStepBackward={() => setFormStep(1)} formStepForward={() => setFormStep(3)}/>
+            
+         
+        );
+      case 3:
+        return (
+          <CartOrderComplete/>
+        );
+      default:
+        return <div>1</div>;
+    }
+  };
+
   return (
     <section className={cartPageSection}>
-      {productToShow.length === 0 ? (
+      {fullProductsWithQuantity.length === 0 ? (
         <Empty
           children={<TbShoppingCartOff size={200} />}
           text="Your cart is empty"
-        ></Empty>
+        />
       ) : (
-        <div
-          className="container flexMiddleScreen"
-          style={{ flexDirection: "column", gap: "100px" }}
-        >
-          <CartHeader></CartHeader>
-
-          {productToShow}
-          <div className={`flexBetween ${subtotal}`}>
-            <div>Total:</div>
-            <div>{cartTotalPrice.toFixed(2)}$</div>
-          </div>
-          <div className={coupon}>
-            <input placeholder="Enter your coupon"></input>
-            <button>Apply</button>
-          </div>
-          <button>checkout</button>
-        </div>
+        <>
+          <CartHeader formStep={formStep} />
+          {renderMutlipleForms()}
+        </>
       )}
     </section>
   );
