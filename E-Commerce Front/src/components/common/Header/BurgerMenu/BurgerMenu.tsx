@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import useHeader from "../../../../hooks/useHeader";
 import BurgerIcon from "./BurgerIcon/BurgerIcon";
 import { useAppSelector } from "../../../../store/hooks/hooks";
-import DashboardMenu from "../NavLinks/DashboardMenu/DashboardMenu";
+
 import DetailsMenu from "../../DetailsMenu/DetailsMenu";
 
 const { burgerContainer, burgerOpenMenu, burgerMenu } = styles;
 function BurgerMenu() {
+  const dashboardLinks = ["products", "users"];
   const {
     isBurgerOpened,
     setIsBurgerOpened,
@@ -18,13 +19,10 @@ function BurgerMenu() {
     linksTitles,
   } = useHeader();
 
-  
   const { role } = useAppSelector((state) => state.auth.user);
   const categories = ["men", "women", "kids", "sport"];
 
   useEffect(() => {
-
-    
     const handleResize = () => {
       if (window.innerWidth > 991) {
         setIsBurgerOpened(false);
@@ -55,7 +53,18 @@ function BurgerMenu() {
           ></DetailsMenu>
         );
       case "dashboard":
-        return role === "admin" ? <DashboardMenu /> : null;
+        return role === "admin" ? (
+          <DetailsMenu
+            summaryTitle="Dashboard"
+            data={dashboardLinks}
+            link="dashboard"
+            style={{
+              position: "relative",
+              backgroundColor: "var(--third-color)",
+              boxShadow: "none",
+            }}
+          ></DetailsMenu>
+        ) : null;
       default:
         return (
           <li>

@@ -12,7 +12,8 @@ export const getProduct = createAsyncThunk<
     const response = await axios.get(
       `http://localhost:5000/products/${productId}`
     );
-
+    console.log(response.data);
+    
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

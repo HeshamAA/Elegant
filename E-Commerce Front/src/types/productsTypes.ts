@@ -17,11 +17,10 @@ export interface IProductsState {
   loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
   filteredData?: TProducts[];
-  
+  product?: TProducts[];
 }
 
-
-export type TProductsResponse = TProducts[]
+export type TProductsResponse = TProducts[];
 
 export interface IEditProductPayload {
   productId: string;

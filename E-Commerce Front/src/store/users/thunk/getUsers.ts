@@ -1,14 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TProductsResponse } from "../../../types/productsTypes";
+import { TUsersResponse } from "../../../types/authTypes";
 
-const getProducts = createAsyncThunk<
-  TProductsResponse,
+const getUsers = createAsyncThunk<
+  TUsersResponse,
   void,
   { rejectValue: string }
->("productsslice/getproducts", async (_, thunkAPI) => {
+>("usersslice/getUsers", async (_, thunkAPI) => {
   try {
-    const response = await axios.get(`http://localhost:5000/products`);
+    const response = await axios.get(`http://localhost:5000/users`);
+    console.log(response.data);
 
     return response.data;
   } catch (error) {
@@ -22,4 +23,4 @@ const getProducts = createAsyncThunk<
   }
 });
 
-export default getProducts;
+export default getUsers;

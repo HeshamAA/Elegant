@@ -5,12 +5,13 @@ import { useParams } from "react-router-dom";
 
 import PagesFirstSection from "../../components/common/PagesFirstSection/PagesFirstSection";
 import useProductCard from "../../hooks/useProductCard";
-import { cleanUpProduct } from "../../store/product/productSlice";
-import getProduct from "../../store/product/thunk/getProduct";
+
+import getProduct from "../../store/products/thunk/getProduct";
+import { productCleanUp } from "../../store/products/productsSlice";
 const { productSection, productDetailsContainer } = styles;
 
 function Product() {
-  const { data: product } = useAppSelector((state) => state.product);
+  const { product } = useAppSelector((state) => state.products);
   const params = useParams();
 
   const { addToCartHandler, addToWatchListHandler } = useProductCard(
@@ -20,16 +21,15 @@ function Product() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(cleanUpProduct());
+    dispatch(productCleanUp());
     dispatch(getProduct(params.id as string));
 
     // dispatch(productsCleanUp());
 
     return () => {
-      dispatch(cleanUpProduct());
+      dispatch(productCleanUp());
     };
   }, [dispatch, params.id]);
-
 
   const productToShow = product.map((product) => (
     <div className={productDetailsContainer} key={product.id}>

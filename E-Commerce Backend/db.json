@@ -22,15 +22,6 @@
       "role": "user"
     },
     {
-      "email": "asdasd@yahoo.com",
-      "password": "$2a$10$XVqSYNPj9OLRAk3gjd3e8uJ7rcqFIOGW4p1B4uYTPmCYFmDuP32Pq",
-      "firstName": "asdasd",
-      "lastName": "asdasd",
-      "watchlist": [],
-      "id": "3",
-      "role": "user"
-    },
-    {
       "email": "asdasdads@yahoo.com",
       "password": "$2a$10$0QDNllUy8lECSGNy4hIEluEJh5ueD5qbWY3TCOXCyyHfI.1Q4Kply",
       "firstName": "asdasdasd",
@@ -129,16 +120,15 @@
     {
       "id": "1",
       "title": "Regular Fit Jersey top",
-      "price": "265",
+      "price": 249,
       "cat_prefix": "men",
       "sizes": [
         "S",
-        "L",
         "M",
-        "XL"
+        "XXL"
       ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
-      "desc": "Comfortable regular fit jersey top made from soft cotton fabric."
+      "desc": "Comfortable regular fit jersey top made from soft cotton fabricty."
     },
     {
       "id": "2",
@@ -336,54 +326,15 @@
       "desc": "Sporty football shirt with a regular fit, ideal for training and matches."
     },
     {
-      "id": "17",
-      "title": "Denim Jacket",
-      "price": 500,
-      "cat_prefix": "men",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/12345678/abcdef1234567890/2/image-thumb__123456__product_listing/denim_jacket.jpg",
-      "desc": "Classic denim jacket with a modern cut, perfect for a casual look."
-    },
-    {
-      "id": "18",
-      "title": "Leather Boots",
-      "price": 1200,
-      "cat_prefix": "women",
-      "sizes": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/87654321/fedcba0987654321/2/image-thumb__654321__product_listing/leather_boots.jpg",
-      "desc": "Stylish leather boots designed for comfort and durability."
-    },
-    {
-      "id": "19",
-      "title": "Graphic Tee",
-      "price": 150,
-      "cat_prefix": "kids",
-      "sizes": [
-        "XS",
-        "S",
-        "M"
-      ],
-      "img": "https://eg.hm.com/assets/styles/HNM/23456789/bcdefa23456789/2/image-thumb__234567__product_listing/graphic_tee.jpg",
-      "desc": "Fun graphic tee for kids, made from soft, breathable fabric."
-    },
-    {
       "title": "Regular Fit Jersey top",
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
       "desc": "Comfortable regular fit jersey top made from soft cotton fabricty.",
       "price": 249,
       "cat_prefix": "men",
       "sizes": [
-        null,
-        null,
-        null
+        "S",
+        "M",
+        "L"
       ],
       "id": "aesmEwX"
     },
@@ -411,6 +362,19 @@
         "XL"
       ],
       "id": "wnxOVUY"
+    },
+    {
+      "title": "stylish",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSya_RH2Kt3LptFzgbedVrxUPVqxwj0TTjRmQ&s",
+      "desc": "hello",
+      "price": "2500",
+      "cat_prefix": "men",
+      "sizes": [
+        "S",
+        "M",
+        "XL"
+      ],
+      "id": "SGp9oAB"
     }
   ],
   "watchlist": []

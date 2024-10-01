@@ -1,11 +1,9 @@
-import {  Controller } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import InputField from "../../forms/input/InputField";
 import styles from "./productsManagement.module.css";
 import { useEffect } from "react";
-import Select from "react-select";
 
-import useProductsManagement, {
-} from "../../../hooks/useProductsManagement";
+import useProductsManagement from "../../../hooks/useProductsManagement";
 import { TProductManagementProps } from "../../../types/formTypes";
 
 const { productsManagementContainer } = styles;
@@ -14,26 +12,21 @@ function ProductsManagement({
   actionType,
   productId,
   defaultValues,
-  sizesDefaultValues,
+ 
 }: TProductManagementProps) {
-
-  
   const {
-    customStyles,
-    sizesOptions,
+    
     control,
     handleSubmit,
     register,
     onSubmit,
-    reset
+    reset,
   } = useProductsManagement({
     actionType,
     productId,
     defaultValues,
-    sizesDefaultValues,
+    
   });
-
-
 
   useEffect(() => {
     if (defaultValues) {
@@ -41,7 +34,8 @@ function ProductsManagement({
     }
   }, [defaultValues, reset]);
 
-  
+  const sizes = ["S", "M", "L", "XL", "XXL"];
+
   return (
     <section className={productsManagementContainer}>
       <form onSubmit={handleSubmit(onSubmit)} className="flexMiddleScreen">
@@ -63,17 +57,27 @@ function ProductsManagement({
           <Controller
             name="sizes"
             control={control}
-            render={({ field }) => (
-              <Select
-                {...field}
-                className="my-multi-select"
-                styles={customStyles}
-                isMulti
-                isSearchable
-                options={sizesOptions}
-                value={field.value || []}
-                onChange={(selectedOptions) => field.onChange(selectedOptions)}
-              />
+            defaultValue={defaultValues?.sizes || []}
+            render={({ field: { onChange, value } }) => (
+              <div className="flex" style={{ gap: "20px" }}>
+                {sizes.map((size) => (
+                  <div className="flexMiddleScreen" style={{flexDirection: "column"}} key={size}>
+                    <input
+                      type="checkbox"
+                      id={size}
+                      value={size}
+                      checked={value.includes(size)}
+                      onChange={() => {
+                        const newSizes = value.includes(size)
+                          ? value.filter((s:string) => s !== size)
+                          : [...value, size];
+                        onChange(newSizes);
+                      }}
+                    />
+                    <label htmlFor={size}>{size.toUpperCase()}</label>
+                  </div>
+                ))}
+              </div>
             )}
           />
         </InputField>

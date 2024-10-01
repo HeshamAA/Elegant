@@ -23,6 +23,7 @@ import {
   AddProduct,
   EditProduct,
 } from "./index";
+import DashboardUsers from "../pages/admin/dashboard/dashboardUsers/DashboardUsers";
 
 
 
@@ -192,6 +193,10 @@ const AppRoutes = () => {
             {
               path: "products/edit-products/:id",
               element: <EditProduct />,
+            },
+            {
+              path: "users",
+              element: <DashboardUsers />,
             },
           ],
         },

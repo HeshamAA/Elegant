@@ -5,7 +5,7 @@ import { LoveButton } from "./ProductCardIcons/LoveButton";
 import useProductCard from "../../../hooks/useProductCard";
 import StarRating from "./ProductCardIcons/StarRating";
 import Sizes from "./ProductCardIcons/Sizes";
-import getproduct from "../../../store/product/thunk/getProduct";
+import getproduct from "../../../store/products/thunk/getProduct";
 import DetailsButton from "./ProductCardIcons/DetailsButton";
 
 const {

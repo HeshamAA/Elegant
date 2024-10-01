@@ -31,3 +31,13 @@ export type TUserResponse = {
     role: string;
   };
 };
+
+export type TUsersResponse = {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password?: string;
+  watchlist: string[];
+  role: string;
+};

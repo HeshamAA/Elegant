@@ -11,7 +11,7 @@ import {
   searchProducts,
   searchProductsCleanUp,
 } from "../store/products/productsSlice";
-import getproduct from "../store/product/thunk/getProduct";
+import getproduct from "../store/products/thunk/getProduct";
 function useHeader() {
   // header
   const dispatch = useAppDispatch();
@@ -19,7 +19,6 @@ function useHeader() {
   const watchListTotalQuantity = useAppSelector(
     (state) => state.addToWatchList.watchlistIds.length
   );
-
 
   // Header NavLinks
 
@@ -48,24 +47,21 @@ function useHeader() {
     const value = e.target.value;
     setInputValue(value);
 
-   
     if (debounceTimer) {
       clearTimeout(debounceTimer);
     }
 
-  
     const newTimer = setTimeout(() => {
       if (value) {
         setIsOpen(true);
         dispatch(getProducts());
-        dispatch(searchProducts({ value })); 
+        dispatch(searchProducts({ value }));
       } else {
         setIsOpen(false);
         dispatch(searchProductsCleanUp());
       }
     }, 1000);
 
-    
     setDebounceTimer(newTimer);
   };
   const getProductHandler = (id) => {

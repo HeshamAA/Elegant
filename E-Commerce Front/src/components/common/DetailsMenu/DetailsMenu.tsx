@@ -44,7 +44,7 @@ function DetailsMenu({
           <ul style={style}>
             {data &&
               data.map((el, index) => (
-                <li key={index}>
+                <li onClick={() => setIsMenuOpen(false)} key={index}>
                   <Link
                     className="flex"
                     to={`/${link}/${

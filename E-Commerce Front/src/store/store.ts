@@ -5,10 +5,10 @@ import bestSellersSlice from "./bestSellers/bestSellersSlice";
 import addToCartSlice from "./cart/addToCart/addToCartSlice";
 import addToWatchListSlice from "./addToWatchList/addToWatchListSlice";
 import flyOutCartSlice from "./cart/flyOutCart/flyOutCartSlice";
-import productSlice from "./product/productSlice";
 import authSlice from "./auth/authSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import usersSlice from "./users/usersSlice";
 
 // Configuration for redux-persist
 const persistConfig = {
@@ -25,8 +25,9 @@ const rootReducer = combineReducers({
   addToCart: addToCartSlice,
   addToWatchList: addToWatchListSlice,
   flyOutCart: flyOutCartSlice,
-  product: productSlice,
+
   auth: authSlice,
+  users: usersSlice,
 });
 
 // Apply persistence to the combined reducers
