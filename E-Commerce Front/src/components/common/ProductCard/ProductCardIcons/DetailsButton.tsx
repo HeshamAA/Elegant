@@ -1,10 +1,12 @@
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import styles from "../productCard.module.css";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const { detailsButton } = styles;
 
 function DetailsButton({ id }: { id: string }) {
+  console.log("details button");
   const navigate = useNavigate();
   return (
     <div
@@ -18,4 +20,4 @@ function DetailsButton({ id }: { id: string }) {
   );
 }
 
-export default DetailsButton;
+export default React.memo(DetailsButton);

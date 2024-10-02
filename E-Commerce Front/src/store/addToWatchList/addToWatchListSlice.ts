@@ -39,7 +39,7 @@ const addToWatchListSlice = createSlice({
   
       })
       .addCase(addToWatchList.rejected, (state, action) => {
-        console.log(action);
+
         state.loading = "failed";
         state.error = action.payload as string;
       });

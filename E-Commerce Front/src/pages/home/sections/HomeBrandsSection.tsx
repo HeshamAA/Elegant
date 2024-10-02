@@ -18,12 +18,14 @@ const brandsImgs = brands.map((el, index) => (
     alt="brand logo"
     src={el}
     style={{ "--position": index + 1 } as React.CSSProperties}
+    key={index}
   />
 ));
 
-console.log(brandsImgs);
+
 
 function HomeBrandsSection() {
+  console.log("homeBrands");
   return (
     <section className={homeBrandsSection}>
       <h1>We work with a selection of top global brands</h1>

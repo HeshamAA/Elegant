@@ -32,7 +32,7 @@ const usersSlice = createSlice({
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
-      console.log(action);
+     
     });
 
     builder.addCase(deleteUser.pending, (state, action) => {
@@ -44,7 +44,7 @@ const usersSlice = createSlice({
     });
     builder.addCase(deleteUser.rejected, (state, action) => {
       state.loading = "failed";
-      console.log(action);
+  
 
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;

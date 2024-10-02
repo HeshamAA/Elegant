@@ -4,6 +4,7 @@ import styles from "../home.module.css";
 const { homeSecondSection, homeSecondSectionContainer } = styles;
 
 function HomeSecondSection() {
+  console.log("homeSecond");
   return (
     <section className={homeSecondSection}>
    

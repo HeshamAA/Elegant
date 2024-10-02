@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useAppDispatch } from "../../../store/hooks/hooks";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../feedback/modal/Modal";
@@ -12,6 +12,7 @@ function DashboardTable({ type, thead, data }: TDashboardTableProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState<string>("0");
   const navigate = useNavigate();
+
 
   return (
     <div className={dashboardTable}>
@@ -62,22 +63,22 @@ function DashboardTable({ type, thead, data }: TDashboardTableProps) {
               </td>
             </tr>
           ))}
-     
         </tbody>
       </table>
 
-      <Modal
-        isOpen={isModalOpen}
-        message={`Are you sure you want to delete this ${type}`}
-        closeHandler={() => setIsModalOpen(false)}
-        functionToDo={() => {
-          type === "product"
-            ? dispatch(deleteProduct(id))
-            : dispatch(deleteUser(id));
-        }}
-      ></Modal>
+      {isModalOpen && (
+        <Modal
+          message={`Are you sure you want to delete this ${type}`}
+          closeHandler={() => setIsModalOpen(false)}
+          functionToDo={() => {
+            type === "product"
+              ? dispatch(deleteProduct(id))
+              : dispatch(deleteUser(id));
+          }}
+        ></Modal>
+      )}
     </div>
   );
 }
 
-export default DashboardTable;
+export default React.memo(DashboardTable);

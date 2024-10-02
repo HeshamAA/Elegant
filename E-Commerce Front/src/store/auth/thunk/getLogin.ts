@@ -14,7 +14,7 @@ const getLogin = createAsyncThunk<
     const res = await axios.post("http://localhost:5000/login", formData);
 
     const watchlistIds = res.data.user.watchlist;
-    console.log(watchlistIds);
+   
 
     dispatch(setWatchlistIds(watchlistIds));
 

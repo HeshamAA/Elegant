@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import styles from "../productCard.module.css";
 import useProductCard from "../../../../hooks/useProductCard";
@@ -6,6 +6,7 @@ import useProductCard from "../../../../hooks/useProductCard";
 const { loveButton } = styles;
 
 const LoveButton = ({ id }: { id: string }) => {
+  console.log("love button");
   const {
     watchListTotalQuantity,
     setLoveButtonState,
@@ -14,10 +15,10 @@ const LoveButton = ({ id }: { id: string }) => {
     addToWatchListHandler,
   } = useProductCard(id);
 
-  useEffect(() => {
-    const isInWatchlist = watchlistIds.includes(id);
-    setLoveButtonState(isInWatchlist);
-  }, [watchlistIds, id]);
+    useEffect(() => {
+      const isInWatchlist = watchlistIds.includes(id);
+      setLoveButtonState(isInWatchlist);
+    }, [watchlistIds, id]);
 
   return (
     <div className={loveButton}>
@@ -34,5 +35,5 @@ const LoveButton = ({ id }: { id: string }) => {
   );
 };
 
-export default LoveButton;
-export { LoveButton };
+export default React.memo(LoveButton)
+// export { LoveButton };

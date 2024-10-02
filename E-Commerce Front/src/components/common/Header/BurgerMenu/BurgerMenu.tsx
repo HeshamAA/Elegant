@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import styles from "./burgerMenu.module.css";
 import { Link } from "react-router-dom";
 import useHeader from "../../../../hooks/useHeader";
@@ -99,8 +99,8 @@ function BurgerMenu() {
       <div className={`${burgerMenu} ${isBurgerOpened ? burgerOpenMenu : ""}`}>
         <nav>
           <ul>
-            {linksTitles.map((el) => (
-              <>{renderBurgerMenu(el)}</>
+            {linksTitles.map((el, index) => (
+              <Fragment key={index}>{renderBurgerMenu(el)}</Fragment>
             ))}
           </ul>
         </nav>

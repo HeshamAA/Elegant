@@ -13,7 +13,7 @@ function CartItemQuantityChange({ id, quantity }: TQuantityChange) {
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Handle the quantity change here, if needed
-    console.log("New quantity:", e.target.value);
+    
   };
   return (
     <div className="flexBetween">

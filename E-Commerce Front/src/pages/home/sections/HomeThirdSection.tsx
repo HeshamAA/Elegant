@@ -9,7 +9,8 @@ const { homeThirdSection, homeThirdSectionContainer, productCardsContainer } =
 
 function HomeThirdSection() {
   const { dispatch, bestSellersData } = useHome();
-
+  console.log("homeThird");
+  
   useEffect(() => {
     dispatch(getBestSellers());
   }, [dispatch]);

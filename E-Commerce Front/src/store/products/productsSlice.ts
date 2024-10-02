@@ -104,8 +104,7 @@ const productsSlice = createSlice({
     });
     builder.addCase(deleteProduct.rejected, (state, action) => {
       state.loading = "failed";
-      console.log(action);
-
+      
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
@@ -121,8 +120,7 @@ const productsSlice = createSlice({
     });
     builder.addCase(addProduct.rejected, (state, action) => {
       state.loading = "failed";
-      console.log(action);
-
+   
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
@@ -134,11 +132,11 @@ const productsSlice = createSlice({
     builder.addCase(editProduct.fulfilled, (state, action) => {
       state.loading = "succeeded";
 
-      console.log(action);
+      
     });
     builder.addCase(editProduct.rejected, (state, action) => {
       state.loading = "failed";
-      console.log(action);
+   
 
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
@@ -160,7 +158,7 @@ const productsSlice = createSlice({
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
-      console.log(action);
+      
     });
   },
 });

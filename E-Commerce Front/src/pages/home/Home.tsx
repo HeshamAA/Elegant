@@ -5,7 +5,9 @@ import HomeThirdSection from "./sections/HomeThirdSection";
 import HomeBrandsSection from "./sections/HomeBrandsSection";
 import HomeHeroSection from "./sections/HomeHeroSection";
 const { home } = styles;
+
 const Home = () => {
+  console.log("home");
   return (
     <div className={home}>
       <HomeHeroSection></HomeHeroSection>

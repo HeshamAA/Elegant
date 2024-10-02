@@ -1,7 +1,10 @@
 import styles from "../home.module.css";
 import heroPhoto from "../../../assets/heroo.png";
+import { useEffect } from "react";
 const { homeHeroSection } = styles;
 function HomeHeroSection() {
+  console.log("homeHero");
+ 
   return (
     <section className={homeHeroSection}>
       <div className="container">

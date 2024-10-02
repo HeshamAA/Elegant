@@ -19,7 +19,8 @@ function Product() {
   );
 
   const dispatch = useAppDispatch();
-
+  
+  
   useEffect(() => {
     dispatch(productCleanUp());
     dispatch(getProduct(params.id as string));

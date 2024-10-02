@@ -1,7 +1,10 @@
+import React from "react";
+
 type TSizesProps = {
   availableSizes?: string[]; // Make it optional or include undefined
 };
 const Sizes: React.FC<TSizesProps> = ({ availableSizes = [] }) => {
+  console.log("sizes");
   return (
     <>
       {availableSizes.map((size, index) => (
@@ -14,4 +17,4 @@ const Sizes: React.FC<TSizesProps> = ({ availableSizes = [] }) => {
   );
 };
 
-export default Sizes;
+export default React.memo(Sizes)

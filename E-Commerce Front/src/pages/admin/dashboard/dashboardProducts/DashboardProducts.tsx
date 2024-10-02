@@ -18,6 +18,7 @@ const thead = [
 export default function DashboardProducts() {
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state) => state.products);
+  
 
   useEffect(() => {
     dispatch(getProducts());
@@ -25,7 +26,6 @@ export default function DashboardProducts() {
 
   return (
     <section className={dashboardProductsSection}>
-      
       <DashboardTable type="product" thead={thead} data={data}></DashboardTable>
     </section>
   );

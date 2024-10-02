@@ -1,6 +1,9 @@
+import React from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 const StarRating = ({ filledStars = 3, totalStars = 5, color = "#f0ad4e", size = 15 }) => {
+  console.log("star rating");
+  
   return (
     <div>
       {Array.from({ length: totalStars }).map((_, index) => {
@@ -14,4 +17,4 @@ const StarRating = ({ filledStars = 3, totalStars = 5, color = "#f0ad4e", size =
   );
 };
 
-export default StarRating;
+export default React.memo(StarRating)

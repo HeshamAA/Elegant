@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "./productCard.module.css";
 import { TProducts } from "../../../types/productsTypes";
-import { LoveButton } from "./ProductCardIcons/LoveButton";
+import LoveButton from "./ProductCardIcons/LoveButton";
 import useProductCard from "../../../hooks/useProductCard";
 import StarRating from "./ProductCardIcons/StarRating";
 import Sizes from "./ProductCardIcons/Sizes";
@@ -18,6 +18,8 @@ const {
 } = styles;
 
 const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
+  console.log("product card");
+
   const { dispatch, addToCartHandler, buttonDisabled, setButtonDisabled } =
     useProductCard(id);
 
