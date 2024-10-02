@@ -7,7 +7,7 @@ import getCart from "../../../store/cart/thunk/getCart";
 import CartProductsStep from "../cartProductsStep/CartProductsStep";
 import CartHeader from "../../../components/Ecommerce/cart/cartHeader/CartHeader";
 import CheckoutDetails from "../cartCheckoutDetailsStep/CheckoutDetails";
-import CartOrderComplete from "../cartOrderCompleteStep/cartOrderComplete";
+import CartOrderComplete from "../cartOrderCompleteStep/CartOrderComplete";
 
 const { cartPageSection } = styles;
 function CartPage() {

@@ -1,26 +1,31 @@
+import { GiPartyPopper } from "react-icons/gi";
+import styles from "./CartOrderComplete.module.css";
+import { Link } from "react-router-dom";
+
+const { cartOrderComplete, orderDetails } = styles;
+
 function CartOrderComplete() {
   return (
-    <div>
-      <h1>Thank You</h1>
+    <div className={cartOrderComplete}>
+      <h1>
+        Thank You <GiPartyPopper />
+      </h1>
       <div>Your order has been successfully placed</div>
-      <div>
-        <div>
-          <div>Order Code</div>
+      <div className={orderDetails}>
+        <div className="flex">
+          <div>Order Code:</div>
+          <div>Date:</div>
+          <div>Total:</div>
+          <div>Payment Method:</div>
+        </div>
+        <div className="flex">
           <span>4536742</span>
-        </div>
-        <div>
-          <div>Date</div>
           <span>2022-01-01</span>
-        </div>
-        <div>
-          <div>Total</div>
           <span>1,3584$</span>
-        </div>
-        <div>
-          <div>Payment Method</div>
           <span>Credit Card</span>
         </div>
       </div>
+      <Link to="/">Back Home</Link>
     </div>
   );
 }
