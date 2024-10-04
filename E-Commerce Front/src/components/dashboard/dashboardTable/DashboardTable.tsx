@@ -58,51 +58,49 @@ function DashboardTable({ type, thead, data }: TDashboardTableProps) {
             </tr>
           </thead>
           <tbody>
-            {filteredData
-              .map((el) => (
-                <tr key={el.id}>
-                  <td>
-                    <img src={el.img}></img>
-                  </td>
-                  <td>{el.title || el.email}</td>
-                  <td>{el.cat_prefix || el.firstName + " " + el.lastName}</td>
-                  <td>{el.price || el.role}</td>
-                  {type === "product" && (
-                    <>
-                      <td>{el.sizes}</td>
-                      <td title={`${el.desc}`}>{el.desc}</td>{" "}
-                    </>
+            {filteredData.map((el) => (
+              <tr key={el.id}>
+                <td>
+                  <img src={el.img}></img>
+                </td>
+                <td>{el.title || el.email}</td>
+                <td>{el.cat_prefix || el.firstName + " " + el.lastName}</td>
+                <td>{el.price || el.role}</td>
+                {type === "product" && (
+                  <>
+                    <td>{el.sizes}</td>
+                    <td title={`${el.desc}`}>{el.desc}</td>{" "}
+                  </>
+                )}
+                <td>
+                  {el.role !== "admin" && (
+                    <button
+                      onClick={() => {
+                        setIsModalOpen(true);
+                        setId(el.id);
+                      }}
+                    >
+                      Delete
+                    </button>
                   )}
-                  <td>
-                    {el.role !== "admin" && (
-                      <button
-                        onClick={() => {
-                          setIsModalOpen(true);
-                          setId(el.id);
-                        }}
-                      >
-                        Delete
-                      </button>
-                    )}
 
-                    {type === "product" && (
-                      <button
-                        onClick={() =>
-                          navigate(`/dashboard/products/edit-products/${el.id}`)
-                        }
-                      >
-                        Edit
-                      </button>
-                    )}
-                  </td>
-                </tr>
-              ))}
+                  {type === "product" && (
+                    <button
+                      onClick={() =>
+                        navigate(`/dashboard/products/edit-products/${el.id}`)
+                      }
+                    >
+                      Edit
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       ) : (
         <div style={{ textAlign: "center" }}>
-          There's no items Found,go and{" "}
-          <Link to="/dashboard/products/addproduct"> add products </Link>
+          There's no items Found
         </div>
       )}
 

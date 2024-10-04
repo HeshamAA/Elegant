@@ -3,7 +3,7 @@
 .homeHeroSection {
   background: linear-gradient(
     180deg,
-    var(--third-color) 25%,
+    var(--third-color) 0%,
     var(--opposite-secondary) 100%
   );
 
