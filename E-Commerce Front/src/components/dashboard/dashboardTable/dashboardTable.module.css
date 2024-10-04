@@ -8,6 +8,7 @@
     background-color: #323232;
     max-width: 100%;
     overflow-x: auto;
+    width: 70vw;
   }
   .dashboardTable table img {
     width: 100px;

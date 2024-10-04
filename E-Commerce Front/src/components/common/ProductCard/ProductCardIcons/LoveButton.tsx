@@ -6,9 +6,8 @@ import useProductCard from "../../../../hooks/useProductCard";
 const { loveButton } = styles;
 
 const LoveButton = ({ id }: { id: string }) => {
-  console.log("love button");
+ 
   const {
-    watchListTotalQuantity,
     setLoveButtonState,
     loveButtonState,
     watchlistIds,
@@ -36,4 +35,4 @@ const LoveButton = ({ id }: { id: string }) => {
 };
 
 export default React.memo(LoveButton)
-// export { LoveButton };
+

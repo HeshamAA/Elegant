@@ -11,6 +11,7 @@ function DashboardUsers() {
     dispatch(getUsers());
   }, [dispatch]);
 
+  console.log(data);
   
   return (
     <section>

@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../../store/hooks/hooks";
 import getProducts from "../../../../store/products/thunk/getProducts";
 import styles from "./dashboardProducts.module.css";
 import DashboardTable from "../../../../components/dashboard/dashboardTable/DashboardTable";
+import { Link } from "react-router-dom";
 
 const { dashboardProductsSection } = styles;
 const thead = [
@@ -24,8 +25,10 @@ export default function DashboardProducts() {
     dispatch(getProducts());
   }, [dispatch]);
 
+
   return (
-    <section className={dashboardProductsSection}>
+    <section className={dashboardProductsSection} style={{flexDirection:"column" }}>
+      <Link to="/dashboard/products/addproduct" style={{ color: "var(--primary-color)" }}>Add Product</Link>
       <DashboardTable type="product" thead={thead} data={data}></DashboardTable>
     </section>
   );

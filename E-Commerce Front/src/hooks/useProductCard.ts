@@ -24,8 +24,6 @@ function useProductCard(productId: string) {
     });
   };
 
-
-
   const notifyWatchListAdded = () => {
     toast.success(
       `Item Added to watchList,You now have (${
@@ -62,28 +60,36 @@ function useProductCard(productId: string) {
   const [loveButtonState, setLoveButtonState] = useState<boolean>(false);
 
   const { watchlistIds } = useAppSelector((state) => state.addToWatchList);
-
+  const { accessToken } = useAppSelector((state) => state.auth);
   const addToWatchListHandler = () => {
-    dispatch(addToWatchList(productId))
-      .unwrap()
-      .then(() => {
-        if (!loveButtonState) {
-          toast.success("Item Added to watchList", {
-            position: "top-right",
-            className: "custom-toast",
-            duration: 2000,
-          });
-        } else {
-          toast.error("Item Removed from watchList", {
-            position: "top-right",
-            className: "custom-toast-error",
-            duration: 2000,
-          });
-        }
+    if (accessToken) {
+      dispatch(addToWatchList(productId))
+        .unwrap()
+        .then(() => {
+          if (!loveButtonState) {
+            toast.success("Item Added to watchList", {
+              position: "top-right",
+              className: "custom-toast",
+              duration: 2000,
+            });
+          } else {
+            toast.error("Item Removed from watchList", {
+              position: "top-right",
+              className: "custom-toast-error",
+              duration: 2000,
+            });
+          }
+        });
+    } else {
+      toast.error("Please Login First", {
+        position: "top-center",
+        className: "custom-toast-error",
+        duration: 4000,
       });
+    }
   };
   console.log("hesham");
-  
+
   return {
     dispatch,
     buttonDisabled,

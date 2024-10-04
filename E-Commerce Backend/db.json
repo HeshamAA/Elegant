@@ -14,7 +14,10 @@
       "password": "$2a$10$zDtDYwh6NP8WZFRhwCsijuTHrLAg8JOmrERbcofPdNStEIkWPBsIu",
       "firstName": "asd",
       "lastName": "asd",
-      "watchlist": ["1", "4"],
+      "watchlist": [
+        "1",
+        "4"
+      ],
       "id": "2",
       "role": "user"
     },
@@ -43,7 +46,11 @@
       "title": "Regular Fit Jersey top",
       "price": 249,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg"
     },
     {
@@ -51,7 +58,11 @@
       "title": "Cotton t-shirt",
       "price": 100,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg"
     },
     {
@@ -59,7 +70,11 @@
       "title": "Velour top",
       "price": 300,
       "cat_prefix": "kids",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg"
     },
     {
@@ -67,7 +82,11 @@
       "title": "Sweatshirt shorts",
       "price": 300,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg"
     }
   ],
@@ -103,7 +122,11 @@
       "title": "Regular Fit Jersey top",
       "price": 249,
       "cat_prefix": "men",
-      "sizes": ["S", "M", "XXL"],
+      "sizes": [
+        "S",
+        "M",
+        "XXL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
       "desc": "Comfortable regular fit jersey top made from soft cotton fabricty."
     },
@@ -112,7 +135,11 @@
       "title": "Regular Fit Jersey top",
       "price": 229,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
       "desc": "Stylish jersey top with a regular fit, perfect for casual wear."
     },
@@ -121,7 +148,11 @@
       "title": "Cotton polo shirt",
       "price": 200,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/13994073/eeb1d90c4764366000eb8b8571396e81f0de5c44/2/image-thumb__3142108__product_listing/4d6db9e8f936d3d82b13bc5861b0310fa214c74d.jpg",
       "desc": "Classic cotton polo shirt with a comfortable and breathable design."
     },
@@ -130,7 +161,11 @@
       "title": "Cotton t-shirt",
       "price": 100,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg",
       "desc": "Soft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wearSoft and versatile cotton t-shirt for everyday wear."
     },
@@ -139,7 +174,11 @@
       "title": "Sweatshirt shorts",
       "price": 300,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg",
       "desc": "Comfortable sweatshirt shorts with an elastic waistband."
     },
@@ -148,7 +187,11 @@
       "title": "Velour top",
       "price": 300,
       "cat_prefix": "kids",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
       "desc": "Stylish velour top for kids, made from soft and cozy fabric."
     },
@@ -157,7 +200,11 @@
       "title": "Velour pants",
       "price": 300,
       "cat_prefix": "kids",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
       "desc": "Soft velour pants for kids, perfect for comfort and style."
     },
@@ -166,7 +213,11 @@
       "title": "Regular Fit football shirt",
       "price": 449,
       "cat_prefix": "sport",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14472541/cb9d35f1480ce5c8b0be39ad7fd35ab9f8004ce0/2/image-thumb__3453052__product_listing/70408034bd9792a93abbc8ad322565337f535e24.jpg",
       "desc": "Football shirt with a regular fit, designed for active sportswear."
     },
@@ -175,7 +226,11 @@
       "title": "Regular Fit Jersey top",
       "price": 249,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
       "desc": "Versatile jersey top for men, featuring a regular fit and soft fabric."
     },
@@ -184,7 +239,11 @@
       "title": "Regular Fit Jersey top",
       "price": 229,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14482498/6103a8463876770c30cdba3535b7be1f333315fe/2/image-thumb__3464789__product_listing/cb91f8f128ac2125e0ec3a008a2e8d2497d15434.jpg",
       "desc": "Comfortable jersey top designed for a regular fit and easy movement."
     },
@@ -193,7 +252,11 @@
       "title": "Cotton polo shirt",
       "price": 200,
       "cat_prefix": "men",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/13994073/eeb1d90c4764366000eb8b8571396e81f0de5c44/2/image-thumb__3142108__product_listing/4d6db9e8f936d3d82b13bc5861b0310fa214c74d.jpg",
       "desc": "Classic cotton polo shirt ideal for casual and semi-formal wear."
     },
@@ -202,7 +265,11 @@
       "title": "Cotton t-shirt",
       "price": 100,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/13650519/6cc34f51caee1d6cfe776b933d667075fa30d90d/2/image-thumb__2888777__product_listing/16c27492b022ac2eef03853f85d5b279a29ebeed.jpg",
       "desc": "Everyday cotton t-shirt offering a relaxed fit and comfort."
     },
@@ -211,7 +278,11 @@
       "title": "Sweatshirt shorts",
       "price": 300,
       "cat_prefix": "women",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/12652575/3e316aab8ce1b596545d144d0efd362975b3856f/2/image-thumb__1998684__product_listing/48756e509aa05341e4a618ba4c1b0a5ce24ebcae.jpg",
       "desc": "Relaxed fit sweatshirt shorts, perfect for leisure activities."
     },
@@ -220,7 +291,11 @@
       "title": "Velour top",
       "price": 300,
       "cat_prefix": "kids",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
       "desc": "Cozy velour top for kids, designed for warmth and comfort."
     },
@@ -229,7 +304,11 @@
       "title": "Velour pants",
       "price": 300,
       "cat_prefix": "kids",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14478215/543d925539f4a3b92a79df2dfe46d5d481e1c7ae/2/image-thumb__3463278__product_listing/c1417d02c7a93e6d2aca7965003b4f7d490f0ae8.jpg",
       "desc": "Comfortable velour pants for kids, perfect for everyday wear."
     },
@@ -238,7 +317,11 @@
       "title": "Regular Fit football shirt",
       "price": 449,
       "cat_prefix": "sport",
-      "sizes": ["M", "L", "XL"],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
       "img": "https://eg.hm.com/assets/styles/HNM/14472541/cb9d35f1480ce5c8b0be39ad7fd35ab9f8004ce0/2/image-thumb__3453052__product_listing/70408034bd9792a93abbc8ad322565337f535e24.jpg",
       "desc": "Sporty football shirt with a regular fit, ideal for training and matches."
     },
@@ -248,7 +331,11 @@
       "desc": "Comfortable regular fit jersey top made from soft cotton fabricty.",
       "price": 249,
       "cat_prefix": "men",
-      "sizes": ["S", "M", "L"],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
       "id": "aesmEwX"
     },
     {
@@ -257,7 +344,10 @@
       "desc": "Comfortable regular fit jersey top made from soft cotton fabricyy.",
       "price": 249,
       "cat_prefix": "men",
-      "sizes": ["M", "XL"],
+      "sizes": [
+        "M",
+        "XL"
+      ],
       "id": "BZilWRX"
     },
     {
@@ -266,7 +356,11 @@
       "desc": "An Awesome jacket for winter",
       "price": "350",
       "cat_prefix": "men",
-      "sizes": ["S", "L", "XL"],
+      "sizes": [
+        "S",
+        "L",
+        "XL"
+      ],
       "id": "wnxOVUY"
     },
     {
@@ -275,7 +369,11 @@
       "desc": "hello",
       "price": "2500",
       "cat_prefix": "men",
-      "sizes": ["S", "M", "XL"],
+      "sizes": [
+        "S",
+        "M",
+        "XL"
+      ],
       "id": "SGp9oAB"
     }
   ],

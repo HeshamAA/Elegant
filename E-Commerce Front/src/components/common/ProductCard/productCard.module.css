@@ -107,11 +107,7 @@
   cursor: pointer;
 }
 
-.productSizes input:checked + label {
-  background-color: var(--third-color);
-  color: var(--primary-color);
-  border-color: var(--third-color);
-}
+
 .productPrice {
   color: var(--primary-color);
   font-size: 30px;
