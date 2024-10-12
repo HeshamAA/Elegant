@@ -12,23 +12,29 @@ const thead = [
   "Category",
   "Price",
   "Sizes",
-  "Description",
+  "Description (hover)",
   "Actions",
 ];
 
 export default function DashboardProducts() {
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state) => state.products);
-  
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-
   return (
-    <section className={dashboardProductsSection} style={{flexDirection:"column" }}>
-      <Link to="/dashboard/products/addproduct" style={{ color: "var(--primary-color)" }}>Add Product</Link>
+    <section
+      className={dashboardProductsSection}
+      style={{ flexDirection: "column" }}
+    >
+      <Link
+        to="/dashboard/products/addproduct"
+        style={{ color: "var(--primary-color)" }}
+      >
+        Add Product
+      </Link>
       <DashboardTable type="product" thead={thead} data={data}></DashboardTable>
     </section>
   );

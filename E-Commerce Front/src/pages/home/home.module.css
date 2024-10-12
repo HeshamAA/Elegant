@@ -72,9 +72,6 @@
   filter: drop-shadow(2px 2px 5px var(--primary-color));
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .homeHeroSection > div:first-of-type > div:first-child > div:first-child {
-    max-width: 75%;
-  }
   .homeHeroSection > div:first-of-type > div:first-child > div:first-child h1 {
     font-size: 55px;
   }
@@ -82,7 +79,10 @@
 
 @media (max-width: 991px) {
   .homeHeroSection {
-    min-height: 180vh;
+    min-height: 140vh;
+  }
+  .homeHeroSection > div:first-child {
+    margin-top: 100px;
   }
   .homeHeroSection > div:first-child > div:first-child {
     flex-direction: column;
@@ -113,13 +113,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 120vh;
+  height: 100vh;
 }
 .homeSection::after {
   content: "";
   background-color: var(--black-section-overlay);
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -178,6 +178,14 @@
     padding: 5px 10px !important;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .signUpButton {
+    font-size: 16px !important;
+    padding: 2px 5px !important;
+    font-weight: 500 !important;
+  }
+}
 .homeSection > div:first-child > div:first-child {
   font-family: "Kalam", cursive;
   color: var(--primary-color);
@@ -220,9 +228,6 @@
 .homeSection > div:first-child > div:last-child {
   color: var(--secondary-color);
   font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   padding: 10px;
 }
@@ -404,6 +409,7 @@
   font-size: 39px;
   font-weight: bolder;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .productCardsContainer {
@@ -411,28 +417,6 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
 }
-
-/* @media (min-width: 768px) and (max-width:991px) {
-  .homeThirdSection {
-   height: 170vh;
-  }
-}
-
-@media (min-width: 576px) and (max-width:767px) {
-  .homeThirdSection {
-    height: 170vh;
-   }
-}
-
-
-@media (max-width: 575.98px) {
-  .homeThirdSection {
-    height: 320vh;
-    padding: 0 20px;
-   }
-} */
-
-/*  home brands section */
 
 :root {
   --brand-image-width: 150px;

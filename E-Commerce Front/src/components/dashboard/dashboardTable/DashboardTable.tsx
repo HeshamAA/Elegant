@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAppDispatch } from "../../../store/hooks/hooks";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Modal from "../../feedback/modal/Modal";
 import { TDashboardTableProps } from "../../../types/dashboardTypes";
 import deleteProduct from "../../../store/products/thunk/deleteProduct";
@@ -65,10 +65,22 @@ function DashboardTable({ type, thead, data }: TDashboardTableProps) {
                 </td>
                 <td>{el.title || el.email}</td>
                 <td>{el.cat_prefix || el.firstName + " " + el.lastName}</td>
-                <td>{el.price || el.role}</td>
+                <td>{el.price + "$" || el.role}</td>
                 {type === "product" && (
                   <>
-                    <td>{el.sizes}</td>
+                    <td>
+                      {el.sizes.map((size: string) => (
+                        <div
+                          style={{
+                            fontSize:"18px",
+                            textAlign: "center",
+                            margin: "5px",
+                          }}
+                        >
+                          {size}
+                        </div>
+                      ))}
+                    </td>
                     <td title={`${el.desc}`}>{el.desc}</td>{" "}
                   </>
                 )}
@@ -99,9 +111,7 @@ function DashboardTable({ type, thead, data }: TDashboardTableProps) {
           </tbody>
         </table>
       ) : (
-        <div style={{ textAlign: "center" }}>
-          There's no items Found
-        </div>
+        <div style={{ textAlign: "center" }}>There's no items Found</div>
       )}
 
       {isModalOpen && (
