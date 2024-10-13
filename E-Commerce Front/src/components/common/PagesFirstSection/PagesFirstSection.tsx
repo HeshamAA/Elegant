@@ -11,20 +11,21 @@ const {
   cartPhoto,
 } = styles;
 
-
 function PagesFirstSection({ title, children }: TPagesFirstSection) {
   const location = useLocation();
+  
   const dynamicBackgroundImg = () => {
-    if (location.pathname.includes("kids")) {
-      return kidsPhoto;
-    } else if (location.pathname.includes("women")) {
-      return womenPhoto;
-    } else if (location.pathname.includes("sport")) {
-      return sportPhoto;
-    } else if (location.pathname.includes("cart")) {
-      return cartPhoto;
-    } else {
-      return "";
+    switch (true) {
+      case location.pathname.includes("kids"):
+        return kidsPhoto;
+      case location.pathname.includes("women"):
+        return womenPhoto;
+      case location.pathname.includes("sport"):
+        return sportPhoto;
+      case location.pathname.includes("cart"):
+        return cartPhoto;
+      default:
+        return "";
     }
   };
   return (

@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useRef, useState } from "react";
+import { SetStateAction, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { getCategories } from "../store/categories/categoriesSlice";
 import {
@@ -12,6 +12,8 @@ import {
   searchProductsCleanUp,
 } from "../store/products/productsSlice";
 import getproduct from "../store/products/thunk/getProduct";
+
+
 function useHeader() {
   // header
   const dispatch = useAppDispatch();
@@ -31,6 +33,8 @@ function useHeader() {
     "contact",
     "dashboard",
   ];
+
+  
 
   // Header Burger
 

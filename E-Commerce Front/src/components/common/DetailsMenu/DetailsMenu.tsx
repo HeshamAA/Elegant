@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { TDetailsMenuProps } from "../../../types/detailsMenuTypes";
+import useDetailsMenu from "../../../hooks/useDetailsMenu";
 
 function DetailsMenu({
   summaryTitle,
@@ -10,16 +11,8 @@ function DetailsMenu({
   style,
   children,
 }: TDetailsMenuProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const detailsRef = useRef<HTMLDetailsElement>(null);
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      detailsRef.current &&
-      !detailsRef.current.contains(event.target as Node)
-    ) {
-      setIsMenuOpen(false);
-    }
-  };
+  const { isMenuOpen, setIsMenuOpen, detailsRef, handleClickOutside } =
+    useDetailsMenu();
 
   // Add event listener to the document
   useEffect(() => {
@@ -28,10 +21,13 @@ function DetailsMenu({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <>
       <nav>
         <details ref={detailsRef} open={isMenuOpen}>
+
+
           <summary
             onClick={(e) => {
               e.preventDefault();
@@ -62,6 +58,8 @@ function DetailsMenu({
                 </li>
               ))}
           </ul>
+
+          
         </details>
       </nav>
     </>

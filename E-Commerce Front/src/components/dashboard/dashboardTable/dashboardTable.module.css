@@ -2,7 +2,16 @@
   display: flex;
   flex-direction: column;
 }
+.dashboardTable > input:first-child{
+  width: 50%;
+  margin: 10px auto;
+}
 
+.dashboardTable > div:first-of-type{
+  text-align: center;
+  margin: 0 auto 20px;
+  color: var(--secondary-color)
+}
 .dashboardTable table {
   border-collapse: collapse;
   background-color: #323232;
@@ -82,9 +91,9 @@
   .dashboardTable th {
     display: none;
   }
-  .dashboardTable td button{
+  .dashboardTable td button {
     display: block;
-    margin: 5px   auto;
+    margin: 5px auto;
   }
   .dashboardTable td {
     display: block;

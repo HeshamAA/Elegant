@@ -12,14 +12,18 @@ export const Error404 = () => {
       <PagesFirstSection title="">
         <TbError404Off className={errorText} />
       </PagesFirstSection>
+
       <section className={error404Container}>
         <HiOutlineEmojiSad className={errorText} />
+
         <div className="flex">
           <div className={info}>Oops! Not Found</div>
         </div>
+
         <div className={errorMessage}>
           The page you requested for is not found.
         </div>
+
         <button
           className={goHome}
           onClick={() => {

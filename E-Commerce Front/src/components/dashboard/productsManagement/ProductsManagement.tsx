@@ -25,7 +25,7 @@ function ProductsManagement({
   }, [defaultValues, reset]);
 
   const sizes = ["S", "M", "L", "XL", "XXL"];
-  console.log(errors);
+
 
   return (
     <section className={productsManagementContainer}>

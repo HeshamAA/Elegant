@@ -18,7 +18,7 @@ const {
 } = styles;
 
 const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
-  console.log("product card");
+ 
 
   const { dispatch, addToCartHandler, buttonDisabled, setButtonDisabled } =
     useProductCard(id);
@@ -35,6 +35,8 @@ const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
   return (
     <>
       <div className={cardContainer}>
+
+        
         <img
           alt="image"
           onClick={() => {
@@ -43,6 +45,8 @@ const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
           src={img}
           className={productCardImg}
         ></img>
+
+
         <LoveButton id={id}></LoveButton>
         <DetailsButton id={id}></DetailsButton>
 

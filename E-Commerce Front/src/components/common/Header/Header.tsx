@@ -10,12 +10,15 @@ import useCart from "../../../hooks/useCart";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
 import TopBar from "../TopBar/TopBar";
 const { header, cartNumber, headerContainer } = styles;
+
+
 export const Header = () => {
   const { dispatch, navigate, getCategories, watchListTotalQuantity } =
     useHeader();
 
   const { cartTotalQuantity, isFlyOutCartOpened, openFlyOutCartHandler } =
     useCart();
+
 
   useEffect(() => {
     dispatch(getCategories());

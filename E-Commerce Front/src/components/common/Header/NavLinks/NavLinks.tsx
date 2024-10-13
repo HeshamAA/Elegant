@@ -5,7 +5,7 @@ import { useAppSelector } from "../../../../store/hooks/hooks";
 import CategoriesMenu from "./CategoriesMenu/CategoriesMenu";
 import DashboardMenu from "./DashboardMenu/DashboardMenu";
 
-const { navLinks,link, active } = styles;
+const { navLinks, link, active } = styles;
 
 function NavLinks() {
   const { linksTitles } = useHeader();
@@ -30,6 +30,8 @@ function NavLinks() {
         );
     }
   };
+
+  
   return (
     <nav className={navLinks}>
       <ul>
