@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 import {
   RouterProvider,
   createBrowserRouter,
-  useParams,
+
 } from "react-router-dom";
 import Loader from "../components/feedback/loader/Loader";
 import { Error404 } from "../components/common/Error404/Error404";
@@ -34,7 +34,7 @@ const AppRoutes = () => {
   const categories = ["men", "women", "sport", "kids"];
   const { accessToken } = useAppSelector((state) => state.auth);
   const { role } = useAppSelector((state) => state.auth.user);
-  const { data: products } = useAppSelector((state) => state.products);
+  
 
  
 

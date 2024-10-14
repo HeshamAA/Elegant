@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import styles from "../flyOutCart/flyOutCart.module.css";
 import useCart from "../../../../hooks/useCart";
 import FlyOutCartItem from "../flyOutCartItem/flyOutCartItem";
@@ -37,8 +37,6 @@ function FlyOutCartItemsContainer() {
     dispatch(getCart());
   }, []);
 
-
-  
   return (
     <div
       className={`${flyOutCartContainer} ${isFlyOutCartOpened ? active : ""}`}
@@ -49,7 +47,6 @@ function FlyOutCartItemsContainer() {
       </div>
       {fullProductsWithQuantity.length !== 0 ? (
         <>
-          {" "}
           {productToShow}
           <div className="flexBetween">
             <div>Total:</div>

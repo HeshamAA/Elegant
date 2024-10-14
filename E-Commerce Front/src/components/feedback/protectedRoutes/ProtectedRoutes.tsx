@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../../store/hooks/hooks";
+
 import { IProtectedRoutesProps } from "../../../types/protectedRoutesTypes";
 
 

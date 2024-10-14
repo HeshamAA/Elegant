@@ -1,14 +1,24 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "./pagination.module.css";
+import { TPaginationProps } from "../../../types/paginationTypes";
 
 const { buttonsContainer } = styles;
 
-function Pagination({ itemsPerPage, items, currentPage, setCurrentPage }) {
+
+function Pagination({
+  itemsPerPage,
+  items,
+  currentPage,
+  setCurrentPage,
+}: TPaginationProps) {
   const pages = Math.ceil(items.length / itemsPerPage);
   const totalPages = Array.from({ length: pages }, (_, index) => index + 1);
   return (
     <div className={`${buttonsContainer}`}>
-      <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+      <button
+        onClick={() => setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
         <FaArrowLeft />
       </button>
       {totalPages.map((page) => (
@@ -20,8 +30,10 @@ function Pagination({ itemsPerPage, items, currentPage, setCurrentPage }) {
           {page}
         </button>
       ))}
-      <button onClick={() => setCurrentPage(currentPage + 1)}
-        disabled={currentPage === pages}>
+      <button
+        onClick={() => setCurrentPage(currentPage + 1)}
+        disabled={currentPage === pages}
+      >
         <FaArrowRight />
       </button>
     </div>

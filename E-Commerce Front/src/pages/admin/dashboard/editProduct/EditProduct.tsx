@@ -23,7 +23,7 @@ function EditProduct() {
       <ProductsManagement
         actionType="update"
         productId={params.id}
-        defaultValues={product[0]}
+        defaultValues={product && product[0]}
       ></ProductsManagement>
     </>
   );

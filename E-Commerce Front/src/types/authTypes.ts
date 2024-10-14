@@ -1,16 +1,17 @@
 export type TAuthState = {
   accessToken: string;
-  user: {
-    id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    password?: string;
-    watchlist: string[];
-    role: string;
-  };
+  user: TUser;
   loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
+};
+export type TUser = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password?: string;
+  watchlist: string[];
+  role: "user" | "admin";
 };
 
 export type TFormData = {
@@ -18,26 +19,12 @@ export type TFormData = {
   lastName?: string;
   email: string;
   password: string;
+  confirmPassword?: string;
 };
 
 export type TUserResponse = {
   accessToken: string;
-  user: {
-    id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    watchlist: string[];
-    role: string;
-  };
+  user: TUser
 };
 
-export type TUsersResponse = {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password?: string;
-  watchlist: string[];
-  role: string;
-};
+export type TUsersResponse = TUser;

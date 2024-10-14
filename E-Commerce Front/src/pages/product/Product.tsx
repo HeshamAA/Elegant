@@ -32,7 +32,7 @@ function Product() {
     };
   }, [dispatch, params.id]);
 
-  const productToShow = product.map((product) => (
+  const productToShow =product && product.map((product) => (
     <div className={productDetailsContainer} key={product.id}>
       <img alt="image" src={product.img} />
       <div>

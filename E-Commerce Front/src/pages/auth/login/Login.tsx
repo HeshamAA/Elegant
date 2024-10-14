@@ -6,7 +6,8 @@ import InputField from "../../../components/forms/input/InputField";
 import { useAppSelector } from "../../../store/hooks/hooks";
 import { loginSchema } from "../../../validations/LoginSchema";
 import useAuth from "../../../hooks/useAuth";
-import { TFormInputs } from "../../../types/formTypes";
+import { TFormData } from "../../../types/authTypes";
+
 
 const { registerSectionContainer, createAccountButton } = styles;
 
@@ -18,7 +19,7 @@ function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TFormInputs>({
+  } = useForm<TFormData>({
     resolver: zodResolver(loginSchema),
   });
 

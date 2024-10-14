@@ -5,9 +5,13 @@ import addProduct from "../store/products/thunk/addProduct";
 import editProduct from "../store/products/thunk/editProduct";
 import { useNatificationToast } from "./useNatificationToast";
 import useSelectOptions from "./useSelectOptions";
-import { TFormInputs, TProductManagementProps } from "../types/formTypes";
+import {
+  TProductFormInputs,
+  TProductManagementProps,
+} from "../types/productFormTypes";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { productsManagementSchema } from "../validations/ProductsManagementSchema";
+import { TProducts } from "../types/productsTypes";
 
 function useProductsManagement({
   actionType,
@@ -24,12 +28,12 @@ function useProductsManagement({
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<TFormInputs>({
+  } = useForm<TProductFormInputs>({
     defaultValues,
     resolver: zodResolver(productsManagementSchema),
   });
 
-  const onSubmit: SubmitHandler<TFormInputs> = async (data) => {
+  const onSubmit: SubmitHandler<TProducts> = async (data) => {
     if (actionType === "add") {
       const addingPromise = dispatch(addProduct(data)).unwrap();
       await toastPromise(addingPromise, {

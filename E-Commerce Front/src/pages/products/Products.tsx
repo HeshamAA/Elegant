@@ -3,20 +3,18 @@ import { productsCleanUp } from "../../store/products/productsSlice";
 import getProductsByCategoryPrefix from "../../store/products/thunk/getProductsByCategoryPrefix";
 import ProductCard from "../../components/common/ProductCard/ProductCard";
 import PagesFirstSection from "../../components/common/PagesFirstSection/PagesFirstSection";
-import styles from "./products.module.css";
+
 import useProducts from "../../hooks/useProducts";
 import Sorting from "../../components/Ecommerce/sorting/Sorting";
 import Pagination from "../../components/feedback/pagination/Pagination";
 
-const { showMoreProductsButton } = styles;
+
 const Products = () => {
   const {
     dispatch,
     params,
     productsData,
-    visibleCount,
-    setVisibleCount,
-    handleShowMoreItems,
+  
   } = useProducts();
 
   useEffect(() => {

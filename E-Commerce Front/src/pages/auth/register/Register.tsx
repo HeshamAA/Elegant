@@ -5,10 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "../../../validations/SignUpSchema";
 import RegisterInputs from "../../../components/forms/registerInputs/RegisterInputs";
 import { useAppSelector } from "../../../store/hooks/hooks";
-
 import useAuth from "../../../hooks/useAuth";
-import { TFormInputs } from "../../../types/formTypes";
-
+import { TFormData } from "../../../types/authTypes";
 const { registerSectionContainer, agreeTermPrivacy, createAccountButton } =
   styles;
 
@@ -20,7 +18,7 @@ function Register() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TFormInputs>({
+  } = useForm<TFormData>({
     resolver: zodResolver(signUpSchema),
     mode: "onBlur",
   });

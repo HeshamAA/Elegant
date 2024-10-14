@@ -14,15 +14,18 @@ const getLogin = createAsyncThunk<
     const res = await axios.post("http://localhost:5000/login", formData);
 
     const watchlistIds = res.data.user.watchlist;
-   
 
     dispatch(setWatchlistIds(watchlistIds));
 
     return res.data;
-  } catch (error: any) {
-    return thunkAPI.rejectWithValue(
-      error.response?.data || "Something went wrong"
-    );
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return thunkAPI.rejectWithValue(
+        error.response?.data.message || error.message
+      );
+    } else {
+      return thunkAPI.rejectWithValue("An unexpected error");
+    }
   }
 });
 

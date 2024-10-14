@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TProducts } from "../../../types/productsTypes";
 import getCart from "../thunk/getCart";
 import { TAddToCartState } from "../../../types/cartTypes";
 

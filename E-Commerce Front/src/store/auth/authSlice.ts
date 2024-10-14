@@ -7,6 +7,7 @@ import { TAuthState } from "../../types/authTypes";
 const initialState: TAuthState = {
   accessToken: "",
   user: {
+    id: "",
     firstName: "",
     lastName: "",
     email: "",

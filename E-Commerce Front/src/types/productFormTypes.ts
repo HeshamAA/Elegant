@@ -15,4 +15,4 @@ export type TProductManagementProps = {
   defaultValues?: TProducts;
   // sizesDefaultValues?: string[];
 };
-export type TFormInputs = TProducts | Partial<TProducts>;
+export type TProductFormInputs = TProducts | Partial<TProducts>;

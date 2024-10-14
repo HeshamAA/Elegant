@@ -3,7 +3,7 @@ import InputField from "../../forms/input/InputField";
 import styles from "./productsManagement.module.css";
 import { useEffect } from "react";
 import useProductsManagement from "../../../hooks/useProductsManagement";
-import { TProductManagementProps } from "../../../types/formTypes";
+import { TProductManagementProps } from "../../../types/productFormTypes";
 const { productsManagementContainer } = styles;
 
 function ProductsManagement({
@@ -25,7 +25,6 @@ function ProductsManagement({
   }, [defaultValues, reset]);
 
   const sizes = ["S", "M", "L", "XL", "XXL"];
-
 
   return (
     <section className={productsManagementContainer}>
@@ -70,7 +69,7 @@ function ProductsManagement({
                         const newSizes =
                           value && value.includes(size)
                             ? value.filter((s: string) => s !== size)
-                            : [...(value ?? []) , size];
+                            : [...(value ?? []), size];
                         onChange(newSizes);
                       }}
                     />
