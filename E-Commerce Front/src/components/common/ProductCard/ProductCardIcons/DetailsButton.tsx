@@ -6,7 +6,7 @@ import React from "react";
 const { detailsButton } = styles;
 
 function DetailsButton({ id }: { id: string }) {
-  console.log("details button");
+ 
   const navigate = useNavigate();
   return (
     <div

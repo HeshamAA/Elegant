@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import getUsers from "./thunk/getUsers";
 import deleteUser from "./thunk/deleteUser";
+import { TUsersState } from "../../types/authTypes";
 
-const initialState = {
+const initialState: TUsersState = {
   data: [],
   loading: "idle",
   error: null,
@@ -32,10 +33,9 @@ const usersSlice = createSlice({
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
-     
     });
 
-    builder.addCase(deleteUser.pending, (state, action) => {
+    builder.addCase(deleteUser.pending, (state) => {
       state.loading = "pending";
     });
     builder.addCase(deleteUser.fulfilled, (state, action) => {
@@ -44,7 +44,6 @@ const usersSlice = createSlice({
     });
     builder.addCase(deleteUser.rejected, (state, action) => {
       state.loading = "failed";
-  
 
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;

@@ -27,4 +27,10 @@ export type TUserResponse = {
   user: TUser
 };
 
-export type TUsersResponse = TUser;
+export type TUsersResponse = TUser[];
+
+export type TUsersState = {
+  data: TUser[];
+  loading: "idle" | "pending" | "succeeded" | "failed";
+  error: string | null;
+}

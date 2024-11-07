@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
-import styles from "../home.module.css";
 
+import { useEffect } from "react";
+import styles from "../home.module.css";
+import AOS from "aos";
 const { homeSecondSection, homeSecondSectionContainer } = styles;
 
 function HomeSecondSection() {
-  console.log("homeSecond");
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, 
+    });
+  }, []);
   return (
     <section className={homeSecondSection}>
    
  
       <div className={`container ${homeSecondSectionContainer}`}>
-        <div>
+        <div data-aos="fade-up">
           <div>Up To 70% Off</div>
           <div>Get your favourites before they're gone</div>
           <div>

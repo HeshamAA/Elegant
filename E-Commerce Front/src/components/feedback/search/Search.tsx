@@ -1,4 +1,3 @@
-import React from "react";
 import useHeader from "../../../hooks/useHeader";
 
 function Search() {

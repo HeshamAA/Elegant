@@ -21,8 +21,19 @@ export interface IProductsState {
 }
 
 export type TProductsResponse = TProducts[];
+export type TAddProduct = {
+  id: string;
+  title: string;
+  desc: string;
+  price: number;
+  img: string;
+  sizes: string[];
+  cat_prefix: string;
+};
 
-export interface IEditProductPayload {
+export type TAddProductData = TAddProduct[];
+export type TEditProduct = {
   productId: string;
-  updatedProductData: Partial<TProducts>;
-}
+  updatedProductData: TAddProduct[];
+};
+export type TEditProductPayload = TEditProduct | TAddProductData;

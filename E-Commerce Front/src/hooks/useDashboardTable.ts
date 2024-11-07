@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useAppDispatch } from "../store/hooks/hooks";
 import { useNavigate } from "react-router-dom";
-import { TProducts } from "../types/productsTypes";
-import { TUsersResponse } from "../types/authTypes";
+import { TDashboardTableHookData } from "../types/dashboardTypes";
 
-function useDashboardTable(data: TProducts[] | TUsersResponse[]) {
+function useDashboardTable(data: TDashboardTableHookData) {
   const dispatch = useAppDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState<string>("0");

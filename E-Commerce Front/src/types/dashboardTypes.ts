@@ -1,4 +1,4 @@
-import { TUsersResponse } from "./authTypes";
+import { TUser, TUsersResponse } from "./authTypes";
 import { TProducts } from "./productsTypes";
 
 export type TDashboardTableProps = {
@@ -6,3 +6,5 @@ export type TDashboardTableProps = {
   data: TProducts[] | TUsersResponse[];
   type: "product" | "user";
 };
+
+export type TDashboardTableHookData = TProducts & TUser

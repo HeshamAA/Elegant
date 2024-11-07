@@ -4,14 +4,15 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import addProduct from "../store/products/thunk/addProduct";
 import editProduct from "../store/products/thunk/editProduct";
 import { useNatificationToast } from "./useNatificationToast";
-import useSelectOptions from "./useSelectOptions";
+
 import {
   TProductFormInputs,
   TProductManagementProps,
 } from "../types/productFormTypes";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { productsManagementSchema } from "../validations/ProductsManagementSchema";
-import { TProducts } from "../types/productsTypes";
+import { TAddProductData, TEditProductPayload } from "../types/productsTypes";
+
 
 function useProductsManagement({
   actionType,
@@ -20,7 +21,7 @@ function useProductsManagement({
 }: TProductManagementProps) {
   const dispatch = useAppDispatch();
   const { toastPromise } = useNatificationToast();
-  const { customStyles, sizesOptions } = useSelectOptions();
+
 
   const {
     reset,
@@ -33,9 +34,12 @@ function useProductsManagement({
     resolver: zodResolver(productsManagementSchema),
   });
 
-  const onSubmit: SubmitHandler<TProducts> = async (data) => {
+
+  const onSubmit: SubmitHandler<TEditProductPayload> = async (data) => {
+
+    
     if (actionType === "add") {
-      const addingPromise = dispatch(addProduct(data)).unwrap();
+      const addingPromise = dispatch(addProduct(data as TAddProductData)).unwrap();
       await toastPromise(addingPromise, {
         loading: "Adding product...",
         success: "Product added successfully",
@@ -47,7 +51,7 @@ function useProductsManagement({
       const updatingPromise = dispatch(
         editProduct({
           productId: productId as string,
-          updatedProductData: data,
+          updatedProductData: data as TAddProductData,
         })
       ).unwrap();
 
@@ -61,8 +65,6 @@ function useProductsManagement({
 
   return {
     dispatch,
-    customStyles,
-    sizesOptions,
     control,
     handleSubmit,
     register,

@@ -58,7 +58,7 @@ export const Footer = () => {
         </div>
         <div className={`flexBetween ${copyRights}`}>
           <div>
-            Copyrights © 2019
+            Copyrights © 2024
             <span>Hesham Ahmed</span>, All Rights Reserved.
           </div>
           <div>

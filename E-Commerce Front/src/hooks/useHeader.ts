@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import {  useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { getCategories } from "../store/categories/categoriesSlice";
 import {
@@ -46,8 +46,8 @@ function useHeader() {
   const filteredData = useAppSelector((state) => state.products.filteredData);
   const [, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [debounceTimer, setDebounceTimer] = useState<SetStateAction<any>>(null);
-  const searchHandler = (e) => {
+  const [debounceTimer, setDebounceTimer] = useState(1000);
+  const searchHandler = (e :React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
 
@@ -68,7 +68,7 @@ function useHeader() {
 
     setDebounceTimer(newTimer);
   };
-  const getProductHandler = (id) => {
+  const getProductHandler = (id:string) => {
     dispatch(getproduct(id));
     navigate(`/products/product/${id}`);
     setIsOpen(false);

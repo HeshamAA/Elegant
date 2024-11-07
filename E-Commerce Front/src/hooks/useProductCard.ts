@@ -88,7 +88,7 @@ function useProductCard(productId: string) {
       });
     }
   };
-  console.log("hesham");
+
 
   return {
     dispatch,

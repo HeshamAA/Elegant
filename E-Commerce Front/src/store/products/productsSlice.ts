@@ -6,6 +6,8 @@ import deleteProduct from "./thunk/deleteProduct";
 import addProduct from "./thunk/addProduct";
 import editProduct from "./thunk/editProduct";
 import getProduct from "./thunk/getProduct";
+
+
 const initialState: IProductsState = {
   data: [],
   filteredData: [],
@@ -78,14 +80,8 @@ const productsSlice = createSlice({
       state.error = null;
     });
     builder.addCase(getProducts.fulfilled, (state, action) => {
-      const { arg } = action.meta;
-      if (arg === "ids") {
-        state.loading = "succeeded";
-        state.data = action.payload.map((el) => el.id?.toString());
-      } else {
-        state.loading = "succeeded";
-        state.data = action.payload;
-      }
+      state.loading = "succeeded";
+      state.data = action.payload;
     });
     builder.addCase(getProducts.rejected, (state, action) => {
       state.loading = "failed";
@@ -104,7 +100,7 @@ const productsSlice = createSlice({
     });
     builder.addCase(deleteProduct.rejected, (state, action) => {
       state.loading = "failed";
-      
+
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
@@ -120,7 +116,7 @@ const productsSlice = createSlice({
     });
     builder.addCase(addProduct.rejected, (state, action) => {
       state.loading = "failed";
-   
+
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
@@ -129,14 +125,11 @@ const productsSlice = createSlice({
       state.loading = "pending";
       state.error = null;
     });
-    builder.addCase(editProduct.fulfilled, (state, action) => {
+    builder.addCase(editProduct.fulfilled, (state) => {
       state.loading = "succeeded";
-
-      
     });
     builder.addCase(editProduct.rejected, (state, action) => {
       state.loading = "failed";
-   
 
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
@@ -148,9 +141,7 @@ const productsSlice = createSlice({
     });
     builder.addCase(getProduct.fulfilled, (state, action) => {
       state.loading = "succeeded";
-      state.product.push(action.payload);
-    
-      
+      state.product?.push(action.payload);
     });
 
     builder.addCase(getProduct.rejected, (state, action) => {
@@ -158,7 +149,6 @@ const productsSlice = createSlice({
       if (action.payload && typeof action.payload === "string") {
         state.error = action.payload;
       }
-      
     });
   },
 });

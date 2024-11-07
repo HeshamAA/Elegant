@@ -11,7 +11,7 @@ const getRegister = createAsyncThunk<TUserResponse, TFormData, { rejectValue: st
         watchlist: [],
         role: "user",
       });
-      console.log(res.data);
+     
       
 
       return res.data;

@@ -9,7 +9,8 @@ const getUsers = createAsyncThunk<
 >("usersslice/getUsers", async (_, thunkAPI) => {
   try {
     const response = await axios.get(`http://localhost:5000/users`);
-  
+
+
 
     return response.data;
   } catch (error) {

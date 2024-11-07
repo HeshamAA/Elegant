@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TProducts, TProductsResponse } from "../../../types/productsTypes";
+import { TAddProduct, TAddProductData } from "../../../types/productsTypes";
 
 const addProduct = createAsyncThunk<
-  TProductsResponse,
-  TProducts,
+  TAddProduct,
+  TAddProductData,
   { rejectValue: string }
 >("productsslice/addProduct", async (productData, thunkAPI) => {
   try {
@@ -12,6 +12,7 @@ const addProduct = createAsyncThunk<
       `http://localhost:5000/products`,
       productData
     );
+    console.log(response);
 
     return response.data;
   } catch (error) {

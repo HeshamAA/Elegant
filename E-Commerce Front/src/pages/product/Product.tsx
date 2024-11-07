@@ -14,13 +14,15 @@ function Product() {
   const { product } = useAppSelector((state) => state.products);
   const params = useParams();
 
-  const { addToCartHandler, addToWatchListHandler } = useProductCard(
-    params.id as string
-  );
+  const {
+    addToCartHandler,
+    addToWatchListHandler,
+    buttonDisabled,
+    setButtonDisabled,
+  } = useProductCard(params.id as string);
 
   const dispatch = useAppDispatch();
-  
-  
+
   useEffect(() => {
     dispatch(productCleanUp());
     dispatch(getProduct(params.id as string));
@@ -31,29 +33,40 @@ function Product() {
       dispatch(productCleanUp());
     };
   }, [dispatch, params.id]);
-
-  const productToShow =product && product.map((product) => (
-    <div className={productDetailsContainer} key={product.id}>
-      <img alt="image" src={product.img} />
-      <div>
-        <div>{product.title}</div>
-        <div>{product.desc}</div>
-        <div>{product.cat_prefix}</div>
-        <div>{product.price}$</div>
+  useEffect(() => {
+    if (buttonDisabled) {
+      const debounce = setTimeout(() => {
+        setButtonDisabled(false);
+      }, 500);
+      return () => clearTimeout(debounce);
+    }
+  }, [buttonDisabled]);
+  const productToShow =
+    product &&
+    product.map((product) => (
+      <div className={productDetailsContainer} key={product.id}>
+        <img alt="image" src={product.img} />
         <div>
-          {product.sizes ? (
-            product.sizes.map((size, index) => <span key={index}>{size}</span>)
-          ) : (
-            <div>No Sizes Found</div>
-          )}
+          <div>{product.title}</div>
+          <div>{product.desc}</div>
+          <div>{product.cat_prefix}</div>
+          <div>{product.price}$</div>
+          <div>
+            {product.sizes ? (
+              product.sizes.map((size, index) => (
+                <span key={index}>{size}</span>
+              ))
+            ) : (
+              <div>No Sizes Found</div>
+            )}
+          </div>
+          <div>
+            <button onClick={addToWatchListHandler}>Add to watchlist</button>
+          </div>
+          <button disabled={buttonDisabled} onClick={addToCartHandler}>{buttonDisabled ? "Loading..." : "Add To Cart"}</button>
         </div>
-        <div>
-          <button onClick={addToWatchListHandler}>Add to watchlist</button>
-        </div>
-        <button onClick={addToCartHandler}>Add to cart</button>
       </div>
-    </div>
-  ));
+    ));
 
   return (
     <>

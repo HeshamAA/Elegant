@@ -3,18 +3,23 @@ import styles from "../home.module.css";
 import ProductCard from "../../../components/common/ProductCard/ProductCard";
 import getBestSellers from "../../../store/bestSellers/thunk/getBestSellers";
 import useHome from "../../../hooks/useHome";
-
+import AOS from "aos";
 const { homeThirdSection, homeThirdSectionContainer, productCardsContainer } =
   styles;
 
 function HomeThirdSection() {
   const { dispatch, bestSellersData } = useHome();
-  console.log("homeThird");
+  
   
   useEffect(() => {
     dispatch(getBestSellers());
   }, [dispatch]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
 
 
   const bestSellers = bestSellersData.map((el) => {
@@ -23,7 +28,7 @@ function HomeThirdSection() {
         id={el.id}
         key={el.id}
         title={el.title}
-        price={el.price.toFixed(2)}
+        price={Number(el.price.toFixed(2))}
         img={el.img}
         category={el.cat_prefix}
         cat_prefix={el.cat_prefix}
@@ -38,7 +43,7 @@ function HomeThirdSection() {
         className={`container flexMiddleScreen ${homeThirdSectionContainer}`}
       >
         <div>Best sellers</div>
-        <div className={`container ${productCardsContainer}`}>
+        <div data-aos="fade-up" className={`container ${productCardsContainer}`}>
           {bestSellers}
         </div>
       </div>

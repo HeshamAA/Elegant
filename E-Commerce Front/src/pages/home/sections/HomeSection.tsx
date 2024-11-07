@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import styles from "../home.module.css";
 import { Link } from "react-router-dom";
 import useHome from "../../../hooks/useHome";
+import AOS from "aos";
 
 const { homeSection, timerWrapper, time, signUpButton } = styles;
 const HomeSection = () => {
@@ -40,6 +41,15 @@ const HomeSection = () => {
       clearInterval(timer);
     };
   }, [seconds, minutes, hours]);
+  
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
+
+
 
   const countDownTimer = timeData.map((el, index) => {
     return (
@@ -52,7 +62,7 @@ const HomeSection = () => {
 
   return (
     <section className={` ${homeSection}`}>
-      <div className="flexMiddleScreen container">
+      <div data-aos="fade-up" className="flexMiddleScreen container">
         <div>
           Hurry up,<div>Our biggest sale</div> is going to end
         </div>

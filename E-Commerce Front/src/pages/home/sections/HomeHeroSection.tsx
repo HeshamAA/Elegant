@@ -1,13 +1,18 @@
 import styles from "../home.module.css";
 import heroPhoto from "../../../assets/heroo.png";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const { homeHeroSection } = styles;
 function HomeHeroSection() {
-  console.log("homeHero");
- 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // مدة التأثير
+    });
+  }, []);
   return (
     <section className={homeHeroSection}>
-      <div className="container">
+      <div className="container" data-aos="fade-up">
         <div className="flexBetween">
           <div>
             <h1>
@@ -22,7 +27,6 @@ function HomeHeroSection() {
             <img src={heroPhoto}></img>
           </div>
         </div>
-      
       </div>
     </section>
   );
