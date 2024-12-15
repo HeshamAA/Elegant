@@ -22,7 +22,7 @@ function HomeThirdSection() {
   }, []);
 
 
-  const bestSellers = bestSellersData.map((el) => {
+  const bestSellers = bestSellersData ?  bestSellersData.map((el) => {
     return (
       <ProductCard
         id={el.id}
@@ -35,7 +35,7 @@ function HomeThirdSection() {
         sizes={el.sizes}
       />
     );
-  });
+  }) : ["hesham"];
 
   return (
     <section className={homeThirdSection}>

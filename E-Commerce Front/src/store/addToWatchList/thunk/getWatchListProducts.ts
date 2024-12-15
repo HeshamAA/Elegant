@@ -4,7 +4,6 @@ import { RootState } from "../../store";
 
 import { TWatchlistResponse } from "../../../types/watchlistTypes";
 
-
 const getWatchListProducts = createAsyncThunk<
   TWatchlistResponse,
   void,
@@ -19,15 +18,17 @@ const getWatchListProducts = createAsyncThunk<
     const userRes = axios.get(`http://localhost:5000/users/${id}`);
     const watchlistIds = await userRes.then((res) => res.data.watchlist);
 
-    const allItemsQueryString = watchlistIds
-      .map((el: string) => `id=${el}`)
-      .join("&");
+    const allItemsQueryString =
+      watchlistIds && watchlistIds.map((el: string) => `id=${el}`).join("&");
 
-    const res = await axios.get(
-      `http://localhost:5000/products?${allItemsQueryString}`
-    );
-
-    return res.data;
+    if (allItemsQueryString) {
+      const res = await axios.get(
+        `http://localhost:5000/products?${allItemsQueryString}`
+      );
+      return res.data;
+    } else {
+      return;
+    }
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return rejectWithValue(error.response?.data.message || error.message);

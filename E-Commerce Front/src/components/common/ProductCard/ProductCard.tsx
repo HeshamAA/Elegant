@@ -3,7 +3,6 @@ import styles from "./productCard.module.css";
 import { TProducts } from "../../../types/productsTypes";
 import LoveButton from "./ProductCardIcons/LoveButton";
 import useProductCard from "../../../hooks/useProductCard";
-import StarRating from "./ProductCardIcons/StarRating";
 import Sizes from "./ProductCardIcons/Sizes";
 import getproduct from "../../../store/products/thunk/getProduct";
 import DetailsButton from "./ProductCardIcons/DetailsButton";
@@ -62,9 +61,7 @@ const ProductCard = ({ id, title, price, img, category, sizes }: TProducts) => {
             <Sizes availableSizes={sizes || []}></Sizes>
           </div>
           <div className={productPrice}>{price}$</div>
-          <div>
-            <StarRating></StarRating>
-          </div>
+        
 
           <button
             className={`flexMiddleScreen ${addToCartButton}`}

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../store";
-
+import { TWatchlistIds } from "../../../types/watchlistTypes";
 
 const addToWatchList = createAsyncThunk<
-  string[],
+  TWatchlistIds[],
   string,
   { rejectValue: string }
 >("watchlist/addToWatchList", async (productId, thunkAPI) => {
@@ -35,6 +35,8 @@ const addToWatchList = createAsyncThunk<
           },
         }
       );
+      console.log("first", res);
+
       return res.data.watchlist;
     } else {
       updatedWatchlist = [...currentWatchlist, productId];
@@ -48,6 +50,7 @@ const addToWatchList = createAsyncThunk<
           },
         }
       );
+      console.log("second", res);
       return res.data.watchlist;
     }
   } catch (error) {

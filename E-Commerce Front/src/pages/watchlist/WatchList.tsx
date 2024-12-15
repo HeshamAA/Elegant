@@ -29,7 +29,7 @@ function WatchList() {
       <PagesFirstSection title="Watchlist"></PagesFirstSection>
       <section className={watchListSection}>
         <div className="container productCardsContainer">
-          {watchListProductsFullInfo.length ? watchListProductsFullInfo.map((el, index) => {
+          {watchListProductsFullInfo ? watchListProductsFullInfo.map((el, index) => {
             return (
               <ProductCard
                 id={el.id}

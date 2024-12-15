@@ -33,6 +33,8 @@ const addToWatchListSlice = createSlice({
         state.loading = "loading";
       })
       .addCase(addToWatchList.fulfilled, (state, action) => {
+        console.log("action.payload addToWatchList", action.payload);
+        
         state.loading = "succeeded";
         state.watchlistIds = action.payload;
 
@@ -50,6 +52,8 @@ const addToWatchListSlice = createSlice({
         state.loading = "loading";
       })
       .addCase(getWatchListProducts.fulfilled, (state, action) => {
+      
+
         state.loading = "succeeded";
         state.watchListProductsFullInfo = action.payload;
 

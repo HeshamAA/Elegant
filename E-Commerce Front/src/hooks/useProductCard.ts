@@ -59,23 +59,30 @@ function useProductCard(productId: string) {
   //  Love Button
   const [loveButtonState, setLoveButtonState] = useState<boolean>(false);
 
-  const { watchlistIds } = useAppSelector((state) => state.addToWatchList);
+  const { watchListProductsFullInfo } = useAppSelector(
+    (state) => state.addToWatchList
+  );
+  const watchlistIds =
+    watchListProductsFullInfo && watchListProductsFullInfo.map((el) => el.id);
   const { accessToken } = useAppSelector((state) => state.auth);
+
+  const isInWatchlist = watchlistIds?.includes(productId);
+
   const addToWatchListHandler = () => {
     if (accessToken) {
       dispatch(addToWatchList(productId))
         .unwrap()
         .then(() => {
-          if (!loveButtonState) {
-            toast.success("Item Added to watchList", {
-              position: "top-right",
-              className: "custom-toast",
-              duration: 2000,
-            });
-          } else {
+          if (isInWatchlist) {
             toast.error("Item Removed from watchList", {
               position: "top-right",
               className: "custom-toast-error",
+              duration: 2000,
+            });
+          } else {
+            toast.success("Item Added to watchList", {
+              position: "top-right",
+              className: "custom-toast",
               duration: 2000,
             });
           }
@@ -88,7 +95,6 @@ function useProductCard(productId: string) {
       });
     }
   };
-
 
   return {
     dispatch,
@@ -105,6 +111,7 @@ function useProductCard(productId: string) {
     setLoveButtonState,
     watchlistIds,
     addToWatchListHandler,
+    isInWatchlist,
   };
 }
 

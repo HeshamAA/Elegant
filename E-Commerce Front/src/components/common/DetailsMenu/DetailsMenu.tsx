@@ -14,7 +14,7 @@ function DetailsMenu({
   const { isMenuOpen, setIsMenuOpen, detailsRef, handleClickOutside } =
     useDetailsMenu();
 
-  // Add event listener to the document
+ 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

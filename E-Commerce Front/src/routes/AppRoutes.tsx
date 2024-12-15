@@ -1,9 +1,5 @@
 import { Suspense, useEffect } from "react";
-import {
-  RouterProvider,
-  createBrowserRouter,
-
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Loader from "../components/feedback/loader/Loader";
 import { Error404 } from "../components/common/Error404/Error404";
 import { useAppSelector } from "../store/hooks/hooks";
@@ -24,22 +20,13 @@ import {
   EditProduct,
 } from "./index";
 import DashboardUsers from "../pages/admin/dashboard/dashboardUsers/DashboardUsers";
-
-
-
-
-// const ids = Array.from({ length: 29 }, (_, index) => index + 1);
+import axios from "axios";
+import { TProducts } from "../types/productsTypes";
 
 const AppRoutes = () => {
   const categories = ["men", "women", "sport", "kids"];
   const { accessToken } = useAppSelector((state) => state.auth);
   const { role } = useAppSelector((state) => state.auth.user);
-  
-
- 
-
-  
- 
 
   useEffect(() => {
     const primary = localStorage.getItem("--primary-color");
@@ -129,7 +116,18 @@ const AppRoutes = () => {
               <Product />
             </Suspense>
           ),
-         
+          loader: async ({ params }) => {
+            const response = await axios.get("http://localhost:5000/products");
+            const ids = response.data.map((el: TProducts) => el.id);
+            if (!ids.includes(params.id)) {
+              throw new Response("Bad Request", {
+                statusText: "Product not found",
+                status: 400,
+              });
+            }
+
+            return true;
+          },
         },
         {
           path: "products/:prefix",

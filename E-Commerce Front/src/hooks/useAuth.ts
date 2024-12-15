@@ -54,7 +54,7 @@ function useAuth() {
       {
         loading: "Registering...",
         success: () => "Registration successful",
-        error: (error) => `Registration failed: ${error.message}`,
+        error: (error) => `Registration failed: ${error.message ==="undefined" ? "Email is used before" : error.message}`,
       },
       {
         position: "top-right",

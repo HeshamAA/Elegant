@@ -9,16 +9,19 @@ import FlyOutCart from "../../Ecommerce/cart/flyOutCart/FlyOutCart";
 import useCart from "../../../hooks/useCart";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
 import TopBar from "../TopBar/TopBar";
+
 const { header, cartNumber, headerContainer } = styles;
 
-
 export const Header = () => {
-  const { dispatch, navigate, getCategories, watchListTotalQuantity } =
-    useHeader();
+  const {
+    dispatch,
+    navigate,
+    getCategories,
+    watchListTotalQuantityFull,
+  } = useHeader();
 
   const { cartTotalQuantity, isFlyOutCartOpened, openFlyOutCartHandler } =
     useCart();
-
 
   useEffect(() => {
     dispatch(getCategories());
@@ -29,13 +32,7 @@ export const Header = () => {
       {isFlyOutCartOpened ? <FlyOutCart /> : ""}
 
       <header className={`${header}`}>
-
-
-
-        
         <TopBar></TopBar>
-
-
 
         <div className={`container ${headerContainer}`}>
           <div>
@@ -49,20 +46,12 @@ export const Header = () => {
             </h1>
           </div>
 
-
-
           <NavLinks />
 
-
-
-
-
           <div>
-
-
             <HeaderIcons
               className={cartNumber}
-              value={watchListTotalQuantity}
+              value={watchListTotalQuantityFull}
               children={
                 <PiListHeartFill
                   onClick={() => navigate("/watchlist")}
@@ -70,8 +59,6 @@ export const Header = () => {
                 />
               }
             />
-
-
 
             <HeaderIcons
               className={cartNumber}
@@ -81,14 +68,8 @@ export const Header = () => {
               }
             />
 
-
-
             <BurgerMenu />
           </div>
-
-
-
-          
         </div>
       </header>
     </>

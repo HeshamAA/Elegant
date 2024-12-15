@@ -12,7 +12,7 @@ const addProduct = createAsyncThunk<
       `http://localhost:5000/products`,
       productData
     );
-    console.log(response);
+    
 
     return response.data;
   } catch (error) {

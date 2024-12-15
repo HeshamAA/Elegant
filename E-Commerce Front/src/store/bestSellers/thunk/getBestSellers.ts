@@ -2,8 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TProducts } from "../../../types/productsTypes";
 
-
-
 const getBestSellers = createAsyncThunk<
   TProducts[],
   void,
@@ -11,10 +9,7 @@ const getBestSellers = createAsyncThunk<
 >("bestsellersslice/getbestsellers", async (_, thunkAPI) => {
   const { rejectWithValue } = thunkAPI;
   try {
-    const response = await axios.get(
-      "http://localhost:5000/bestsellers"
-    );
-    
+    const response = await axios.get("http://localhost:5000/bestsellers");
 
     return response.data;
   } catch (error) {

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../store";
-
+import { TWatchlistIds } from "../../../types/watchlistTypes";
 
 const getWatchlist = createAsyncThunk<
-  string[],
+  TWatchlistIds[],
   void,
   { rejectValue: string }
 >("watchlist/getWatchlist", async (_, thunkAPI) => {
