@@ -11,7 +11,7 @@ import {
 } from "../types/productFormTypes";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { productsManagementSchema } from "../validations/ProductsManagementSchema";
-import { TAddProductData, TEditProductPayload } from "../types/productsTypes";
+import { TAddProductData } from "../types/productsTypes";
 
 
 function useProductsManagement({
@@ -35,7 +35,7 @@ function useProductsManagement({
   });
 
 
-  const onSubmit: SubmitHandler<TEditProductPayload> = async (data) => {
+  const onSubmit: SubmitHandler<TProductFormInputs> = async (data) => {
 
     
     if (actionType === "add") {

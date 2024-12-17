@@ -1,10 +1,8 @@
-import { TUser, TUsersResponse } from "./authTypes";
+import { TUsersResponse } from "./authTypes";
 import { TProducts } from "./productsTypes";
-
+export type TDashboardTableHookData = TProducts[] | TUsersResponse[] | TUsersResponse;
 export type TDashboardTableProps = {
   thead: string[];
-  data: TProducts[] | TUsersResponse[];
+  data: TDashboardTableHookData;
   type: "product" | "user";
 };
-
-export type TDashboardTableHookData = TProducts & TUser

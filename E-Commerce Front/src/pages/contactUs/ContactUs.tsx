@@ -1,4 +1,4 @@
-import React from "react";
+
 import PagesFirstSection from "../../components/common/PagesFirstSection/PagesFirstSection";
 import styles from "./contactUs.module.css";
 import { CiDeliveryTruck } from "react-icons/ci";

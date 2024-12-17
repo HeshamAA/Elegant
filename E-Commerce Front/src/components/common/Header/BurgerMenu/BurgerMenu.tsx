@@ -13,7 +13,6 @@ function BurgerMenu() {
   const {
     isBurgerOpened,
     setIsBurgerOpened,
-    isCategoriesOpened,
     setIsCategoriesOpened,
 
     linksTitles,

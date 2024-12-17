@@ -1,15 +1,16 @@
 import React from "react";
 import useDashboardTable from "../../../../hooks/useDashboardTable";
 import { TProducts } from "../../../../types/productsTypes";
-import { TUsersResponse } from "../../../../types/authTypes";
+import { TUser, TUsersResponse } from "../../../../types/authTypes";
 import Modal from "../../../feedback/modal/Modal";
 import deleteProduct from "../../../../store/products/thunk/deleteProduct";
 import deleteUser from "../../../../store/users/thunk/deleteUser";
+import { TDashboardTableHookData } from "../../../../types/dashboardTypes";
 
 type TBodyProps = {
   type: "product" | "user";
-  data: TProducts[] | TUsersResponse[];
-  filteredData: (TProducts | TUsersResponse)[];
+  data: TDashboardTableHookData;
+  filteredData: (TProducts | TUsersResponse | TUser)[];
 };
 
 function Tbody({ type, data, filteredData }: TBodyProps) {
@@ -23,26 +24,33 @@ function Tbody({ type, data, filteredData }: TBodyProps) {
     navigate,
   } = useDashboardTable(data);
 
-  const isProduct = (el: TProducts | TUsersResponse): el is TProducts => {
+  const isProduct = (
+    el: TProducts | TUsersResponse | TUser
+  ): el is TProducts => {
     return (el as TProducts).cat_prefix !== undefined;
+  };
+  const isUser = (el: TProducts | TUsersResponse | TUser): el is TUser => {
+    return (el as TUser).email !== undefined;
   };
 
   return (
     <>
       <tbody>
         {filteredData.map((el) => (
-          <tr key={el.id}>
+          <tr key={isProduct(el) ? el.id : isUser(el) ? el.id : ""}>
             <td>
               <img
                 src={isProduct(el) ? el.img : ""}
-                alt={isProduct(el) ? el.title : el.email}
+                alt={isProduct(el) ? el.title : isUser(el) ? el.email : ""}
               />
             </td>
-            <td>{isProduct(el) ? el.title : el.email}</td>
+            <td>{isProduct(el) ? el.title : isUser(el) && el.email}</td>
             <td>
-              {isProduct(el) ? el.cat_prefix : `${el.firstName} ${el.lastName}`}
+              {isProduct(el)
+                ? el.cat_prefix
+                : isUser(el) && `${el.firstName} ${el.lastName}`}
             </td>
-            <td>{isProduct(el) ? `${el.price}$` : el.role}</td>
+            <td>{isProduct(el) ? `${el.price}$` : isUser(el) && el.role}</td>
             {type === "product" && isProduct(el) && (
               <>
                 <td>
@@ -74,6 +82,7 @@ function Tbody({ type, data, filteredData }: TBodyProps) {
                   Delete
                 </button>
               ) : (
+                isUser(el) &&
                 el.role !== "admin" && (
                   <button
                     onClick={() => {
@@ -88,7 +97,11 @@ function Tbody({ type, data, filteredData }: TBodyProps) {
               {type === "product" && (
                 <button
                   onClick={() =>
-                    navigate(`/dashboard/products/edit-products/${el.id}`)
+                    navigate(
+                      `/dashboard/products/edit-products/${
+                        isProduct(el) || isUser(el) ? el.id : ""
+                      }`
+                    )
                   }
                 >
                   Edit

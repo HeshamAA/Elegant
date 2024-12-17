@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TEditProductPayload, TAddProduct } from "../../../types/productsTypes";
+import {  TAddProduct, TEditProduct } from "../../../types/productsTypes";
 
 const editProduct = createAsyncThunk<
   TAddProduct,
-  TEditProductPayload,
+  TEditProduct,
   { rejectValue: string }
 >(
   "productsslice/editProduct",
