@@ -47,6 +47,15 @@
       "watchlist": [],
       "role": "user",
       "id": "uW6Kt3Y"
+    },
+    {
+      "email": "heshama@yahoo.com",
+      "password": "$2a$10$RPxI1TM2p6SbvvH1AwwbT.UPYBWlN9uTcWPvs3YcR6vNH82G7U4me",
+      "firstName": "mohamed",
+      "lastName": "pogba",
+      "watchlist": [],
+      "role": "user",
+      "id": "IZMj5_b"
     }
   ],
   "bestsellers": [
@@ -129,7 +138,7 @@
     {
       "id": "1",
       "title": "Regular Fit Jersey top",
-      "price": 249,
+      "price": "251",
       "cat_prefix": "men",
       "sizes": [
         "S",
@@ -393,7 +402,30 @@
       "sizes": [],
       "price": "",
       "id": "xbKAIuh"
+    },
+    {
+      "title": "asd",
+      "img": "asdasdasd",
+      "sizes": [
+        "L",
+        "XL"
+      ],
+      "desc": "asdasd",
+      "price": "234",
+      "cat_prefix": "men",
+      "id": "d616tlU"
+    },
+    {
+      "title": "hesh",
+      "img": "asdads",
+      "sizes": [
+        "M",
+        "S"
+      ],
+      "desc": "asdasd",
+      "price": "123123",
+      "cat_prefix": "men",
+      "id": "_B6muUZ"
     }
-  ],
-  "watchlist": []
+  ]
 }
