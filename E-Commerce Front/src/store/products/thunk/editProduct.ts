@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import {  TAddProduct, TEditProduct } from "../../../types/productsTypes";
+import Axi from "../../../api/api";
 
 const editProduct = createAsyncThunk<
   TAddProduct,
@@ -10,8 +11,8 @@ const editProduct = createAsyncThunk<
   "productsslice/editProduct",
   async ({ productId, updatedProductData }, thunkAPI) => {
     try {
-      const response = await axios.patch(
-        `http://localhost:5000/products/${productId}`,
+      const response = await Axi.patch(
+        `products/${productId}`,
         updatedProductData
       );
 

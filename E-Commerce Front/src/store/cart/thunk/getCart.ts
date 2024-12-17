@@ -3,6 +3,7 @@ import { RootState } from "../../store";
 import axios from "axios";
 
 import { TGetCartResponse } from "../../../types/cartTypes";
+import Axi from "../../../api/api";
 
 const getCart = createAsyncThunk<TGetCartResponse,void, { rejectValue: string }>("cart/getcart", async (_, thunkAPI) => {
   const { rejectWithValue, fulfillWithValue, getState } = thunkAPI;
@@ -15,8 +16,8 @@ const getCart = createAsyncThunk<TGetCartResponse,void, { rejectValue: string }>
   }
   try {
     const allItemsQueryString = itemsIds.map((el) => `id=${el}`).join("&");
-    const response = await axios.get(
-      `http://localhost:5000/products?${allItemsQueryString}`
+    const response = await Axi.get(
+      `products?${allItemsQueryString}`
     );
     return response.data;
   } catch (error) {

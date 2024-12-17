@@ -25,7 +25,6 @@ const rootReducer = combineReducers({
   addToCart: addToCartSlice,
   addToWatchList: addToWatchListSlice,
   flyOutCart: flyOutCartSlice,
-
   auth: authSlice,
   users: usersSlice,
 });

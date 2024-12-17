@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { setWatchlistIds } from "../../addToWatchList/addToWatchListSlice"; // Import the action
 import { TFormData, TUserResponse } from "../../../types/authTypes";
+import Axi from "../../../api/api";
 
 const getLogin = createAsyncThunk<
   TUserResponse,
@@ -11,7 +12,7 @@ const getLogin = createAsyncThunk<
 >("auth/getlogin", async (formData: TFormData, thunkAPI) => {
   const { dispatch } = thunkAPI;
   try {
-    const res = await axios.post("http://localhost:5000/login", formData);
+    const res = await Axi.post("login", formData);
 
     const watchlistIds = res.data.user.watchlist;
 

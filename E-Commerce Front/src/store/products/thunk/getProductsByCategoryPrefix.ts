@@ -1,6 +1,7 @@
 import {  createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TProductsResponse } from "../../../types/productsTypes";
+import Axi from "../../../api/api";
 
 const getProductsByCategoryPrefix = createAsyncThunk<
 TProductsResponse,
@@ -10,8 +11,8 @@ string,
   "productsslice/getproductsbycategoryprefix",
   async (prefix: string, thunkAPI) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5000/products?cat_prefix=${prefix}`
+      const response = await Axi.get(
+        `products?cat_prefix=${prefix}`
       );
       return response.data;
     } catch (error) {

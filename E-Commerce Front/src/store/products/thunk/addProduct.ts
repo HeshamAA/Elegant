@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TAddProduct, TAddProductData } from "../../../types/productsTypes";
+import Axi from "../../../api/api";
 
 const addProduct = createAsyncThunk<
   TAddProduct,
@@ -8,8 +9,8 @@ const addProduct = createAsyncThunk<
   { rejectValue: string }
 >("productsslice/addProduct", async (productData, thunkAPI) => {
   try {
-    const response = await axios.post(
-      `http://localhost:5000/products`,
+    const response = await Axi.post(
+      `products`,
       productData
     );
     

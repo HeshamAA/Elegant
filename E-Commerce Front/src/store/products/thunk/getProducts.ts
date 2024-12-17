@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TProductsResponse } from "../../../types/productsTypes";
+import Axi from "../../../api/api";
 
 const getProducts = createAsyncThunk<
   TProductsResponse,
@@ -8,7 +9,7 @@ const getProducts = createAsyncThunk<
   { rejectValue: string }
 >("productsslice/getproducts", async (_, thunkAPI) => {
   try {
-    const response = await axios.get(`http://localhost:5000/products`);
+    const response = await Axi.get(`products`);
 
     return response.data;
   } catch (error) {

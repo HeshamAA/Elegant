@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TProductsResponse } from "../../../types/productsTypes";
+import Axi from "../../../api/api";
 
 const deleteProduct = createAsyncThunk<
   TProductsResponse,
@@ -8,8 +9,8 @@ const deleteProduct = createAsyncThunk<
   { rejectValue: string }
 >("productsslice/deleteproduct", async (productId, thunkAPI) => {
   try {
-    await axios.delete(`http://localhost:5000/products/${productId}`);
-    const response = await axios.get(`http://localhost:5000/products`);
+    await Axi.delete(`products/${productId}`);
+    const response = await Axi.get(`products`);
 
     return response.data;
   } catch (error) {

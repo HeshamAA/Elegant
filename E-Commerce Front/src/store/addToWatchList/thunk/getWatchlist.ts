@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../store";
 import { TWatchlistIds } from "../../../types/watchlistTypes";
+import Axi from "../../../api/api";
 
 const getWatchlist = createAsyncThunk<
   TWatchlistIds[],
@@ -12,12 +13,12 @@ const getWatchlist = createAsyncThunk<
   const { auth } = getState() as RootState;
   const { id } = auth.user;
   try {
-    const adminRes = await axios.get(`http://localhost:5000/users/1`);
+    const adminRes = await Axi.get(`users/1`);
 
     const adminRole = adminRes.data.user.role;
 
     if (adminRole !== "admin") {
-      const res = await axios.get(`http://localhost:5000/users/${id}`);
+      const res = await axios.get(`users/${id}`);
 
       return res.data.watchlist;
     }

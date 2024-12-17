@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../store";
 import { TWatchlistIds } from "../../../types/watchlistTypes";
+import Axi from "../../../api/api";
 
 const addToWatchList = createAsyncThunk<
   TWatchlistIds[],
@@ -12,8 +13,8 @@ const addToWatchList = createAsyncThunk<
   const { auth } = getState() as RootState;
 
   try {
-    const userResponse = await axios.get(
-      `http://localhost:5000/users/${auth.user.id}`
+    const userResponse = await Axi.get(
+      `users/${auth.user.id}`
     );
     const currentWatchlist = userResponse.data.watchlist || [];
 
@@ -25,8 +26,8 @@ const addToWatchList = createAsyncThunk<
       updatedWatchlist = currentWatchlist.filter(
         (id: string) => id !== productId
       );
-      const res = await axios.patch(
-        `http://localhost:5000/users/${auth.user.id}`,
+      const res = await Axi.patch(
+        `users/${auth.user.id}`,
         { watchlist: updatedWatchlist },
         {
           headers: {
@@ -40,8 +41,8 @@ const addToWatchList = createAsyncThunk<
       return res.data.watchlist;
     } else {
       updatedWatchlist = [...currentWatchlist, productId];
-      const res = await axios.patch(
-        `http://localhost:5000/users/${auth.user.id}`,
+      const res = await Axi.patch(
+        `users/${auth.user.id}`,
         { watchlist: updatedWatchlist },
         {
           headers: {

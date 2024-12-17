@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TUsersResponse } from "../../../types/authTypes";
+import Axi from "../../../api/api";
 
 const deleteUser = createAsyncThunk<
 TUsersResponse,
@@ -8,8 +9,8 @@ TUsersResponse,
   { rejectValue: string }
 >("usersslice/deleteUser", async (userId, thunkAPI) => {
   try {
-    await axios.delete(`http://localhost:5000/users/${userId}`);
-    const response = await axios.get(`http://localhost:5000/users`);
+    await Axi.delete(`users/${userId}`);
+    const response = await Axi.get(`users`);
 
     return response.data;
   } catch (error) {

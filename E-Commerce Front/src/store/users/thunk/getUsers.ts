@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { TUsersResponse } from "../../../types/authTypes";
+import Axi from "../../../api/api";
 
 const getUsers = createAsyncThunk<
   TUsersResponse,
@@ -8,7 +9,7 @@ const getUsers = createAsyncThunk<
   { rejectValue: string }
 >("usersslice/getUsers", async (_, thunkAPI) => {
   try {
-    const response = await axios.get(`http://localhost:5000/users`);
+    const response = await Axi.get(`users`);
 
 
 

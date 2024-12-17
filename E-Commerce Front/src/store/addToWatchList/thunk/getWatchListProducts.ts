@@ -3,6 +3,7 @@ import axios from "axios";
 import { RootState } from "../../store";
 
 import { TWatchlistResponse } from "../../../types/watchlistTypes";
+import Axi from "../../../api/api";
 
 const getWatchListProducts = createAsyncThunk<
   TWatchlistResponse,
@@ -15,15 +16,15 @@ const getWatchListProducts = createAsyncThunk<
   const { id } = auth.user;
 
   try {
-    const userRes = axios.get(`http://localhost:5000/users/${id}`);
+    const userRes = Axi.get(`users/${id}`);
     const watchlistIds = await userRes.then((res) => res.data.watchlist);
 
     const allItemsQueryString =
       watchlistIds && watchlistIds.map((el: string) => `id=${el}`).join("&");
 
     if (allItemsQueryString) {
-      const res = await axios.get(
-        `http://localhost:5000/products?${allItemsQueryString}`
+      const res = await Axi.get(
+        `products?${allItemsQueryString}`
       );
       return res.data;
     } else {
