@@ -13,25 +13,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 23px 10px 10px 0;
   margin: auto;
 }
 
 
 .headerContainer h1 {
-  font-family: "Kalam", cursive;
+  font-family: "Ethnocentric";
   letter-spacing: 3px;
   color: var(--secondary-color);
-  font-weight: bolder;
-  font-size: 50px;
+  font-weight: bold;
+  font-size: 40px;
   margin: 0;
   transition: 0.5s ease;
 }
-.headerContainer h1 span {
-  font-family: "Kalam", cursive;
-  color: var(--primary-color);
-  font-size: 70px;
-}
+
 
 
 .cartNumber {

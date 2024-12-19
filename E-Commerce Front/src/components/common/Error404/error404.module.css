@@ -12,7 +12,7 @@
 }
 
 .info {
-  font-family: "Kalam", cursive;
+  font-family: "", cursive;
   font-size: 50px;
   color: var(--secondary-color);
 }
@@ -41,5 +41,7 @@
 }
 
 @media (max-width: 450px) {
-    .info {font-size: 30px}
+  .info {
+    font-size: 30px;
+  }
 }

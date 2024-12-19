@@ -18,8 +18,7 @@
 }
 
 .footer > div:first-child {
- 
- z-index: 2;
+  z-index: 2;
   margin: auto;
   display: flex;
   align-items: center;
@@ -27,8 +26,6 @@
   flex-direction: column;
   min-height: 40vh;
   gap: 60px;
-  
-  
 }
 .footer > div:first-child > div:first-child {
   gap: 20px;
@@ -40,11 +37,12 @@
 }
 
 .footerPart h1 {
-  font-family: "Kalam", cursive;
+  font-family: "Ethnocentric";
   letter-spacing: 3px;
   color: var(--secondary-color);
   font-weight: bolder;
-  font-size: 35px;
+  font-size: 25px;
+  padding: 10px 0px;
   margin: 0;
   transition: 0.5s ease;
   transform: translateX(0px);
@@ -59,11 +57,7 @@
   bottom: 10%;
   left: 0%;
 }
-.footerPart h1 span {
-  font-family: "Kalam", cursive;
-  color: var(--primary-color);
-  font-size: 35px;
-}
+
 
 .footerPart div {
   color: var(--secondary-color);
@@ -71,7 +65,6 @@
 }
 
 .copyRights {
-
   color: var(--secondary-color);
   border-top: 1px solid var(--primary-color);
   padding: 10px;
@@ -87,36 +80,30 @@
   color: var(--primary-color);
   cursor: pointer;
 }
-@media (min-width: 992px){
- .footerPart h1 {
-  font-size: 32px;
- }
- 
+@media (min-width: 992px) {
+  .footerPart h1 {
+    font-size: 22px;
+  }
 }
-@media (min-width: 768px) and  (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .footerPart {
     width: calc(50% - 15px);
     padding-top: 20px;
   }
- 
 }
-@media (min-width: 576px) and  (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .footerPart {
     width: calc(50% - 15px);
     padding-top: 20px;
   }
-   
-   
 }
-@media (max-width: 575.98px){
+@media (max-width: 575.98px) {
   .footerPart {
     width: calc(100% - 15px);
     padding-top: 20px;
   }
- 
 
-.copyRights{
+  .copyRights {
     width: 100%;
   }
-}  
- 
+}

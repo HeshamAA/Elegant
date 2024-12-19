@@ -6,16 +6,19 @@
     var(--third-color) 0%,
     var(--opposite-secondary) 100%
   );
-
-  min-height: 125vh;
+  background-image: url(../../assets/hero6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   position: relative;
+  text-align: center;
 }
 .homeHeroSection > * {
   color: var(--secondary-color);
 }
 
 .homeHeroSection > div:first-of-type > div:first-child > div:first-child {
-  max-width: 55%;
+  margin: 0;
 }
 
 .homeHeroSection
@@ -24,16 +27,23 @@
   > div:first-child
   h1
   span {
+  font-family: "AkiraExpanded";
+  font-size: 65px;
+  text-shadow: 4px 4px 4px black;
   color: var(--primary-color);
 }
 .homeHeroSection > div:first-of-type > div:first-child > div:first-child h1 {
-  font-family: "Kalam", cursive;
-  font-size: 65px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: start;
+  font-size: 35px;
   text-shadow: 4px 4px 4px black;
 }
 .homeHeroSection > div:first-of-type > div:first-child > div:first-child p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
   font-size: 30px;
   text-shadow: 2px 2px 4px black;
+  margin: 50vh 0 0 20rem;
 }
 .homeHeroSection
   > div:first-of-type
@@ -128,7 +138,7 @@
 .homeSection > div:first-child {
   text-align: center;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20vh;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -187,7 +197,7 @@
   }
 }
 .homeSection > div:first-child > div:first-child {
-  font-family: "Kalam", cursive;
+  font-family: "AkiraExpanded";
   color: var(--primary-color);
   font-size: 39px;
   font-weight: bolder;
@@ -197,8 +207,7 @@
   display: inline;
 
   padding: 10px;
-  color: var(--secondary-color);
-  text-transform: uppercase;
+ 
 }
 .homeSection > div:first-child > div:nth-child(2) {
   text-transform: uppercase;
@@ -228,7 +237,7 @@
 .homeSection > div:first-child > div:last-child {
   color: var(--secondary-color);
   font-size: 30px;
-
+  
   padding: 10px;
 }
 
@@ -310,7 +319,7 @@
   max-width: 50%;
 }
 .homeSecondSectionContainer > div:first-child > div:first-child {
-  font-family: "Kalam", cursive;
+  font-family: "Ethnocentric";
   color: var(--primary-color);
   font-size: 25px;
   font-weight: bolder;
@@ -404,7 +413,7 @@
   gap: 10px;
 }
 .homeThirdSectionContainer > div:first-child {
-  font-family: "Kalam", cursive;
+  
   color: var(--primary-color);
   font-size: 39px;
   font-weight: bolder;
@@ -434,7 +443,6 @@
 }
 .homeBrandsSection h1 {
   display: block;
-  font-family: "Kalam", cursive;
   color: var(--primary-color);
   text-transform: uppercase;
 }

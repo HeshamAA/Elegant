@@ -13,24 +13,24 @@
 .cartOrderComplete > div:nth-child(2) {
   font-size: 30px;
 }
-.orderDetails{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 22px;
+.orderDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
 }
-.orderDetails > div{
-    flex-direction: column;
+.orderDetails > div {
+  flex-direction: column;
 }
-.orderDetails > div > div, .orderDetails > div > span{
+.orderDetails > div > div,
+.orderDetails > div > span {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
 
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.orderDetails > div > div{
-    color: rgb(84, 84, 84);
+.orderDetails > div > div {
+  color: rgb(84, 84, 84);
 }
 .cartOrderComplete > a {
   background-color: var(--primary-color);
@@ -44,7 +44,7 @@
   border: 1px solid var(--primary-color);
 }
 
-.cartOrderComplete > a:hover{
-    background-color: transparent;
-    color: var(--primary-color);
+.cartOrderComplete > a:hover {
+  background-color: transparent;
+  color: var(--primary-color);
 }

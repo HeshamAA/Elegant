@@ -13,6 +13,19 @@
   --black-section-overlay: rgb(0, 0, 0, 0.5);
   --card-background: #2c2c2c;
 }
+
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("../assets/fonts/EthnocentricRg.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AkiraExpanded";
+  src: url("../assets/fonts/AkiraExpanded.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 #root {
   position: relative;
 }
@@ -143,7 +156,6 @@ select option {
   text-align: center;
   padding: 4px 6px;
 }
-
 
 details {
   position: relative;

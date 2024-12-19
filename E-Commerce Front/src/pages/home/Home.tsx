@@ -10,10 +10,10 @@ const Home = () => {
 
   return (
     <div className={home}>
+      <HomeSection></HomeSection>
       <HomeHeroSection></HomeHeroSection>
       <HomeBrandsSection></HomeBrandsSection>
       <HomeSecondSection></HomeSecondSection>
-      <HomeSection></HomeSection>
       <HomeThirdSection></HomeThirdSection>
     </div>
   );

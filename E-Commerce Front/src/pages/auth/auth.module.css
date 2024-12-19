@@ -35,9 +35,8 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
-.authPhotoContent h1{
+.authPhotoContent h1 {
   font-family: "Kalam", cursive;
   letter-spacing: 3px;
   color: var(--third-color);
@@ -47,7 +46,7 @@
   transition: 0.5s ease;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
-.authPhotoContent h1 span{
+.authPhotoContent h1 span {
   font-family: "Kalam", cursive;
   color: var(--primary-color);
   font-size: 80px;
@@ -63,11 +62,9 @@
   cursor: pointer;
 }
 
-
-
 .registerSectionContainer {
   background-color: var(--opposite-secondary);
- z-index: 2002;
+  z-index: 2002;
   width: 50%;
   height: 100vh;
 }
@@ -77,7 +74,6 @@ form {
   flex-direction: column;
   padding: 2px;
   gap: 10px;
-
 }
 p {
   font-size: 14px;
@@ -119,14 +115,14 @@ p {
   border: 1px solid var(--primary-color);
   text-transform: capitalize;
   transition: 0.5s ease;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .createAccountButton:hover {
   background-color: transparent;
   color: var(--primary-color);
 }
-.createAccountButton:disabled{
+.createAccountButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background-color: var(--primary-color) !important;
@@ -142,8 +138,7 @@ p {
     width: 100%;
     min-height: 50vh;
   }
-.authSection{
-  flex-direction: column;
-}
- 
+  .authSection {
+    flex-direction: column;
+  }
 }
