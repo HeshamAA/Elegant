@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "../auth.module.css";
-import photo from "../../../assets/regBackgroundTwo.jpg";
+import photo from "../../../assets/auth.jpg";
 const { authPhotoContent } = styles;
 function AuthContentSection() {
   return (
