@@ -63,5 +63,9 @@ pointer-events: none;
     padding-left: 10px;
     padding-right: 10px;
   }
-  
+  .topBar > div:first-child > div:nth-child(2) {
+    gap: 10px;
+    font-size: 14px;
+    text-align: center;
+}
 }

@@ -4,6 +4,9 @@ import AppRoutes from "./routes/AppRoutes";
 import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

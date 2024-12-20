@@ -1,57 +1,42 @@
 /* hero section */
 
 .homeHeroSection {
-  background: linear-gradient(
-    180deg,
-    var(--third-color) 0%,
-    var(--opposite-secondary) 100%
-  );
-  background-image: url(../../assets/hero6.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  /* background: linear-gradient(
+      180deg,
+      var(--third-color) 0%,
+      var(--opposite-secondary) 100%
+    ),
+    url(../../assets/hero6.jpg); */
+
+  min-height: 50vh;
   position: relative;
-  text-align: center;
-}
-.homeHeroSection > * {
   color: var(--secondary-color);
+  padding: 0;
+  display: block;
 }
 
-.homeHeroSection > div:first-of-type > div:first-child > div:first-child {
-  margin: 0;
+.homeHeroSection h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 55px;
+  line-height: 2;
+  text-shadow: 4px 4px 4px black;
 }
 
-.homeHeroSection
-  > div:first-of-type
-  > div:first-child
-  > div:first-child
-  h1
-  span {
+.homeHeroSection h1 span {
   font-family: "AkiraExpanded";
   font-size: 65px;
-  text-shadow: 4px 4px 4px black;
   color: var(--primary-color);
 }
-.homeHeroSection > div:first-of-type > div:first-child > div:first-child h1 {
-  font-family: "Courier New", Courier, monospace;
-  text-align: start;
-  font-size: 35px;
-  text-shadow: 4px 4px 4px black;
-}
-.homeHeroSection > div:first-of-type > div:first-child > div:first-child p {
+
+.homeHeroSection p {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 30px;
   text-shadow: 2px 2px 4px black;
-  margin: 50vh 0 0 20rem;
 }
-.homeHeroSection
-  > div:first-of-type
-  > div:first-child
-  > div:first-child
-  p
-  button {
-  font-size: 30px;
+
+.homeHeroSection button {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
@@ -65,51 +50,26 @@
   text-transform: uppercase;
   transition: 0.5s ease;
 }
-.homeHeroSection > div:first-of-type > div:first-child p button:hover {
+
+.homeHeroSection button:hover {
   background-color: transparent;
   color: var(--primary-color);
 }
 
-.homeHeroSection
-  > div:first-of-type
-  > div:first-child
-  > div:last-of-type
-  > img {
-  max-width: 100%;
-  max-height: 400px;
-  position: relative;
-  display: block;
-  filter: drop-shadow(2px 2px 5px var(--primary-color));
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .homeHeroSection > div:first-of-type > div:first-child > div:first-child h1 {
-    font-size: 55px;
+@media (max-width: 991px) {
+  
+  .homeHeroSection h1 {
+    font-size: 45px !important;
   }
 }
 
-@media (max-width: 991px) {
-  .homeHeroSection {
-    min-height: 140vh;
-  }
-  .homeHeroSection > div:first-child {
-    margin-top: 100px;
-  }
-  .homeHeroSection > div:first-child > div:first-child {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-  .homeHeroSection > div:first-of-type > div:first-child > div:first-child {
-    width: 100% !important;
-    max-width: 100%;
-  }
-}
 @media (max-width: 767.98px) {
-  .homeHeroSection > div:first-of-type > div:first-child > div:first-child h1 {
-    font-size: 45px !important;
+  .homeHeroSection {
+    background-image: url(../../assets/hero62.png);
   }
-  .homeHeroSection > div:first-of-type > div:first-child > div:first-child p {
-    font-size: 28px;
+
+  .homeHeroSection h1 span {
+    font-size: 45px !important;
   }
 }
 
@@ -123,13 +83,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
 }
 .homeSection::after {
   content: "";
   background-color: var(--black-section-overlay);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -195,6 +155,9 @@
     padding: 2px 5px !important;
     font-weight: 500 !important;
   }
+  .homeSection {
+    min-height: 125vh;
+  }
 }
 .homeSection > div:first-child > div:first-child {
   font-family: "AkiraExpanded";
@@ -207,7 +170,6 @@
   display: inline;
 
   padding: 10px;
- 
 }
 .homeSection > div:first-child > div:nth-child(2) {
   text-transform: uppercase;
@@ -237,7 +199,7 @@
 .homeSection > div:first-child > div:last-child {
   color: var(--secondary-color);
   font-size: 30px;
-  
+
   padding: 10px;
 }
 
@@ -413,7 +375,6 @@
   gap: 10px;
 }
 .homeThirdSectionContainer > div:first-child {
-  
   color: var(--primary-color);
   font-size: 39px;
   font-weight: bolder;

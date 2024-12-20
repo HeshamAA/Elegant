@@ -28,7 +28,11 @@
   transition: 0.5s ease;
 }
 
-
+@media screen and (max-width: 575.98px) {
+  .headerContainer h1 {
+    font-size: 28px;
+  }
+}
 
 .cartNumber {
   background-color: var(--secondary-color);
