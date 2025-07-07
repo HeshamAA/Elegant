@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Axi = axios.create({
-  baseURL: "https://elegant-api-liard.vercel.app/",
+  baseURL: "https://elegant-api-mu.vercel.app/",
   headers: {
     "Content-Type": "application/json",
   },
